@@ -18,56 +18,85 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-## Run the Web Service
-
-Run:
+## Run the web service
 
 ```bash
 python gradio_app.py
 ```
 
-Or use the helper script:
+Or:
 
 ```bash
 bash scripts/run_webapp.sh
 ```
 
-## Input Format
+## Example inputs
 
-Fusion-pM accepts:
-
-- HLA Class I full-length sequences or pseudo-sequences
-- peptide sequences of 8 to 14 amino acids
-- multiple peptide sequences, one per line
-
-Example files are available in:
+Example files:
 
 ```text
 examples/example_hla.txt
 examples/example_peptides.txt
 ```
 
-## Model Weights
+## Model files
 
-The repository includes pretrained `.pkl` model files.
+The repository includes pretrained model files:
 
-For long-term reproducibility, future releases should ideally provide versioned model weights through GitHub Releases, Zenodo, or another archival storage service.
+```text
+model_fold_0.pkl
+model_fold_1.pkl
+model_layer1_multihead9_fold0.pkl
+model_layer1_multihead9_fold1.pkl
+model_layer1_multihead9_fold2.pkl
+model_layer1_multihead9_fold3.pkl
+model_layer1_multihead9_fold4.pkl
+regmodel_fold_1.pkl
+```
 
-## Recommended Reproducibility Materials
+## Basic code check
 
-For full manuscript-level reproducibility, the following materials should be provided:
+A basic syntax check can be run with:
 
-- training, validation, and test splits
-- processed benchmark datasets
-- HLA allele or pseudo-sequence tables
-- pretrained model weights
-- random seeds
-- metric calculation scripts
-- baseline model outputs
-- source data for figures and tables
+```bash
+python -m py_compile config.py data_utils.py evaluate.py gradio_app.py model.py test.py train.py train_eval.py
+```
+
+## Materials recommended for full reproducibility
+
+For full manuscript-level reproducibility, the following materials should be provided or archived:
+
+| Item | Status |
+| --- | --- |
+| Source code | Included |
+| Pretrained model weights | Included |
+| Example inputs | Included |
+| Python dependencies | Included in `requirements.txt` |
+| Training dataset | To be documented |
+| Validation dataset | To be documented |
+| Test dataset | To be documented |
+| Dataset split files | To be documented |
+| HLA allele or pseudo-sequence table | To be documented |
+| Random seeds | To be documented |
+| Baseline outputs | To be documented |
+| Metric calculation scripts | To be documented |
+| Source data for figures and tables | To be documented |
+
+## Recommended archival practice
+
+For stable releases, consider archiving:
+
+- source code release tag
+- model weights
+- processed datasets
+- benchmark outputs
+- documentation
+- citation metadata
+
+Possible archival locations include GitHub Releases, Zenodo, Figshare, or an institutional repository.
 
 ## Limitations
 
-Fusion-pM provides computational HLA-peptide binding-related predictions.
+Fusion-pM provides computational predictions for research use.
 
-The predicted scores should not be interpreted as direct proof of T-cell immunogenicity, vaccine efficacy, clinical response, or disease protection without experimental validation.
+Predicted scores should not be interpreted as direct evidence of T-cell immunogenicity, vaccine efficacy, clinical response, or disease protection without experimental validation.

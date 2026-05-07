@@ -1,21 +1,38 @@
 cff-version: 1.2.0
-message: "If you use Fusion-pM, please cite this repository and the related manuscript."
+message: "If you use Fusion-pM, please cite this repository and the related manuscript if available."
 title: "Fusion-pM: a deep learning-based web service for Class I HLA-peptide binding prediction"
+type: software
+repository-code: "https://github.com/Ascaris-Equi/fusionpm"
+license: "PolyForm-Noncommercial-1.0.0"
+abstract: "Fusion-pM is a deep learning-based web service for Class I HLA-peptide binding prediction and immunogenicity-related analysis."
+keywords:
+  - HLA
+  - peptide binding
+  - neoantigen
+  - immunoinformatics
+  - cancer vaccine
+  - deep learning
+  - cross-attention
+  - Gradio
 authors:
   - family-names: Ma
     given-names: Jiahao
+    affiliation: "BayVax Biotech Limited"
   - family-names: Li
     given-names: Hongzong
+    affiliation: "BayVax Biotech Limited"
   - family-names: Su
     given-names: Xiaoping
+    affiliation: "Wenzhou Medical University"
   - family-names: Cai
     given-names: Zhenzhai
+    affiliation: "Second Affiliated Hospital of Wenzhou Medical University"
   - family-names: Hu
     given-names: Ye-Fan
+    affiliation: "BayVax Biotech Limited"
   - family-names: Chen
     given-names: Yifan
+    affiliation: "Hong Kong Baptist University"
   - family-names: Huang
     given-names: Jian-Dong
-repository-code: "https://github.com/Ascaris-Equi/fusionpm"
-type: software
-license: "NOASSERTION"
+    affiliation: "The University of Hong Kong"
