@@ -1,5 +1,10 @@
 # Fusion-pM
 
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-To%20be%20specified-lightgrey)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Platform](https://img.shields.io/badge/platform-Gradio-orange)
+
 Fusion-pM is a deep learning-based web service for Class I HLA-peptide binding prediction and immunogenicity-related analysis.
 
 The model integrates HLA Class I sequences with peptide sequences and uses cross-attention and mask learning to support peptide-HLA binding prediction, candidate peptide ranking, and interactive visualization.
