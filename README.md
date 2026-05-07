@@ -1,33 +1,60 @@
 # Fusion-pM
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![License](https://img.shields.io/badge/license-To%20be%20specified-lightgrey)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Platform](https://img.shields.io/badge/platform-Gradio-orange)
+[![Python CI](https://github.com/Ascaris-Equi/fusionpm/actions/workflows/python-ci.yml/badge.svg)](https://github.com/Ascaris-Equi/fusionpm/actions/workflows/python-ci.yml)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Use](https://img.shields.io/badge/use-non--commercial%20research-orange)
+![License](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-blue)
 
 Fusion-pM is a deep learning-based web service for Class I HLA-peptide binding prediction and immunogenicity-related analysis.
 
-The model integrates HLA Class I sequences with peptide sequences and uses cross-attention and mask learning to support peptide-HLA binding prediction, candidate peptide ranking, and interactive visualization.
+The model integrates HLA Class I sequences with peptide sequences and uses cross-attention and mask learning to support HLA-peptide binding prediction, candidate peptide ranking, and attention-based visualization.
 
-## Background
+> **License notice:** Fusion-pM is publicly available for **non-commercial research use only**. Commercial use requires prior written permission.
+>
+> **Clinical notice:** Fusion-pM is a computational research tool. It is not intended for clinical diagnosis, treatment selection, or standalone medical decision-making.
 
-Fusion-pM integrates full-length HLA sequences or pseudo-sequences with peptides of 8 to 14 amino acids.
+## Overview
 
-The model uses cross-attention mechanisms to focus on informative regions, such as peptide anchor residues and HLA binding-groove-related regions. This helps make predictions more interpretable.
+Fusion-pM integrates full-length HLA Class I sequences or HLA pseudo-sequences with peptide sequences of 8 to 14 amino acids.
+
+The model uses attention-based mechanisms to help identify informative HLA and peptide regions, including peptide anchor residues and HLA binding-groove-related positions.
 
 ## Key Features
 
-- **HLA-peptide binding prediction**  
+- **HLA-peptide binding prediction**
   Predicts Class I HLA-peptide binding-related scores.
 
-- **Ranked outputs**  
-  Generates prioritized peptide candidate lists.
+- **Peptide candidate ranking**
+  Produces ranked peptide candidates to support neoantigen-oriented research workflows.
 
-- **Interactive visualization**  
-  Provides attention-based visualization for inspecting important HLA-peptide regions.
+- **Attention-based visualization**
+  Provides attention information for inspecting potentially important HLA-peptide regions.
 
-- **Broad compatibility**  
-  Designed as a web service and tested on common browsers and operating systems.
+- **Web interface**
+  Includes a Gradio-based web application for local interactive use.
+
+- **Pretrained model files**
+  Includes pretrained `.pkl` model files for prediction workflows.
+
+## Repository Contents
+
+| Path | Description |
+| --- | --- |
+| `README.md` | Project overview and quick start |
+| `requirements.txt` | Python dependencies |
+| `gradio_app.py` | Gradio web application |
+| `model.py` | Model architecture |
+| `data_utils.py` | Data processing utilities |
+| `config.py` | Configuration |
+| `evaluate.py` | Evaluation utilities |
+| `train.py` | Training script |
+| `train_eval.py` | Training and evaluation script |
+| `test.py` | Test or example script |
+| `model_*.pkl`, `regmodel_*.pkl` | Pretrained model files |
+| `vocab_dict.npy` | Vocabulary dictionary |
+| `examples/` | Example input files |
+| `scripts/` | Helper scripts |
+| `docs/` | Documentation |
 
 ## Installation
 
@@ -38,7 +65,7 @@ git clone https://github.com/Ascaris-Equi/fusionpm.git
 cd fusionpm
 ```
 
-Create an environment:
+Create a Python environment:
 
 ```bash
 python3 -m venv .venv
@@ -52,7 +79,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-## Usage
+## Quick Start
 
 Run the Gradio web application:
 
@@ -70,32 +97,32 @@ Then open the local Gradio URL shown in the terminal.
 
 ## Input Format
 
-### HLA Sequence
+### HLA sequence
 
 Input either:
 
 - a full-length HLA Class I sequence
-- or an HLA pseudo-sequence
+- an HLA pseudo-sequence
 
-Use single-letter amino acid code without spaces.
+Use single-letter amino acid codes without spaces.
 
-### Peptide Sequence
+### Peptide sequence
 
 Input peptide sequences of 8 to 14 amino acids.
 
 Multiple peptides can be provided with one peptide per line.
 
-Longer sequences may be automatically segmented depending on the web-service workflow.
+Longer sequences may be segmented depending on the web-service workflow. Users should verify segmentation behavior before interpreting results.
 
 ## Example Input
 
-HLA sequence:
+Example HLA sequence:
 
 ```text
 MAVMAPRTLVLLLSGALALTQTWAGSHSMRYFFTSVSRPGR...
 ```
 
-Peptide sequence:
+Example peptide:
 
 ```text
 SIINFEKL
@@ -109,63 +136,92 @@ GILGFVFTL
 NLVPMVATV
 ```
 
-Example files:
+Example files are available in:
 
 ```text
 examples/example_hla.txt
 examples/example_peptides.txt
 ```
 
-## Repository Structure
+## Output
 
-```text
-fusionpm/
-├── README.md
-├── requirements.txt
-├── config.py
-├── data_utils.py
-├── evaluate.py
-├── gradio_app.py
-├── model.py
-├── train.py
-├── train_eval.py
-├── test.py
-├── model_fold_0.pkl
-├── model_fold_1.pkl
-├── model_layer1_multihead9_fold0.pkl
-├── model_layer1_multihead9_fold1.pkl
-├── model_layer1_multihead9_fold2.pkl
-├── model_layer1_multihead9_fold3.pkl
-├── model_layer1_multihead9_fold4.pkl
-├── regmodel_fold_1.pkl
-├── vocab_dict.npy
-├── docs/
-├── examples/
-└── scripts/
-```
+Fusion-pM returns HLA-peptide binding-related predictions and ranked peptide candidates.
+
+Depending on the workflow, outputs may include:
+
+- prediction scores
+- ranked peptide tables
+- attention-based visualizations
+- downloadable result files
+
+Predicted scores should be interpreted as computational prioritization results, not as direct evidence of T-cell immunogenicity or clinical efficacy.
+
+## Documentation
+
+Additional documentation:
+
+- [Usage Guide](docs/USAGE.md)
+- [Reproducibility Guide](docs/REPRODUCIBILITY.md)
+- [Model Card](docs/MODEL_CARD.md)
+- [License Policy](docs/LICENSE_POLICY.md)
+- [Commercial Use](docs/COMMERCIAL_USE.md)
 
 ## Reproducibility
 
-See:
-
-```text
-docs/REPRODUCIBILITY.md
-```
-
 The repository currently includes pretrained `.pkl` model files.
 
-For full reproducibility, future releases should provide dataset splits, benchmark datasets, baseline outputs, metric scripts, random seeds, and versioned model weights.
+For full manuscript-level reproducibility, users may also need access to:
+
+- training, validation, and test splits
+- processed benchmark datasets
+- HLA allele or pseudo-sequence tables
+- random seeds
+- baseline model outputs
+- metric calculation scripts
+- source data for figures and tables
+
+See [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
+
+## Citation
+
+If you use Fusion-pM, please cite this repository and the related manuscript if available.
+
+Citation metadata is provided in:
+
+```text
+CITATION.cff
+```
+
+## License
+
+Fusion-pM is distributed for non-commercial research use under the PolyForm Noncommercial License 1.0.0.
+
+See:
+
+- [LICENSE](LICENSE)
+- [NOTICE](NOTICE)
+- [docs/LICENSE_POLICY.md](docs/LICENSE_POLICY.md)
+- [docs/COMMERCIAL_USE.md](docs/COMMERCIAL_USE.md)
+
+Commercial use requires prior written permission.
+
+For commercial licensing, contact:
+
+```text
+fusionpm@bayvaxbio.com
+```
 
 ## Limitations
 
-Fusion-pM is intended for computational peptide-HLA-I binding prediction and candidate prioritization.
+Fusion-pM is intended for computational HLA-peptide binding prediction and candidate prioritization.
 
 Important limitations:
 
 - Binding prediction alone does not prove T-cell immunogenicity.
 - Predicted scores require experimental validation.
-- Fusion-pM should not be used as a standalone clinical decision-making tool.
+- The model should not be used as a standalone clinical decision-making tool.
 - Performance may vary across HLA alleles, peptide lengths, datasets, and experimental settings.
+- Attention visualizations can support interpretation but should not be treated as direct mechanistic proof.
 
 ## Authors
 
@@ -183,10 +239,8 @@ Supported by the National Key Research and Development Program of China, the Hea
 
 ## Contact
 
-For questions or feedback, please contact:
+For questions, feedback, or commercial licensing, contact:
 
 ```text
 fusionpm@bayvaxbio.com
 ```
-
-If you find Fusion-pM helpful, please consider starring the repository.
