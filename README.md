@@ -1,81 +1,187 @@
-# fusionpm
-Fusion-pM is a deep learning-based web service that predicts Class I HLA-peptide binding for immunogenicity analysis. With cross-attention and mask learning, it surpasses current baselines, offering interactive visualizations and ranking data to aid neoantigen-based cancer vaccine research.
----
+# Fusion-pM
 
-## Table of Contents
-1. [Background](#background)
-2. [Key Features](#key-features)
-3. [Usage Guide](#usage-guide)
-4. [Input Example](#input-example)
-5. [Installation and Deployment](#installation-and-deployment)
-6. [Authors](#authors)
-7. [Acknowledgments](#acknowledgments)
-8. [Contact](#contact)
+Fusion-pM is a deep learning-based web service for Class I HLA-peptide binding prediction and immunogenicity-related analysis.
 
----
+The model integrates HLA Class I sequences with peptide sequences and uses cross-attention and mask learning to support peptide-HLA binding prediction, candidate peptide ranking, and interactive visualization.
 
 ## Background
-Fusion-pM integrates full-length HLA sequences with peptides (8–14 amino acids) to predict binding affinity and immunogenicity. By utilizing cross-attention mechanisms, the model can focus on critical regions—such as anchor residues in peptides and the MHC binding groove—making the predictions both accurate and explainable.
 
----
+Fusion-pM integrates full-length HLA sequences or pseudo-sequences with peptides of 8 to 14 amino acids.
+
+The model uses cross-attention mechanisms to focus on informative regions, such as peptide anchor residues and HLA binding-groove-related regions. This helps make predictions more interpretable.
 
 ## Key Features
-- **High Accuracy**  
-  Advanced transformer-based architectures and mask learning for state-of-the-art performance.
-- **Interactive Visualization**  
-  Provides attention maps that highlight key contact residues between HLA and peptide.
-- **Broad Compatibility**  
-  Free to use, no login required, tested on major browsers (Chrome, Firefox, Edge) and operating systems.
-- **Ranked Outputs**  
-  Generates a prioritized list of candidate peptides, aiding in neoantigen-focused research.
 
----
+- **HLA-peptide binding prediction**  
+  Predicts Class I HLA-peptide binding-related scores.
 
-## Usage Guide
-1. **HLA Sequence**  
-   - Full-length HLA Class I sequence (single-letter code, no spaces)  
-   - Or a pseudo-sequence
+- **Ranked outputs**  
+  Generates prioritized peptide candidate lists.
 
-2. **Peptide Sequence**  
-   - Amino acid sequence for peptides (8–14 residues)  
-   - Longer sequences will be automatically segmented
+- **Interactive visualization**  
+  Provides attention-based visualization for inspecting important HLA-peptide regions.
 
-**Output**  
-The service ranks peptide binding affinity from highest to lowest, offering interactive plots and detailed tables for further analysis.
+- **Broad compatibility**  
+  Designed as a web service and tested on common browsers and operating systems.
 
----
+## Installation
 
-## Input Example
-```text
-HLA Sequence:
-MAVMAPRTLVLLLSGALALTQTWAGSHSMRYFFTSVSRPGR... (Full or partial)
+Clone the repository:
 
-Peptide Sequence:
-SIINFEKL
-or
-MACTGPSLPSAFDILGAAGQDKLLYLKHKLKTPRPGCQGQDLLHAMVLLKLGQETEARISLEALKADAVARLVARQWAGVDSTEDPEEPPDVSWAVARLYHLLAEEKLCPASLRDVAYQEAVRTLSSRDDHRLGELQDEARNRCGWDIAGDPGSIRTLQSNLGCLPPSSALPSGTRSLPRPIDGVSDWSQGCSLRSTGSPASLASNLEISQSPTMPFLSLHRSPHGPSKLCDDPQASLVPEPVPGGCQEPEEMSWPPSGEIASPPELPSSPPPGLPEVAPDATSTGLPDTPAAPETSTNYPVECTEGSAGPQSLPLPILEPVKNPCSVKDQTPLQLSVEDTTSPNTKPCPPTPTTPETSPPPPPPPPSSTPCSAHLTPSSLFPSSLESSSEQKFYNFVILHARADEHIALRVREKLEALGVPDGATFCEDFQVPGRGELSCLQDAIDHSAFIILLLTSNFDCRLSLHQVNQAMMSNLTRQGSPDCVIPFLPLESSPAQLSSDTASLLSGLVRLDEHSQIFARKVANTFKPHRLQARKAMWRKEQDTRALREQSQHLDGERMQAAALNAAYSAYLQSYLSYQAQMEQLQVAFGSHMSFGTGAPYGARMPFGGQVPLGAPPPFPTWPGCPQPPPLHAWQAGTPPPPSPQPAAFPQSLPFPQSPAFPTASPAPPQSPGLQPLIIHHAQMVQLGLNNHMWNQRGSQAPEDKTQEAE
-(You can input multiple peptides, one per line.)
+```bash
+git clone https://github.com/Ascaris-Equi/fusionpm.git
+cd fusionpm
 ```
-Installation and Deployment
 
-(To be add)
-Authors
+Create an environment:
 
-    Jiahao Ma, BayVax Biotech Limited
-    Hongzong Li, BayVax Biotech Limited
-    Xiaoping Su, Wenzhou Medical University
-    Zhenzhai Cai, Second Affiliated Hospital of Wenzhou Medical University
-    Ye-Fan Hu, BayVax Biotech Limited
-    Yifan Chen, Hong Kong Baptist University
-    Jian-Dong Huang, The University of Hong Kong
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-Acknowledgments
+Install dependencies:
 
-Supported by the National Key Research and Development Program of China (2021YFA0910700), the Health and Medical Research Fund, and other investors and sponsors.
-Contact
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
-If you have any questions or feedback, please email us at fusionpm@bayvaxbio.com.
+## Usage
 
-If you find Fusion-pM helpful, please give us a Star!
-Happy researching!
+Run the Gradio web application:
 
+```bash
+python gradio_app.py
+```
+
+Alternatively:
+
+```bash
+bash scripts/run_webapp.sh
+```
+
+Then open the local Gradio URL shown in the terminal.
+
+## Input Format
+
+### HLA Sequence
+
+Input either:
+
+- a full-length HLA Class I sequence
+- or an HLA pseudo-sequence
+
+Use single-letter amino acid code without spaces.
+
+### Peptide Sequence
+
+Input peptide sequences of 8 to 14 amino acids.
+
+Multiple peptides can be provided with one peptide per line.
+
+Longer sequences may be automatically segmented depending on the web-service workflow.
+
+## Example Input
+
+HLA sequence:
+
+```text
+MAVMAPRTLVLLLSGALALTQTWAGSHSMRYFFTSVSRPGR...
+```
+
+Peptide sequence:
+
+```text
+SIINFEKL
+```
+
+Multiple peptides:
+
+```text
+SIINFEKL
+GILGFVFTL
+NLVPMVATV
+```
+
+Example files:
+
+```text
+examples/example_hla.txt
+examples/example_peptides.txt
+```
+
+## Repository Structure
+
+```text
+fusionpm/
+├── README.md
+├── requirements.txt
+├── config.py
+├── data_utils.py
+├── evaluate.py
+├── gradio_app.py
+├── model.py
+├── train.py
+├── train_eval.py
+├── test.py
+├── model_fold_0.pkl
+├── model_fold_1.pkl
+├── model_layer1_multihead9_fold0.pkl
+├── model_layer1_multihead9_fold1.pkl
+├── model_layer1_multihead9_fold2.pkl
+├── model_layer1_multihead9_fold3.pkl
+├── model_layer1_multihead9_fold4.pkl
+├── regmodel_fold_1.pkl
+├── vocab_dict.npy
+├── docs/
+├── examples/
+└── scripts/
+```
+
+## Reproducibility
+
+See:
+
+```text
+docs/REPRODUCIBILITY.md
+```
+
+The repository currently includes pretrained `.pkl` model files.
+
+For full reproducibility, future releases should provide dataset splits, benchmark datasets, baseline outputs, metric scripts, random seeds, and versioned model weights.
+
+## Limitations
+
+Fusion-pM is intended for computational peptide-HLA-I binding prediction and candidate prioritization.
+
+Important limitations:
+
+- Binding prediction alone does not prove T-cell immunogenicity.
+- Predicted scores require experimental validation.
+- Fusion-pM should not be used as a standalone clinical decision-making tool.
+- Performance may vary across HLA alleles, peptide lengths, datasets, and experimental settings.
+
+## Authors
+
+- Jiahao Ma, BayVax Biotech Limited
+- Hongzong Li, BayVax Biotech Limited
+- Xiaoping Su, Wenzhou Medical University
+- Zhenzhai Cai, Second Affiliated Hospital of Wenzhou Medical University
+- Ye-Fan Hu, BayVax Biotech Limited
+- Yifan Chen, Hong Kong Baptist University
+- Jian-Dong Huang, The University of Hong Kong
+
+## Acknowledgments
+
+Supported by the National Key Research and Development Program of China, the Health and Medical Research Fund, and other investors and sponsors.
+
+## Contact
+
+For questions or feedback, please contact:
+
+```text
+fusionpm@bayvaxbio.com
+```
+
+If you find Fusion-pM helpful, please consider starring the repository.
