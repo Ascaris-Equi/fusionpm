@@ -1,35 +1,16 @@
-# Python
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.egg-info/
-
-# Environments
+*.pyc
 .venv/
-venv/
-env/
-ENV/
-conda-meta/
-
-# IDE
-.vscode/
 .idea/
-
-# OS
+.vscode/
+1_log.txt
+dataset/
+_legacy/
+_fixed_weights/
+bayvax-pm/
+bayvax-pm.zip
+_test_*.csv
+*.pred.csv
+*.dryrun.csv
 .DS_Store
-Thumbs.db
-
-# Logs and outputs
-*.log
-outputs/
-runs/
-wandb/
-mlruns/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Temporary files
-tmp/
-temp/
+verify.py
