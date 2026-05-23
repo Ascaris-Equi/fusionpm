@@ -26,24 +26,6 @@ self-attention backbone, Fusion-pM adds:
 - **NetMHCpan-style IC50** transform on the output: `IC50_nM = 50000^(1−score)`,
   with SB / WB / NB binder classes
 
-## Repository layout
-
-fusionpm/
-├── dataset/ # put your data here
-│ ├── train_data_fold[0-4].csv
-│ ├── val_data_fold[0-4].csv
-│ ├── independent_set.csv
-│ ├── external_set.csv
-│ └── common_hla.csv
-├── weights/ # created/filled by train.py
-│ ├── model_fold[0-4].pkl
-│ ├── vocab_dict.npy
-│ └── best_fold.json
-├── model.py # architecture (backbone + cross-attn + MLM head)
-├── train.py # 5-fold trainer
-├── infer.py # ensemble / fast-mode CSV inference
-└── README.md
-
 
 ## Installation
 
