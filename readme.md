@@ -1,153 +1,252 @@
 # Fusion-pM
 
-Fusion-pM is a deep learning-based service for Class I HLA-peptide binding
+Fusion-pM is a deep learning–based service for Class I HLA–peptide binding
 prediction and immunogenicity-related analysis. The model integrates HLA
 Class I sequences with peptide sequences and uses **cross-attention** and
-**masked-residue learning** to support HLA-peptide binding prediction,
-candidate peptide ranking, and NetMHCpan-style IC50 reporting.
+**masked-residue learning** to support HLA–peptide binding prediction,
+candidate peptide ranking, and NetMHCpan-style affinity reporting.
 
-**License notice:** Fusion-pM is publicly available for non-commercial
-research use only. Commercial use requires prior written permission
-(see `LICENSE`, `NOTICE`).
+**License notice:** Fusion-pM is publicly available for
+**non-commercial research use only**. Commercial use requires prior written
+permission.
 
 **Clinical notice:** Fusion-pM is a computational research tool. It is not
 intended for clinical diagnosis, treatment selection, or standalone medical
 decision-making.
 
+---
+
 ## Overview
 
-Fusion-pM integrates Class I HLA pseudo-sequences (≤34 AA) with peptide
-sequences of 8 to 14 amino acids. On top of the TransPHLA-style dual
-self-attention backbone, Fusion-pM adds:
+Fusion-pM integrates HLA Class I pseudo-sequences with peptide sequences of
+8 to 14 amino acids. On top of a TransPHLA-style dual self-attention
+backbone, Fusion-pM adds:
 
-- **Cross-Attention bridge** between peptide and HLA encoders (bidirectional)
-- **Masked Language Modeling** auxiliary head on peptide residues
-  (regularization during training)
-- **NetMHCpan-style IC50** transform on the output: `IC50_nM = 50000^(1−score)`,
-  with SB / WB / NB binder classes
+- a **Cross-Attention bridge** between the peptide and HLA encoders
+  (bidirectional);
+- a **Masked Language Modeling** auxiliary head on peptide residues for
+  regularization during training;
+- a **NetMHCpan-style affinity transform** on the output, reported together
+  with `SB / WB / NB` binder classes.
 
+The model uses attention-based mechanisms to help identify informative
+HLA and peptide regions, including peptide anchor residues and HLA
+binding-groove-related positions.
+
+## Key Features
+
+- **HLA–peptide binding prediction.** Predicts Class I HLA–peptide
+  binding-related scores.
+- **Peptide candidate ranking.** Produces ranked peptide candidates to
+  support neoantigen-oriented research workflows.
+- **NetMHCpan-style IC50 reporting.** Reports a ranking-friendly
+  pseudo-affinity `IC50_nM = 50000^(1 − score)` together with SB / WB / NB
+  classes.
+- **5-fold ensemble inference.** Default inference averages five
+  cross-validation folds; an optional fast mode uses the best single fold.
+- **Pretrained model files.** Includes five pretrained `.pkl` model files
+  for direct inference.
+
+## Repository Contents
+
+| Path | Description |
+|---|---|
+| `README.md` | Project overview and quick start |
+| `model.py` | Model architecture (backbone + cross-attention + MLM head) |
+| `train.py` | 5-fold training script |
+| `infer.py` | CSV-in / CSV-out inference (ensemble or fast mode) |
+| `weights/model_fold[0-4].pkl` | Pretrained 5-fold weights |
+| `weights/vocab_dict.npy` | Vocabulary dictionary |
+| `weights/best_fold.json` | Best-fold index used by `--fast` |
+| `dataset/` | User-provided data folder (not tracked in git) |
 
 ## Installation
 
+Clone the repository:
+
+```
 git clone https://github.com/Ascaris-Equi/fusionpm.git
 cd fusionpm
+```
+
+Create a Python environment:
+
+```
 python3 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip install torch numpy pandas scikit-learn
-n1ql
+```
 
+Install dependencies:
 
-## Data format
+```
+python -m pip install --upgrade pip
+python -m pip install torch numpy pandas scikit-learn
+```
 
-Each CSV must contain three columns (TransPHLA-compatible; an extra leading
-index column is tolerated):
+## Quick Start
 
-| column         | content                                                |
-|----------------|--------------------------------------------------------|
-| `peptide`      | 8–14 amino acids, single-letter codes                  |
-| `HLA_sequence` | Class-I pseudo-sequence, up to 34 amino acids          |
-| `label`        | 0 / 1 binding label                                    |
+Run inference on a CSV file (5-fold ensemble, default):
 
-`dataset/common_hla.csv` (optional) maps allele names (`HLA-A*02:01`, ...) to
-pseudo-sequences and is used by `infer.py` when the input CSV has an `HLA`
-column instead of `HLA_sequence`.
+```
+python infer.py --input dataset/independent_set.csv --output preds.csv
+```
 
-## Training (5-fold)
+Single best-fold mode (≈ 4× faster, slightly lower accuracy):
 
-python train.py
-gherkin
+```
+python infer.py --input dataset/independent_set.csv --output preds.csv --fast
+```
 
+## Input Format
 
-Useful flags:
+Each input CSV must contain a `peptide` column and either an `HLA_sequence`
+column or an `HLA` allele column.
 
-| flag             | default | meaning                                       |
-|------------------|---------|-----------------------------------------------|
-| `--folds 0,2`    | all     | comma-separated list of fold indices          |
-| `--epochs N`     | 50      | epochs per fold                               |
-| `--batch_size`   | 4096    | tuned for 24–32 GB GPU (e.g. RTX 5090)        |
-| `--num_workers`  | 6       | tuned for 6c/12t CPU (e.g. Ryzen 5600X)       |
-| `--lr`           | 1e-3    | Adam learning rate                            |
-| `--mask_rate`    | 0.15    | MLM mask rate on peptide tokens               |
-| `--mlm_w`        | 0.1     | MLM auxiliary loss weight                     |
-| `--force`        | off     | retrain even if a fold weight already exists  |
-| `--device`       | auto    | `auto`/`cuda`/`cpu`                           |
+| column | required | content |
+|---|---|---|
+| `peptide` | yes | 8–14 amino acids, single-letter codes, no spaces |
+| `HLA_sequence` | yes (or `HLA`) | Class-I pseudo-sequence, up to 34 amino acids |
+| `HLA` | optional | Allele name (e.g. `HLA-A*02:01`), resolved via `dataset/common_hla.csv` |
+| `label` | optional | 0 / 1 binding label (only used for training and offline evaluation) |
+| `id` | optional | Passed through to output |
 
-`train.py` uses TF32 + bfloat16 AMP automatically on Ampere/Ada/Blackwell.
-At the end of each fold it prints TransPHLA-style metrics on `val`,
-`independent_set` and `external_set` (no extra files written; **only model
-weights are saved** to `weights/`).
+When `HLA_sequence` is absent, Fusion-pM looks up the pseudo-sequence from
+`dataset/common_hla.csv` (`HLA` / `allele` → `HLA_sequence`).
 
-The fold with the highest validation `avg(auc+acc+mcc+f1)/4` is recorded in
-`weights/best_fold.json` for the inference `--fast` mode.
+## Output Format
 
-## Inference
+Each output CSV contains:
 
-Default — ensemble across all folds:
-
-python infer.py --input examples/input.csv --output out.csv
-
-
-Fast mode — single best fold only (≈4× faster):
-
-python infer.py --input examples/input.csv --output out.csv --fast
-gherkin
-
-
-CLI flags:
-
-| flag           | default | meaning                                          |
-|----------------|---------|--------------------------------------------------|
-| `--input`      | (req.)  | CSV path                                         |
-| `--output`     | auto    | output CSV path                                  |
-| `--batch_size` | 4096    |                                                  |
-| `--device`     | auto    | `auto` / `cuda` / `cpu`                          |
-| `--threshold`  | 0.5     | `pred_label` cutoff                              |
-| `--top_k N`    | 0       | keep only top-N peptides per HLA_sequence (0=all)|
-| `--fast`       | off     | single-fold inference                            |
-| `--dry_run`    | off     | input validation only                            |
-
-### Input columns
-
-`peptide` (required) + one of `HLA_sequence` or `HLA` (allele name, looked up
-via `dataset/common_hla.csv`). Optional `id` is passed through.
-
-### Output columns
-
+```
 id, peptide, HLA_sequence,
 score, IC50_nM, binder_class, pred_label, rank, n_models, status
-scheme
+```
 
+| column | meaning |
+|---|---|
+| `score` | Mean softmax-positive probability across `n_models` folds |
+| `IC50_nM` | NetMHCpan-style affinity transform: `50000^(1 − score)` |
+| `binder_class` | `SB` (< 50 nM), `WB` (< 500 nM), `NB` (≥ 500 nM) |
+| `pred_label` | `int(score > threshold)`; default threshold 0.5 |
+| `rank` | Dense rank within the same HLA_sequence (1 = best) |
+| `n_models` | Number of fold weights actually used for the row |
+| `status` | `ok`, or short tag (`bad-pep-len(7)`, `bad-hla-aa(X)`, ...) |
 
-- `score` — mean softmax-positive probability across `n_models` folds.
-- `IC50_nM` — NetMHCpan-style affinity transform `50000^(1 − score)`.
-  Reported as a **ranking-friendly pseudo-affinity** derived from the
-  binary-classifier confidence; this is **not** a quantitative IC50 trained on
-  regression labels.
-- `binder_class` — `SB` (IC50 < 50 nM), `WB` (< 500 nM), `NB` (≥ 500 nM).
-- `rank` — dense rank within the same HLA_sequence (1 = best).
-- `status` — `ok` or short tag (`bad-pep-len(7)`, `bad-hla-aa(X)`, ...).
-  Invalid rows are kept with `score = NaN`; the run does not abort.
+Invalid rows are kept with `score = NaN`; the run does not abort.
 
-## Reproducibility quick-check
+`IC50_nM` is a ranking-friendly pseudo-affinity derived from the
+binary-classifier confidence via the NetMHCpan transform. It is **not** a
+quantitative IC50 trained on regression labels.
 
-python train.py --folds 0 --epochs 3 # ~minutes on RTX 5090
+## Inference CLI
+
+| flag | default | meaning |
+|---|---|---|
+| `--input` | — (required) | Input CSV path |
+| `--output` | `<input>.pred.csv` | Output CSV path |
+| `--batch_size` | 4096 | Inference batch size |
+| `--device` | `auto` | `auto` / `cuda` / `cpu` |
+| `--threshold` | 0.5 | `pred_label` cutoff |
+| `--top_k` | 0 | Keep only top-N peptides per HLA_sequence (0 = all) |
+| `--fast` | off | Use only the best single fold (per `weights/best_fold.json`) |
+| `--dry_run` | off | Validate the input CSV only; no inference |
+
+## Training
+
+Place the dataset files under `./dataset/`:
+
+```
+dataset/
+├── train_data_fold0.csv ... train_data_fold4.csv
+├── val_data_fold0.csv   ... val_data_fold4.csv
+├── independent_set.csv
+├── external_set.csv
+└── common_hla.csv          (optional, for HLA-allele → pseudo-seq lookup)
+```
+
+Then run 5-fold training:
+
+```
+python train.py
+```
+
+| flag | default | meaning |
+|---|---|---|
+| `--folds 0,2` | all | Comma-separated list of fold indices |
+| `--epochs N` | 50 | Epochs per fold |
+| `--batch_size` | 4096 | Tuned for a 24–32 GB GPU |
+| `--num_workers` | 6 | Tuned for a 6c/12t CPU |
+| `--lr` | 1e-3 | Adam learning rate |
+| `--mask_rate` | 0.15 | MLM mask rate on peptide tokens |
+| `--mlm_w` | 0.1 | MLM auxiliary loss weight |
+| `--force` | off | Retrain even if a fold weight already exists |
+| `--device` | `auto` | `auto` / `cuda` / `cpu` |
+
+Training uses TF32 + bfloat16 AMP automatically on Ampere/Ada/Blackwell.
+At the end of each fold, the script prints TransPHLA-style metrics on the
+validation, `independent_set`, and `external_set` splits — **only model
+weights are written to disk** (`weights/model_fold[0-4].pkl`). The fold
+with the highest validation `avg(auc + acc + mcc + f1) / 4` is recorded in
+`weights/best_fold.json` and is used by `infer.py --fast`.
+
+## Reproducibility
+
+Quick check (a few minutes on a recent GPU):
+
+```
+python train.py --folds 0 --epochs 3
 python infer.py --input dataset/independent_set.csv --output ind_pred.csv --fast
+```
 
+For full manuscript-level reproducibility, the following materials are
+typically also required:
+
+- training, validation, and test splits;
+- processed benchmark datasets;
+- HLA allele or pseudo-sequence tables;
+- random seeds;
+- baseline model outputs;
+- metric calculation scripts;
+- source data for figures and tables.
 
 ## Limitations
 
-- Binding-prediction confidence does not prove T-cell immunogenicity.
-- IC50 here is a transform of the classifier score, not a regression target.
-- Performance varies across HLA alleles, peptide lengths, datasets, and
+Fusion-pM is intended for computational HLA–peptide binding prediction and
+candidate prioritization. Important limitations:
+
+- Binding prediction alone does not prove T-cell immunogenicity.
+- Predicted scores require experimental validation.
+- The model should not be used as a standalone clinical decision-making
+  tool.
+- Performance may vary across HLA alleles, peptide lengths, datasets, and
   experimental settings.
-- Attention visualizations support interpretation, not mechanistic proof.
+- Attention visualizations can support interpretation but should not be
+  treated as direct mechanistic proof.
+- `IC50_nM` is derived from the classifier score, not from a quantitative
+  regression target.
 
 ## Authors
 
-Jiahao Ma · Hongzong Li · Xiaoping Su · Zhenzhai Cai · Ye-Fan Hu ·
-Yifan Chen · Jian-Dong Huang
+- Jiahao Ma, BayVax Biotech Limited
+- Hongzong Li, BayVax Biotech Limited
+- Xiaoping Su, Wenzhou Medical University
+- Zhenzhai Cai, Second Affiliated Hospital of Wenzhou Medical University
+- Ye-Fan Hu, BayVax Biotech Limited
+- Yifan Chen, Hong Kong Baptist University
+- Jian-Dong Huang, The University of Hong Kong
+
+## Acknowledgments
+
+Supported by the National Key Research and Development Program of China,
+the Health and Medical Research Fund, and other investors and sponsors.
+
+## License
+
+Fusion-pM is distributed for non-commercial research use under the
+PolyForm Noncommercial License 1.0.0. Commercial use requires prior written
+permission. For commercial licensing, contact: **fusionpm@bayvaxbio.com**
 
 ## Contact
 
-`fusionpm@bayvaxbio.com`
+For questions, feedback, or commercial licensing, contact:
+**fusionpm@bayvaxbio.com**
