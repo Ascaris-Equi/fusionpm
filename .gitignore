@@ -12,5 +12,6 @@ bayvax-pm.zip
 _test_*.csv
 *.pred.csv
 *.dryrun.csv
+benchmark/results/*predictions*.csv
 .DS_Store
 verify.py

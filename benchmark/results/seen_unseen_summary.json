@@ -1,0 +1,33 @@
+{
+  "definition": {
+    "normalization": "strip whitespace and uppercase both key columns",
+    "primary_overlap_key": [
+      "peptide",
+      "HLA_sequence"
+    ],
+    "training_reference": "union of all files matched by --train-glob",
+    "decision_rule": "predicted positive when score > 0.5"
+  },
+  "training_files": [
+    "train_data_fold0.csv",
+    "train_data_fold1.csv",
+    "train_data_fold2.csv",
+    "train_data_fold3.csv",
+    "train_data_fold4.csv"
+  ],
+  "unique_training_peptides": 1552312,
+  "unique_training_hlas": 108,
+  "unique_training_pairs": 1791294,
+  "test_rows": 171438,
+  "unique_test_pairs": 171330,
+  "duplicate_test_rows_by_pair": 108,
+  "test_rows_by_exact_pair_overlap": {
+    "exact_pair_unseen": 170596,
+    "exact_pair_seen": 842
+  },
+  "test_rows_by_novelty_group": {
+    "peptide_unseen_hla_seen": 110742,
+    "both_components_seen_new_pair": 59854,
+    "exact_pair_seen": 842
+  }
+}

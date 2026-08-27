@@ -1,0 +1,24 @@
+{
+  "random_seed": 19961231,
+  "training_splits": "dataset/train_data_fold*.csv",
+  "validation_splits": "dataset/val_data_fold*.csv",
+  "independent_test": "dataset/independent_set.csv",
+  "model_weights": "weights/model_fold[0-4].pkl",
+  "inference_mode": "five-fold probability ensemble",
+  "decision_threshold": 0.5,
+  "overlap_normalization": "strip whitespace and uppercase",
+  "primary_overlap_key": [
+    "peptide",
+    "HLA_sequence"
+  ],
+  "metrics": [
+    "ROC-AUC",
+    "AUPR",
+    "accuracy",
+    "MCC",
+    "F1",
+    "sensitivity",
+    "specificity",
+    "precision"
+  ]
+}

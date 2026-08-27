@@ -191,6 +191,12 @@ with the highest validation `avg(auc + acc + mcc + f1) / 4` is recorded in
 
 ## Reproducibility
 
+The revision benchmark workflow, fixed configuration, baseline/web-server
+version table, split audit, and generated training-overlap performance table
+are documented under [`benchmark/`](benchmark/README.md). In particular, the
+GitHub-rendered seen/unseen result is available at
+[`benchmark/results/README.md`](benchmark/results/README.md).
+
 Quick check (a few minutes on a recent GPU):
 
 ```
