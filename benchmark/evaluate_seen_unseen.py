@@ -350,17 +350,48 @@ def main() -> None:
         json.dumps(summary, indent=2), encoding="utf-8"
     )
 
+    exact_seen = metrics.loc[
+        (metrics["grouping"] == "exact_pair_overlap")
+        & (metrics["group"] == "exact_pair_seen")
+    ].iloc[0]
+    exact_unseen = metrics.loc[
+        (metrics["grouping"] == "exact_pair_overlap")
+        & (metrics["group"] == "exact_pair_unseen")
+    ].iloc[0]
+    seen_fraction = exact_seen["n_evaluable"] / len(predictions)
+
     report = "\n".join(
         [
             "# Training-overlap performance",
+            "",
+            f"All {len(predictions):,} rows in `independent_set.csv` were evaluated; "
+            "no sampling or subset selection was applied. Scores are the mean positive-class "
+            "probability from the five released fold checkpoints (five-fold ensemble).",
             "",
             "Rows are normalized by stripping whitespace and uppercasing both `peptide` and "
             "`HLA_sequence`. The primary comparison treats an exact normalized "
             "`(peptide, HLA_sequence)` pair as seen when it occurs in the union of all "
             "training-fold CSVs. The five-way breakdown separates exact-pair overlap from "
-            "component-level coverage.",
+            "component-level coverage; the overall row and all strata summarize the same set "
+            "of ensemble predictions.",
             "",
             markdown_table(metrics),
+            "",
+            "## Interpretation",
+            "",
+            f"- Exact training-pair overlap is limited to {int(exact_seen['n_evaluable']):,} "
+            f"of {len(predictions):,} rows ({seen_fraction:.2%}); the remaining "
+            f"{int(exact_unseen['n_evaluable']):,} rows ({1 - seen_fraction:.2%}) retain "
+            f"ROC-AUC {exact_unseen['auc']:.4f} and AUPR {exact_unseen['aupr']:.4f}.",
+            f"- The seen-pair stratum contains {int(exact_seen['n_positive']):,} positives "
+            f"among {int(exact_seen['n_evaluable']):,} rows "
+            f"({exact_seen['positive_rate']:.2%} prevalence). Its accuracy, F1, and AUPR "
+            "therefore reflect a strongly imbalanced subset and should not be compared "
+            "directly with the approximately balanced unseen-pair stratum; MCC is the more "
+            "informative thresholded metric here.",
+            "- The two `n = 0` HLA-unseen groups are properties of the supplied split: every "
+            "independent-test HLA pseudo-sequence occurs in the union of the training folds. "
+            "They do not indicate failed or omitted model predictions.",
             "",
             f"Decision threshold: `{args.score_column} > {args.threshold}`.",
             "",

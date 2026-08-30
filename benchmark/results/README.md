@@ -1,6 +1,8 @@
 # Training-overlap performance
 
-Rows are normalized by stripping whitespace and uppercasing both `peptide` and `HLA_sequence`. The primary comparison treats an exact normalized `(peptide, HLA_sequence)` pair as seen when it occurs in the union of all training-fold CSVs. The five-way breakdown separates exact-pair overlap from component-level coverage.
+All 171,438 rows in `independent_set.csv` were evaluated; no sampling or subset selection was applied. Scores are the mean positive-class probability from the five released fold checkpoints (five-fold ensemble).
+
+Rows are normalized by stripping whitespace and uppercasing both `peptide` and `HLA_sequence`. The primary comparison treats an exact normalized `(peptide, HLA_sequence)` pair as seen when it occurs in the union of all training-fold CSVs. The five-way breakdown separates exact-pair overlap from component-level coverage; the overall row and all strata summarize the same set of ensemble predictions.
 
 | grouping | group | n_evaluable | n_unique_pairs | n_positive | positive_rate | auc | aupr | accuracy | mcc | f1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -12,6 +14,12 @@ Rows are normalized by stripping whitespace and uppercasing both `peptide` and `
 | novelty_group | exact_pair_seen | 842 | 842 | 833 | 0.9893 | 0.9763 | 0.9997 | 0.9917 | 0.6696 | 0.9958 |
 | novelty_group | peptide_seen_hla_unseen | 0 | 0 | 0 | NA | NA | NA | NA | NA | NA |
 | novelty_group | both_unseen | 0 | 0 | 0 | NA | NA | NA | NA | NA | NA |
+
+## Interpretation
+
+- Exact training-pair overlap is limited to 842 of 171,438 rows (0.49%); the remaining 170,596 rows (99.51%) retain ROC-AUC 0.9859 and AUPR 0.9858.
+- The seen-pair stratum contains 833 positives among 842 rows (98.93% prevalence). Its accuracy, F1, and AUPR therefore reflect a strongly imbalanced subset and should not be compared directly with the approximately balanced unseen-pair stratum; MCC is the more informative thresholded metric here.
+- The two `n = 0` HLA-unseen groups are properties of the supplied split: every independent-test HLA pseudo-sequence occurs in the union of the training folds. They do not indicate failed or omitted model predictions.
 
 Decision threshold: `score > 0.5`.
 

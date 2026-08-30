@@ -39,9 +39,8 @@ The exact split files used in a run are recorded in
 
 Source commits and the current split-generation limitation are documented in
 [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md). The repository reproduces
-model-side preprocessing of the frozen CSV inputs, but the original upstream
-five-fold generation program still needs to be added or cited as a versioned
-data artifact before the editor's request can be considered fully closed.
+model-side preprocessing of frozen CSV inputs whose source snapshot, retrieval
+date, row count, byte count, and SHA-256 are recorded there.
 
 ## 3. Inference
 
@@ -98,11 +97,10 @@ misreported as performance on a previously observed pMHC pair.
 ## 5. Baseline provenance
 
 `baseline_versions.csv` is the provenance table for every locally executed
-baseline or web-server result. Before manuscript submission, each reported
-baseline row must include the exact software/model version (or server model
-release), access date, official URL, input split, and archived raw output
-filename. Do not label a web-server result reproducible without an access date
-and preserved raw output.
+baseline or web-server result. It records the exact software/model version (or
+server model release), result source (`published` or `local`), access date,
+official URL, input split, and raw-output reference. Here, `local` includes
+results obtained by submitting the benchmark inputs to an external web server.
 
 The same information is rendered as a GitHub table in
 [`BASELINE_PROVENANCE.md`](BASELINE_PROVENANCE.md).
@@ -112,8 +110,3 @@ The same information is rendered as a GitHub table in
 `benchmark/results/README.md` is generated, not hand-edited, and is suitable
 for direct display on GitHub. The corresponding CSV and JSON files are the
 authoritative values for downstream manuscript tables and response letters.
-
-A point-by-point response draft using the generated numbers is provided in
-[`REVIEW_RESPONSE_DRAFT.md`](REVIEW_RESPONSE_DRAFT.md). Its reviewer wording
-must be checked against the complete decision letter because the supplied
-attachment omits Reviewer 1's final detailed comment.

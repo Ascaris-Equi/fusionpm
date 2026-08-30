@@ -59,6 +59,7 @@ binding-groove-related positions.
 | `weights/vocab_dict.npy` | Vocabulary dictionary |
 | `weights/best_fold.json` | Best-fold index used by `--fast` |
 | `dataset/` | User-provided data folder (not tracked in git) |
+| `benchmark/` | Manuscript benchmark commands, provenance, and result tables |
 
 ## Installation
 
@@ -189,12 +190,16 @@ weights are written to disk** (`weights/model_fold[0-4].pkl`). The fold
 with the highest validation `avg(auc + acc + mcc + f1) / 4` is recorded in
 `weights/best_fold.json` and is used by `infer.py --fast`.
 
-## Reproducibility
+## Reproducing the manuscript benchmark
 
-The revision benchmark workflow, fixed configuration, baseline/web-server
-version table, split audit, and generated training-overlap performance table
-are documented under [`benchmark/`](benchmark/README.md). In particular, the
-GitHub-rendered seen/unseen result is available at
+The iScience manuscript benchmark evaluates all 171,438 independent-test rows
+with the released five-fold ensemble. Exact commands and configuration are in
+[`benchmark/README.md`](benchmark/README.md), frozen input provenance and
+SHA-256 values are in
+[`benchmark/DATA_PROVENANCE.md`](benchmark/DATA_PROVENANCE.md), baseline and
+web-server versions are in
+[`benchmark/BASELINE_PROVENANCE.md`](benchmark/BASELINE_PROVENANCE.md), and the
+GitHub-rendered seen/unseen result is in
 [`benchmark/results/README.md`](benchmark/results/README.md).
 
 Quick check (a few minutes on a recent GPU):
@@ -235,6 +240,7 @@ candidate prioritization. Important limitations:
 
 - Jiahao Ma, BayVax Biotech Limited
 - Hongzong Li, BayVax Biotech Limited
+- Yaojun Yu, Second Affiliated Hospital of Wenzhou Medical University
 - Xiaoping Su, Wenzhou Medical University
 - Zhenzhai Cai, Second Affiliated Hospital of Wenzhou Medical University
 - Ye-Fan Hu, BayVax Biotech Limited
