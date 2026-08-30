@@ -96,11 +96,14 @@ misreported as performance on a previously observed pMHC pair.
 
 ## 5. Baseline provenance
 
-`baseline_versions.csv` is the provenance table for every locally executed
-baseline or web-server result. It records the exact software/model version (or
-server model release), result source (`published` or `local`), access date,
-official URL, input split, and raw-output reference. Here, `local` includes
-results obtained by submitting the benchmark inputs to an external web server.
+`baseline_versions.csv` is the provenance table for the 15 Fusion-pM
+baselines. Fourteen values (`source = published`) are taken from the official
+Chu et al. (2022) Figure 4 source workbook; they were not recomputed for this
+revision. HLA-Inception (`source = local`) is the only baseline independently
+evaluated for the Fusion-pM comparison. The table records the reported method
+release, exact immutable result source, access date, input panel or split, and
+reproduction note. Fusion-pM itself is the proposed method and is not included
+as a baseline row.
 
 The same information is rendered as a GitHub table in
 [`BASELINE_PROVENANCE.md`](BASELINE_PROVENANCE.md).
