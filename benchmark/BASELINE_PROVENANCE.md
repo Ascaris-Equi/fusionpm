@@ -37,13 +37,14 @@ with the Figure 4 workbook pinned at TransPHLA-AOMP commit
 | SMM | Chu Figure 4 result release; upstream server version not stated | published | `(c) Independent - Unmatchable!J1:J5` | 0.912403 / 0.788691 / 0.606827 / 0.751184 |
 | SMMPMBEC | Chu Figure 4 result release; upstream server version not stated | published | `(c) Independent - Unmatchable!L1:L5` | 0.915624 / 0.788739 / 0.609004 / 0.749755 |
 | TransPHLA | TransPHLA-AOMP commit `3ed2260292934170757507a71e645d0bcadfc44b` | published | `(a) Independent - Matchable!F1:F5` | 0.978880 / 0.930844 / 0.861688 / 0.930927 |
-| HLA-Inception | Zenodo `10.5281/zenodo.10516431`, published 2024-01-16; no version field | local | Author-run Fusion-pM comparison | — |
+| HLA-Inception | Upstream commit `38fdbcbb2d1d35a42b4390b81c63e989c4453335`; run archive `a85603a5616808aaa46c6e614f21837d258374be` | local | Full 171,438-row author run; raw output SHA-256 `ce52e876...690f9` | 0.945881 / 0.755463 / 0.564971 / 0.798866 |
 
 The words “matchable” and “unmatchable” are Chu workbook panel names, not two
 fixed, complementary test subsets. Methods in the unmatchable sheet have
 different evaluable row counts, so those sheet labels must not be interpreted
 as two fixed, complementary subsets of the 171,438-row independent set.
 
-HLA-Inception's official archived release, peptide-mode output convention,
-supported lengths, and allele mapping are recorded in
+HLA-Inception's exact author-run command, source commit, score and threshold
+definitions, archived outputs, supported lengths, and allele mapping are
+recorded in
 [`HLA_INCEPTION_PROVENANCE.md`](HLA_INCEPTION_PROVENANCE.md).

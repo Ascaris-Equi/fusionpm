@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.4-iscience - 2026-08-31
+
+- Recovered and pinned the original HLA-Inception author run from branch
+  commit `a85603a5616808aaa46c6e614f21837d258374be`.
+- Added the verified upstream commit, exact per-allele CLI,
+  `LengthCorrectedScorePercentile` scoring, min-max threshold rule,
+  raw-output hashes, and independently recomputed full-set metrics.
+
 ## v1.0.3-iscience - 2026-08-31
 
 - Corrected the benchmark inventory to the 15 manuscript baselines: ACME,

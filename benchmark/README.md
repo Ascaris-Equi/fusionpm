@@ -119,8 +119,9 @@ The same information is rendered as a GitHub table in
 [`BASELINE_PROVENANCE.md`](BASELINE_PROVENANCE.md).
 
 Checkpoint hashes and the exact parameter count are recorded in
-[`MODEL_PROVENANCE.md`](MODEL_PROVENANCE.md). Verified HLA-Inception release
-behavior and the status of its run-specific metadata are recorded in
+[`MODEL_PROVENANCE.md`](MODEL_PROVENANCE.md). The recovered HLA-Inception
+source commit, exact command, scoring and threshold rules, metrics, and
+archived raw-output hashes are recorded in
 [`HLA_INCEPTION_PROVENANCE.md`](HLA_INCEPTION_PROVENANCE.md).
 
 ## 6. Outputs
