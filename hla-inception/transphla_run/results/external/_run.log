@@ -1,0 +1,2 @@
+Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results/external/hlas.fasta', cut_length=15, cut_peptide=False, output_attention=False, output_dir='/home/ubantu/HLA-inception/transphla_run/results/external/', output_heatmap=False, output_mutation=False, peptide_file='/home/ubantu/HLA-inception/transphla_run/results/external/peptides.fasta', threshold=0.5)
+# Samples =  103865

@@ -1,0 +1,11 @@
+hla-inception/**/*.csv filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.json filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.pt filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.pkl filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.tgz filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.zip filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.ipynb filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.output filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.fasta filter=lfs diff=lfs merge=lfs -text
+hla-inception/**/*.pth filter=lfs diff=lfs merge=lfs -text

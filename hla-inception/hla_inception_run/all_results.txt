@@ -1,0 +1,818 @@
+[2026-05-17 19:50:57] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 19:50:57] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 19:50:57] MISSING TOOLS: ['git-lfs', 'go']
+[2026-05-17 19:50:57] Run as root:
+[2026-05-17 19:50:57]   sudo apt update && sudo apt install -y git git-lfs golang-go build-essential
+[2026-05-17 19:50:57]   git lfs install
+[2026-05-17 19:54:28] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 19:54:28] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 19:54:28]   git: git version 2.25.1
+[2026-05-17 19:54:28]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-17 19:54:28]   go: go version go1.13.8 linux/amd64
+[2026-05-17 19:54:29]   python deps: pandas/numpy/sklearn OK
+[2026-05-17 19:54:29] $ git lfs install   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 19:54:29] $ git lfs clone https://github.com/eawilson-CompBio/HLA-Inception.git /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 20:01:20] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 20:01:20] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 20:01:20]   git: git version 2.25.1
+[2026-05-17 20:01:20]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-17 20:01:20]   go: go version go1.13.8 linux/amd64
+[2026-05-17 20:01:20]   python deps: pandas/numpy/sklearn OK
+[2026-05-17 20:01:20] $ git lfs install   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 20:01:20] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-17 20:01:20] $ git lfs pull   (cwd=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception)
+[2026-05-17 21:22:06] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 21:22:06] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 21:22:06]   git: git version 2.25.1
+[2026-05-17 21:22:06]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-17 21:22:06]   go: go version go1.13.8 linux/amd64
+[2026-05-17 21:22:07]   python deps: pandas/numpy/sklearn OK
+[2026-05-17 21:22:07] $ git lfs install   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 21:22:07] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-17 21:22:07] $ git lfs pull   (cwd=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception)
+[2026-05-17 21:45:05] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 21:45:05] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 21:45:06]   git: git version 2.25.1
+[2026-05-17 21:45:06]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-17 21:45:06]   go: go version go1.13.8 linux/amd64
+[2026-05-17 21:45:06]   python deps: pandas/numpy/sklearn OK
+[2026-05-17 21:45:06] $ git lfs install   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 21:45:06] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-17 21:45:06] running install.sh (5-20 min, downloads LFS + compiles Go) ...
+[2026-05-17 21:45:06] $ bash install.sh   (cwd=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception)
+[2026-05-17 22:48:59] ==== START HLA-Inception × 3 datasets ====
+[2026-05-17 22:48:59] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-17 22:48:59]   git: git version 2.25.1
+[2026-05-17 22:48:59]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-17 22:48:59]   go: go version go1.13.8 linux/amd64
+[2026-05-17 22:49:00]   python deps: pandas/numpy/sklearn OK
+[2026-05-17 22:49:00] $ git lfs install   (cwd=/home/ubantu/HLA-inception)
+[2026-05-17 22:49:00] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-17 22:49:00] running install.sh (5-20 min, downloads LFS + compiles Go) ...
+[2026-05-17 22:49:00] $ bash install.sh   (cwd=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception)
+[2026-05-20 19:06:49] ==== START HLA-Inception × 3 datasets ====
+[2026-05-20 19:06:49] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-20 19:06:49]   git: git version 2.25.1
+[2026-05-20 19:06:49]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-20 19:06:49]   go: go version go1.13.8 linux/amd64
+[2026-05-20 19:06:49]   python deps: pandas/numpy/sklearn OK
+[2026-05-20 19:06:49] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-20 19:06:49] ==== restore LFS files (manual + hardcoded fallback) ====
+[2026-05-20 19:06:49] LFS files tracked: 3
+[2026-05-20 19:06:49]   - data/DefaultLengthWeights.txt
+[2026-05-20 19:06:49]   - data/Dist.json.tgz
+[2026-05-20 19:06:49]   - data/LO.json.tgz
+[2026-05-20 19:06:49]   OK existing : data/DefaultLengthWeights.txt (150 B)
+[2026-05-20 19:06:50]   OK existing : data/Dist.json.tgz (48995844 B)
+[2026-05-20 19:06:50]   OK existing : data/LO.json.tgz (8110908 B)
+[2026-05-20 19:06:50] ==== all LFS files restored ====
+[2026-05-20 19:06:50] running install.sh (may take several minutes; compiles Go)
+[2026-05-20 19:06:50] $ bash install.sh   (cwd=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception)
+[2026-05-20 19:25:58] HI_PRED_PATH is not set
+Do you want to add HLA-inception directory path to .bashrc? [y/n]
+not added to .bashrc
+In the future, you will need to set HI_PRED_PATH manually everytime you open a new terminal
+extracting data files
+tar: Ignoring unknown extended header keyword 'LIBARCHIVE.xattr.com.apple.lastuseddate#PS'
+compile golang binary
+go: creating new go.mod: module HLA-Inception
+running tests
+running single allele single length test
+\033[0;32mtest passed\033[0m\n
+running single allele multiple lengths test
+\033[0;32mtest passed\033[0m\n
+running multiple alleles single length test
+\033[0;32mtest passed\033[0m\n
+running multiple alleles multiple length test
+\033[0;32mtest passed\033[0m\n
+Testing allele alignment search
+\033[0;32mtest passed\033[0m\n
+checking peptide prediction test
+\033[0;32mtest passed\033[0m\n
+
+[2026-05-20 19:33:57] ==== START HLA-Inception × 3 datasets ====
+[2026-05-20 19:33:57] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-20 19:33:57]   git: git version 2.25.1
+[2026-05-20 19:33:57]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-20 19:33:57]   go: go version go1.13.8 linux/amd64
+[2026-05-20 19:33:58]   python deps: pandas/numpy/sklearn OK
+[2026-05-20 19:33:58]   go env: GOPROXY=https://goproxy.cn,direct
+[2026-05-20 19:33:58] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-20 19:33:58] ==== restore LFS files ====
+[2026-05-20 19:33:58] LFS files tracked: 3
+[2026-05-20 19:33:58]   - data/DefaultLengthWeights.txt
+[2026-05-20 19:33:58]   - data/Dist.json.tgz
+[2026-05-20 19:33:58]   - data/LO.json.tgz
+[2026-05-20 19:33:58]   OK existing : data/DefaultLengthWeights.txt (150 B)
+[2026-05-20 19:33:59]   OK existing : data/Dist.json.tgz (48995844 B)
+[2026-05-20 19:33:59]   OK existing : data/LO.json.tgz (8110908 B)
+[2026-05-20 19:33:59] ==== all LFS restored ====
+[2026-05-20 19:33:59] binary already present: /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception/hla-inception
+[2026-05-20 19:33:59] smoke test: /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception/hla-inception -i /home/ubantu/HLA-inception/hla_inception_run/smoke_peps.in -P 1 -a A_02:01 -o /home/ubantu/HLA-inception/hla_inception_run/smoke.out
+[2026-05-20 19:33:59] Error opening file: open /data/LO.json: no such file or directory
+
+[2026-05-20 19:33:59] smoke head:
+[2026-05-20 19:33:59]   Peptide;Length;Allele;Protein;RawScore;RawScorePercentile;LengthCorrectedScore;LengthCorrectedScorePercentile
+[2026-05-20 19:33:59] [independent] csv = /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv  exists=True
+[2026-05-20 19:33:59] [external] csv = /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv  exists=True
+[2026-05-20 19:33:59] [fusionpm] csv = /home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv  exists=True
+[2026-05-20 19:33:59] seq->name map: 108 entries from common_hla_sequence.csv
+[2026-05-20 19:33:59] 
+==== DATASET: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-20 19:33:59] [independent] cols=['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence'] shape=(171438, 6)
+[2026-05-20 19:33:59] [independent] head:
+   Unnamed: 0   peptide  length          HLA  label                        HLA_sequence
+0           0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+1           1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+2           2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+[2026-05-20 19:33:59] [independent] rows in=171438 valid=171438 dropped=0
+[2026-05-20 19:33:59] [independent] alleles=112 workers=12
+[2026-05-20 19:33:59] [independent] (1/112) OK   A_01:01: 0 preds
+[2026-05-20 19:33:59] [independent] (2/112) OK   A_02:02: 0 preds
+[2026-05-20 19:33:59] [independent] (3/112) OK   A_02:03: 0 preds
+[2026-05-20 19:33:59] [independent] (4/112) OK   A_02:04: 0 preds
+[2026-05-20 19:33:59] [independent] (5/112) OK   A_02:01: 0 preds
+[2026-05-20 19:33:59] [independent] (6/112) OK   A_02:05: 0 preds
+[2026-05-20 19:33:59] [independent] (7/112) OK   A_02:06: 0 preds
+[2026-05-20 19:33:59] [independent] (8/112) OK   A_02:07: 0 preds
+[2026-05-20 19:33:59] [independent] (9/112) OK   A_02:11: 0 preds
+[2026-05-20 19:33:59] [independent] (10/112) OK   A_02:17: 0 preds
+[2026-05-20 19:33:59] [independent] (11/112) OK   A_02:16: 0 preds
+[2026-05-20 19:33:59] [independent] (12/112) OK   A_02:19: 0 preds
+[2026-05-20 19:33:59] [independent] (13/112) OK   A_02:20: 0 preds
+[2026-05-20 19:33:59] [independent] (14/112) OK   A_02:12: 0 preds
+[2026-05-20 19:33:59] [independent] (15/112) OK   A_03:01: 0 preds
+[2026-05-20 19:33:59] [independent] (16/112) OK   A_02:50: 0 preds
+[2026-05-20 19:33:59] [independent] (17/112) OK   A_11:01: 0 preds
+[2026-05-20 19:33:59] [independent] (18/112) OK   A_23:01: 0 preds
+[2026-05-20 19:33:59] [independent] (19/112) OK   A_24:02: 0 preds
+[2026-05-20 19:33:59] [independent] (20/112) OK   A_24:06: 0 preds
+[2026-05-20 19:33:59] [independent] (21/112) OK   A_24:03: 0 preds
+[2026-05-20 19:33:59] [independent] (22/112) OK   A_24:13: 0 preds
+[2026-05-20 19:33:59] [independent] (23/112) OK   A_25:01: 0 preds
+[2026-05-20 19:33:59] [independent] (24/112) OK   A_26:02: 0 preds
+[2026-05-20 19:33:59] [independent] (25/112) OK   A_26:01: 0 preds
+[2026-05-20 19:33:59] [independent] (26/112) OK   A_26:03: 0 preds
+[2026-05-20 19:33:59] [independent] (27/112) OK   A_29:02: 0 preds
+[2026-05-20 19:33:59] [independent] (28/112) OK   A_30:01: 0 preds
+[2026-05-20 19:33:59] [independent] (29/112) OK   A_31:01: 0 preds
+[2026-05-20 19:33:59] [independent] (30/112) OK   A_30:02: 0 preds
+[2026-05-20 19:33:59] [independent] (31/112) OK   A_32:01: 0 preds
+[2026-05-20 19:33:59] [independent] (32/112) OK   A_32:07: 0 preds
+[2026-05-20 19:33:59] [independent] (33/112) OK   A_32:15: 0 preds
+[2026-05-20 19:33:59] [independent] (34/112) OK   A_66:01: 0 preds
+[2026-05-20 19:33:59] [independent] (35/112) OK   A_33:01: 0 preds
+[2026-05-20 19:33:59] [independent] (36/112) OK   A_68:01: 0 preds
+[2026-05-20 19:33:59] [independent] (37/112) OK   A_68:23: 0 preds
+[2026-05-20 19:33:59] [independent] (38/112) OK   A_68:02: 0 preds
+[2026-05-20 19:33:59] [independent] (39/112) OK   A_69:01: 0 preds
+[2026-05-20 19:33:59] [independent] (40/112) OK   A_80:01: 0 preds
+[2026-05-20 19:33:59] [independent] (41/112) OK   B_07:02: 0 preds
+[2026-05-20 19:33:59] [independent] (42/112) OK   B_08:01: 0 preds
+[2026-05-20 19:33:59] [independent] (43/112) OK   B_13:02: 0 preds
+[2026-05-20 19:33:59] [independent] (44/112) OK   B_14:01: 0 preds
+[2026-05-20 19:33:59] [independent] (45/112) OK   B_14:02: 0 preds
+[2026-05-20 19:33:59] [independent] (46/112) OK   B_15:42: 0 preds
+[2026-05-20 19:33:59] [independent] (47/112) OK   B_15:18: 0 preds
+[2026-05-20 19:33:59] [independent] (48/112) OK   B_15:17: 0 preds
+[2026-05-20 19:33:59] [independent] (49/112) OK   B_18:01: 0 preds
+[2026-05-20 19:33:59] [independent] (50/112) OK   B_15:11: 0 preds
+[2026-05-20 19:33:59] [independent] (51/112) OK   B_18:03: 0 preds
+[2026-05-20 19:33:59] [independent] (52/112) OK   B_15:03: 0 preds
+[2026-05-20 19:33:59] [independent] (53/112) OK   B_27:01: 0 preds
+[2026-05-20 19:33:59] [independent] (54/112) OK   B_15:02: 0 preds
+[2026-05-20 19:33:59] [independent] (55/112) OK   B_15:01: 0 preds
+[2026-05-20 19:33:59] [independent] (56/112) OK   B_27:02: 0 preds
+[2026-05-20 19:33:59] [independent] (57/112) OK   B_27:03: 0 preds
+[2026-05-20 19:34:00] [independent] (58/112) OK   B_15:09: 0 preds
+[2026-05-20 19:34:00] [independent] (59/112) OK   B_27:04: 0 preds
+[2026-05-20 19:34:00] [independent] (60/112) OK   B_27:06: 0 preds
+[2026-05-20 19:34:00] [independent] (61/112) OK   B_27:07: 0 preds
+[2026-05-20 19:34:00] [independent] (62/112) OK   B_27:05: 0 preds
+[2026-05-20 19:34:00] [independent] (63/112) OK   B_27:08: 0 preds
+[2026-05-20 19:34:00] [independent] (64/112) OK   B_27:09: 0 preds
+[2026-05-20 19:34:00] [independent] (65/112) OK   B_27:20: 0 preds
+[2026-05-20 19:34:00] [independent] (66/112) OK   B_35:01: 0 preds
+[2026-05-20 19:34:00] [independent] (67/112) OK   B_38:01: 0 preds
+[2026-05-20 19:34:00] [independent] (68/112) OK   B_37:01: 0 preds
+[2026-05-20 19:34:00] [independent] (69/112) OK   B_35:03: 0 preds
+[2026-05-20 19:34:00] [independent] (70/112) OK   B_39:24: 0 preds
+[2026-05-20 19:34:00] [independent] (71/112) OK   B_35:08: 0 preds
+[2026-05-20 19:34:00] [independent] (72/112) OK   B_39:06: 0 preds
+[2026-05-20 19:34:00] [independent] (73/112) OK   B_40:01: 0 preds
+[2026-05-20 19:34:00] [independent] (74/112) OK   B_40:02: 0 preds
+[2026-05-20 19:34:00] [independent] (75/112) OK   B_44:02: 0 preds
+[2026-05-20 19:34:00] [independent] (76/112) OK   B_41:01: 0 preds
+[2026-05-20 19:34:00] [independent] (77/112) OK   B_39:01: 0 preds
+[2026-05-20 19:34:00] [independent] (78/112) OK   B_44:03: 0 preds
+[2026-05-20 19:34:00] [independent] (79/112) OK   B_44:27: 0 preds
+[2026-05-20 19:34:00] [independent] (80/112) OK   B_45:01: 0 preds
+[2026-05-20 19:34:00] [independent] (81/112) OK   B_45:06: 0 preds
+[2026-05-20 19:34:00] [independent] (82/112) OK   B_46:01: 0 preds
+[2026-05-20 19:34:00] [independent] (83/112) OK   B_51:01: 0 preds
+[2026-05-20 19:34:00] [independent] (84/112) OK   B_50:01: 0 preds
+[2026-05-20 19:34:00] [independent] (85/112) OK   B_51:08: 0 preds
+[2026-05-20 19:34:00] [independent] (86/112) OK   B_52:01: 0 preds
+[2026-05-20 19:34:00] [independent] (87/112) OK   B_49:01: 0 preds
+[2026-05-20 19:34:00] [independent] (88/112) OK   B_53:01: 0 preds
+[2026-05-20 19:34:00] [independent] (89/112) OK   B_48:01: 0 preds
+[2026-05-20 19:34:00] [independent] (90/112) OK   B_54:01: 0 preds
+[2026-05-20 19:34:00] [independent] (91/112) OK   B_56:01: 0 preds
+[2026-05-20 19:34:00] [independent] (92/112) OK   B_57:01: 0 preds
+[2026-05-20 19:34:00] [independent] (93/112) OK   B_57:03: 0 preds
+[2026-05-20 19:34:00] [independent] (94/112) OK   B_58:01: 0 preds
+[2026-05-20 19:34:00] [independent] (95/112) OK   B_73:01: 0 preds
+[2026-05-20 19:34:00] [independent] (96/112) OK   B_83:01: 0 preds
+[2026-05-20 19:34:00] [independent] (97/112) OK   C_01:02: 0 preds
+[2026-05-20 19:34:00] [independent] (98/112) OK   C_03:03: 0 preds
+[2026-05-20 19:34:00] [independent] (99/112) OK   C_02:02: 0 preds
+[2026-05-20 19:34:00] [independent] (100/112) OK   C_03:04: 0 preds
+[2026-05-20 19:34:00] [independent] (101/112) OK   C_04:01: 0 preds
+[2026-05-20 19:34:00] [independent] (102/112) OK   C_05:01: 0 preds
+[2026-05-20 19:34:00] [independent] (103/112) OK   C_06:02: 0 preds
+[2026-05-20 19:34:00] [independent] (104/112) OK   C_07:02: 0 preds
+[2026-05-20 19:34:00] [independent] (105/112) OK   C_07:01: 0 preds
+[2026-05-20 19:34:00] [independent] (106/112) OK   C_07:04: 0 preds
+[2026-05-20 19:34:00] [independent] (107/112) OK   C_12:03: 0 preds
+[2026-05-20 19:34:00] [independent] (108/112) OK   C_08:02: 0 preds
+[2026-05-20 19:34:00] [independent] (109/112) OK   C_15:02: 0 preds
+[2026-05-20 19:34:00] [independent] (110/112) OK   C_14:02: 0 preds
+[2026-05-20 19:34:00] [independent] (111/112) OK   C_16:01: 0 preds
+[2026-05-20 19:34:00] [independent] (112/112) OK   C_17:01: 0 preds
+[2026-05-20 19:34:03] [independent] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/independent/raw_predictions.csv
+[2026-05-20 19:34:03] [independent] joined=0 missing=171438 failed_alleles=0
+[2026-05-20 19:34:03] 
+==== DATASET: external (/home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv) ====
+[2026-05-20 19:34:03] [external] cols=['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence'] shape=(103865, 6)
+[2026-05-20 19:34:03] [external] head:
+   Unnamed: 0   peptide  length          HLA  label                        HLA_sequence
+0           0  SDKYGLGY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+1           1  QLKEYLFY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+2           2  VFDEADRM       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+[2026-05-20 19:34:03] [external] rows in=103865 valid=103865 dropped=0
+[2026-05-20 19:34:03] [external] alleles=5 workers=12
+[2026-05-20 19:34:03] [external] (1/5) OK   A_02:01: 0 preds
+[2026-05-20 19:34:03] [external] (2/5) OK   A_01:01: 0 preds
+[2026-05-20 19:34:03] [external] (3/5) OK   A_24:02: 0 preds
+[2026-05-20 19:34:03] [external] (4/5) OK   B_08:01: 0 preds
+[2026-05-20 19:34:03] [external] (5/5) OK   B_18:01: 0 preds
+[2026-05-20 19:34:05] [external] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/external/raw_predictions.csv
+[2026-05-20 19:34:05] [external] joined=0 missing=103865 failed_alleles=0
+[2026-05-20 19:34:05] 
+==== DATASET: fusionpm (/home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv) ====
+[2026-05-20 19:34:05] [fusionpm] cols=['peptide', 'length', 'HLA', 'label', 'HLA_sequence', 'pred_prob', 'pred_label'] shape=(171438, 7)
+[2026-05-20 19:34:05] [fusionpm] head:
+    peptide  length          HLA  label                        HLA_sequence  pred_prob  pred_label
+0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.834689           1
+1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.884853           1
+2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.999691           1
+[2026-05-20 19:34:06] [fusionpm] rows in=171438 valid=171438 dropped=0
+[2026-05-20 19:34:06] [fusionpm] alleles=112 workers=12
+[2026-05-20 19:34:06] [fusionpm] (1/112) OK   A_01:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (2/112) OK   A_02:04: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (3/112) OK   A_02:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (4/112) OK   A_02:05: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (5/112) OK   A_02:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (6/112) OK   A_02:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (7/112) OK   A_02:06: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (8/112) OK   A_02:07: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (9/112) OK   A_02:11: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (10/112) OK   A_02:12: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (11/112) OK   A_02:17: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (12/112) OK   A_02:16: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (13/112) OK   A_02:19: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (14/112) OK   A_02:20: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (15/112) OK   A_02:50: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (16/112) OK   A_11:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (17/112) OK   A_03:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (18/112) OK   A_23:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (19/112) OK   A_24:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (20/112) OK   A_24:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (21/112) OK   A_25:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (22/112) OK   A_24:06: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (23/112) OK   A_26:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (24/112) OK   A_24:13: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (25/112) OK   A_26:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (26/112) OK   A_26:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (27/112) OK   A_29:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (28/112) OK   A_30:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (29/112) OK   A_30:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (30/112) OK   A_31:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (31/112) OK   A_32:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (32/112) OK   A_32:07: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (33/112) OK   A_32:15: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (34/112) OK   A_33:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (35/112) OK   A_68:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (36/112) OK   A_80:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (37/112) OK   A_68:23: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (38/112) OK   A_68:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (39/112) OK   A_69:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (40/112) OK   B_08:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (41/112) OK   B_13:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (42/112) OK   B_07:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (43/112) OK   B_14:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (44/112) OK   A_66:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (45/112) OK   B_14:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (46/112) OK   B_15:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (47/112) OK   B_15:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (48/112) OK   B_15:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (49/112) OK   B_15:11: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (50/112) OK   B_15:09: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (51/112) OK   B_18:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (52/112) OK   B_15:42: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (53/112) OK   B_18:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (54/112) OK   B_15:17: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (55/112) OK   B_15:18: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (56/112) OK   B_27:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (57/112) OK   B_27:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (58/112) OK   B_27:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (59/112) OK   B_27:04: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (60/112) OK   B_27:06: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (61/112) OK   B_27:08: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (62/112) OK   B_27:07: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (63/112) OK   B_27:09: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (64/112) OK   B_27:20: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (65/112) OK   B_27:05: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (66/112) OK   B_35:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (67/112) OK   B_35:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (68/112) OK   B_37:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (69/112) OK   B_35:08: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (70/112) OK   B_39:24: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (71/112) OK   B_39:06: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (72/112) OK   B_38:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (73/112) OK   B_39:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (74/112) OK   B_40:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (75/112) OK   B_40:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (76/112) OK   B_41:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (77/112) OK   B_44:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (78/112) OK   B_44:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (79/112) OK   B_44:27: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (80/112) OK   B_48:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (81/112) OK   B_46:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (82/112) OK   B_45:06: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (83/112) OK   B_50:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (84/112) OK   B_49:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (85/112) OK   B_45:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (86/112) OK   B_51:08: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (87/112) OK   B_53:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (88/112) OK   B_52:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (89/112) OK   B_51:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (90/112) OK   B_54:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (91/112) OK   B_56:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (92/112) OK   B_57:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (93/112) OK   B_57:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (94/112) OK   B_58:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (95/112) OK   B_73:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (96/112) OK   B_83:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (97/112) OK   C_02:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (98/112) OK   C_01:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (99/112) OK   C_03:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (100/112) OK   C_03:04: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (101/112) OK   C_04:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (102/112) OK   C_05:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (103/112) OK   C_06:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (104/112) OK   C_07:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (105/112) OK   C_07:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (106/112) OK   C_07:04: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (107/112) OK   C_08:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (108/112) OK   C_12:03: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (109/112) OK   C_14:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (110/112) OK   C_15:02: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (111/112) OK   C_16:01: 0 preds
+[2026-05-20 19:34:06] [fusionpm] (112/112) OK   C_17:01: 0 preds
+[2026-05-20 19:34:10] [fusionpm] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/raw_predictions.csv
+[2026-05-20 19:34:10] [fusionpm] joined=0 missing=171438 failed_alleles=0
+
+==============================================================================
+HLA-Inception inference on 3 datasets
+==============================================================================
+
+--- INDEPENDENT ---
+csv     = /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/independent/raw_predictions.csv
+n_total = 171438  joined = 0  failed_alleles = 0
+
+--- EXTERNAL ---
+csv     = /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/external/raw_predictions.csv
+n_total = 103865  joined = 0  failed_alleles = 0
+
+--- FUSIONPM ---
+csv     = /home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/raw_predictions.csv
+n_total = 171438  joined = 0  failed_alleles = 0
+
+==============================================================================
+[2026-05-20 19:34:10] ==== DONE ====
+[2026-05-20 19:49:09] ==== START HLA-Inception × 3 datasets ====
+[2026-05-20 19:49:09] work = /home/ubantu/HLA-inception/hla_inception_run  workers = 12
+[2026-05-20 19:49:09]   git: git version 2.25.1
+[2026-05-20 19:49:09]   git-lfs: git-lfs/2.9.2 (GitHub; linux amd64; go 1.13.5)
+[2026-05-20 19:49:09]   go: go version go1.13.8 linux/amd64
+[2026-05-20 19:49:09]   python deps: pandas/numpy/sklearn OK
+[2026-05-20 19:49:09] reuse /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-20 19:49:09] ==== restore LFS files ====
+[2026-05-20 19:49:10] LFS files tracked: 3
+[2026-05-20 19:49:10]   - data/DefaultLengthWeights.txt
+[2026-05-20 19:49:10]   - data/Dist.json.tgz
+[2026-05-20 19:49:10]   - data/LO.json.tgz
+[2026-05-20 19:49:10]   OK existing : data/DefaultLengthWeights.txt (150 B)
+[2026-05-20 19:49:10]   OK existing : data/Dist.json.tgz (48995844 B)
+[2026-05-20 19:49:11]   OK existing : data/LO.json.tgz (8110908 B)
+[2026-05-20 19:49:11] binary already present: /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception/hla-inception
+[2026-05-20 19:49:11] HI_PRED_PATH = /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-20 19:49:11] smoke test: /home/ubantu/HLA-inception/hla_inception_run/HLA-Inception/hla-inception -i /home/ubantu/HLA-inception/hla_inception_run/smoke_peps.in -P 1 -a A_02:01 -o /home/ubantu/HLA-inception/hla_inception_run/smoke.out
+[2026-05-20 19:49:11]   HI_PRED_PATH=/home/ubantu/HLA-inception/hla_inception_run/HLA-Inception
+[2026-05-20 19:49:14] smoke rc=0
+[2026-05-20 19:49:14]   stdout> LOG: best match allele for  A_02:01 :  A_02:01  score:  1
+[2026-05-20 19:49:14] pred.out size = 307
+[2026-05-20 19:49:14] pred.out content:
+[2026-05-20 19:49:14]   pred> Peptide;Length;Allele;Protein;RawScore;RawScorePercentile;LengthCorrectedScore;LengthCorrectedScorePercentile
+[2026-05-20 19:49:14]   pred> NLVPMVATV;9;A_02:01;PEPTIDE;5.138004;99.000000;5.138004;99.000000
+[2026-05-20 19:49:14]   pred> SIINFEKL;8;A_02:01;PEPTIDE;3.127536;96.200000;0.668099;88.700000
+[2026-05-20 19:49:14]   pred> GILGFVFTL;9;A_02:01;PEPTIDE;3.568979;97.100000;3.568979;97.100000
+[2026-05-20 19:49:14] parse_predictions: 3 predictions
+[2026-05-20 19:49:14] ==== cache diagnose: total pred.out = 229, valid (has AA+score) = 0 ====
+[2026-05-20 19:49:14] examples of INVALID pred.out:
+[2026-05-20 19:49:14]   bad: /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/B_15_02/pred.out  size=110
+[2026-05-20 19:49:14]     head: 'Peptide;Length;Allele;Protein;RawScore;RawScorePercentile;LengthCorrectedScore;LengthCorrectedScorePercentile\n'
+[2026-05-20 19:49:14]   bad: /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/A_32_15/pred.out  size=110
+[2026-05-20 19:49:14]     head: 'Peptide;Length;Allele;Protein;RawScore;RawScorePercentile;LengthCorrectedScore;LengthCorrectedScorePercentile\n'
+[2026-05-20 19:49:14]   bad: /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/B_15_01/pred.out  size=110
+[2026-05-20 19:49:14]     head: 'Peptide;Length;Allele;Protein;RawScore;RawScorePercentile;LengthCorrectedScore;LengthCorrectedScorePercentile\n'
+[2026-05-20 19:49:14] >>> all cached pred.out are EMPTY/INVALID -> clearing cache and re-running <<<
+[2026-05-20 19:49:14] removed 229 stale pred.out files
+[2026-05-20 19:49:14] [independent] csv = /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv  exists=True
+[2026-05-20 19:49:14] [external] csv = /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv  exists=True
+[2026-05-20 19:49:14] [fusionpm] csv = /home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv  exists=True
+[2026-05-20 19:49:14] 
+==== DATASET: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-20 19:49:14] [independent] cols=['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence'] shape=(171438, 6)
+[2026-05-20 19:49:14] [independent] head:
+   Unnamed: 0   peptide  length          HLA  label                        HLA_sequence
+0           0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+1           1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+2           2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+[2026-05-20 19:49:14] [independent] rows in=171438 valid=171438 dropped=0
+[2026-05-20 19:49:14] [independent] alleles=112 workers=12
+[2026-05-20 19:49:35] [independent] (1/112) OK   A_02:12: 140 preds
+[2026-05-20 19:49:35] [independent] (2/112) OK   A_02:07: 1308 preds
+[2026-05-20 19:49:35] [independent] (3/112) OK   A_02:06: 2017 preds
+[2026-05-20 19:49:35] [independent] (4/112) OK   A_02:11: 164 preds
+[2026-05-20 19:49:35] [independent] (5/112) OK   A_02:17: 118 preds
+[2026-05-20 19:49:35] [independent] (6/112) OK   A_02:04: 672 preds
+[2026-05-20 19:49:35] [independent] (7/112) OK   A_02:02: 1001 preds
+[2026-05-20 19:49:35] [independent] (8/112) OK   A_02:05: 1096 preds
+[2026-05-20 19:49:35] [independent] (9/112) OK   A_02:03: 1986 preds
+[2026-05-20 19:49:35] [independent] (10/112) OK   A_02:16: 76 preds
+[2026-05-20 19:49:35] [independent] (11/112) OK   A_01:01: 4238 preds
+[2026-05-20 19:49:39] [independent] (12/112) OK   A_02:01: 11823 preds
+[2026-05-20 19:49:55] [independent] (13/112) OK   A_02:19: 100 preds
+[2026-05-20 19:49:55] [independent] (14/112) OK   A_24:03: 156 preds
+[2026-05-20 19:49:55] [independent] (15/112) OK   A_02:20: 402 preds
+[2026-05-20 19:49:55] [independent] (16/112) OK   A_24:06: 124 preds
+[2026-05-20 19:49:55] [independent] (17/112) OK   A_24:13: 60 preds
+[2026-05-20 19:49:55] [independent] (18/112) OK   A_02:50: 36 preds
+[2026-05-20 19:49:55] [independent] (19/112) OK   A_23:01: 1504 preds
+[2026-05-20 19:49:55] [independent] (20/112) OK   A_03:01: 5289 preds
+[2026-05-20 19:49:55] [independent] (21/112) OK   A_25:01: 50 preds
+[2026-05-20 19:49:56] [independent] (22/112) OK   A_11:01: 4522 preds
+[2026-05-20 19:49:56] [independent] (23/112) OK   A_24:02: 4040 preds
+[2026-05-20 19:49:59] [independent] (24/112) OK   A_26:01: 904 preds
+[2026-05-20 19:50:15] [independent] (25/112) OK   A_26:02: 96 preds
+[2026-05-20 19:50:15] [independent] (26/112) OK   A_26:03: 34 preds
+[2026-05-20 19:50:15] [independent] (27/112) OK   A_30:01: 692 preds
+[2026-05-20 19:50:15] [independent] (28/112) OK   A_30:02: 378 preds
+[2026-05-20 19:50:15] [independent] (29/112) OK   A_29:02: 2937 preds
+[2026-05-20 19:50:15] [independent] (30/112) OK   A_31:01: 2297 preds
+[2026-05-20 19:50:15] [independent] (31/112) OK   A_32:01: 1697 preds
+[2026-05-20 19:50:15] [independent] (32/112) OK   A_32:07: 36 preds
+[2026-05-20 19:50:16] [independent] (33/112) OK   A_32:15: 30 preds
+[2026-05-20 19:50:16] [independent] (34/112) OK   A_33:01: 542 preds
+[2026-05-20 19:50:16] [independent] (35/112) OK   A_66:01: 38 preds
+[2026-05-20 19:50:20] [independent] (36/112) OK   A_68:01: 3405 preds
+[2026-05-20 19:50:35] [independent] (37/112) OK   A_68:23: 34 preds
+[2026-05-20 19:50:35] [independent] (38/112) OK   A_69:01: 482 preds
+[2026-05-20 19:50:35] [independent] (39/112) OK   A_68:02: 2594 preds
+[2026-05-20 19:50:35] [independent] (40/112) OK   A_80:01: 72 preds
+[2026-05-20 19:50:35] [independent] (41/112) OK   B_14:01: 38 preds
+[2026-05-20 19:50:35] [independent] (42/112) OK   B_13:02: 1276 preds
+[2026-05-20 19:50:36] [independent] (43/112) OK   B_08:01: 2839 preds
+[2026-05-20 19:50:36] [independent] (44/112) OK   B_14:02: 1598 preds
+[2026-05-20 19:50:36] [independent] (45/112) OK   B_15:01: 6850 preds
+[2026-05-20 19:50:36] [independent] (46/112) OK   B_15:02: 106 preds
+[2026-05-20 19:50:38] [independent] (47/112) OK   B_07:02: 6454 preds
+[2026-05-20 19:50:40] [independent] (48/112) OK   B_15:03: 164 preds
+[2026-05-20 19:50:55] [independent] (49/112) OK   B_15:09: 42 preds
+[2026-05-20 19:50:55] [independent] (50/112) OK   B_15:11: 370 preds
+[2026-05-20 19:50:55] [independent] (51/112) OK   B_15:18: 432 preds
+[2026-05-20 19:50:56] [independent] (52/112) OK   B_15:17: 198 preds
+[2026-05-20 19:50:56] [independent] (53/112) OK   B_18:01: 1124 preds
+[2026-05-20 19:50:56] [independent] (54/112) OK   B_15:42: 142 preds
+[2026-05-20 19:50:56] [independent] (55/112) OK   B_18:03: 106 preds
+[2026-05-20 19:50:56] [independent] (56/112) OK   B_27:01: 1461 preds
+[2026-05-20 19:50:57] [independent] (57/112) OK   B_27:02: 1281 preds
+[2026-05-20 19:50:57] [independent] (58/112) OK   B_27:03: 402 preds
+[2026-05-20 19:50:59] [independent] (59/112) OK   B_27:04: 998 preds
+[2026-05-20 19:51:02] [independent] (60/112) OK   B_27:05: 10654 preds
+[2026-05-20 19:51:16] [independent] (61/112) OK   B_27:06: 474 preds
+[2026-05-20 19:51:16] [independent] (62/112) OK   B_27:08: 829 preds
+[2026-05-20 19:51:16] [independent] (63/112) OK   B_27:20: 38 preds
+[2026-05-20 19:51:16] [independent] (64/112) OK   B_27:09: 2223 preds
+[2026-05-20 19:51:16] [independent] (65/112) OK   B_27:07: 818 preds
+[2026-05-20 19:51:17] [independent] (66/112) OK   B_35:01: 4281 preds
+[2026-05-20 19:51:17] [independent] (67/112) OK   B_35:08: 534 preds
+[2026-05-20 19:51:17] [independent] (68/112) OK   B_38:01: 1555 preds
+[2026-05-20 19:51:17] [independent] (69/112) OK   B_35:03: 1615 preds
+[2026-05-20 19:51:18] [independent] (70/112) OK   B_37:01: 1806 preds
+[2026-05-20 19:51:20] [independent] (71/112) OK   B_39:01: 1986 preds
+[2026-05-20 19:51:22] [independent] (72/112) OK   B_39:06: 632 preds
+[2026-05-20 19:51:36] [independent] (73/112) OK   B_39:24: 244 preds
+[2026-05-20 19:51:37] [independent] (74/112) OK   B_41:01: 250 preds
+[2026-05-20 19:51:37] [independent] (75/112) OK   B_40:01: 2206 preds
+[2026-05-20 19:51:37] [independent] (76/112) OK   B_44:02: 3608 preds
+[2026-05-20 19:51:37] [independent] (77/112) OK   B_40:02: 3742 preds
+[2026-05-20 19:51:38] [independent] (78/112) OK   B_44:03: 2940 preds
+[2026-05-20 19:51:38] [independent] (79/112) OK   B_45:01: 1135 preds
+[2026-05-20 19:51:38] [independent] (80/112) OK   B_44:27: 28 preds
+[2026-05-20 19:51:38] [independent] (81/112) OK   B_45:06: 142 preds
+[2026-05-20 19:51:38] [independent] (82/112) OK   B_46:01: 825 preds
+[2026-05-20 19:51:41] [independent] (83/112) OK   B_48:01: 48 preds
+[2026-05-20 19:51:44] [independent] (84/112) OK   B_49:01: 1980 preds
+[2026-05-20 19:51:57] [independent] (85/112) OK   B_50:01: 715 preds
+[2026-05-20 19:51:58] [independent] (86/112) OK   B_52:01: 206 preds
+[2026-05-20 19:51:58] [independent] (87/112) OK   B_51:01: 2487 preds
+[2026-05-20 19:51:58] [independent] (88/112) OK   B_51:08: 230 preds
+[2026-05-20 19:51:58] [independent] (89/112) OK   B_53:01: 328 preds
+[2026-05-20 19:51:59] [independent] (90/112) OK   B_54:01: 590 preds
+[2026-05-20 19:51:59] [independent] (91/112) OK   B_56:01: 290 preds
+[2026-05-20 19:51:59] [independent] (92/112) OK   B_57:03: 2072 preds
+[2026-05-20 19:51:59] [independent] (93/112) OK   B_58:01: 2184 preds
+[2026-05-20 19:52:00] [independent] (94/112) OK   B_57:01: 5964 preds
+[2026-05-20 19:52:02] [independent] (95/112) OK   B_73:01: 206 preds
+[2026-05-20 19:52:05] [independent] (96/112) OK   B_83:01: 130 preds
+[2026-05-20 19:52:18] [independent] (97/112) OK   C_01:02: 966 preds
+[2026-05-20 19:52:19] [independent] (98/112) OK   C_03:03: 2141 preds
+[2026-05-20 19:52:19] [independent] (99/112) OK   C_02:02: 2399 preds
+[2026-05-20 19:52:19] [independent] (100/112) OK   C_03:04: 2010 preds
+[2026-05-20 19:52:20] [independent] (101/112) OK   C_04:01: 4249 preds
+[2026-05-20 19:52:20] [independent] (102/112) OK   C_06:02: 2722 preds
+[2026-05-20 19:52:20] [independent] (103/112) OK   C_05:01: 2204 preds
+[2026-05-20 19:52:20] [independent] (104/112) OK   C_07:02: 1495 preds
+[2026-05-20 19:52:20] [independent] (105/112) OK   C_07:01: 1825 preds
+[2026-05-20 19:52:20] [independent] (106/112) OK   C_07:04: 1188 preds
+[2026-05-20 19:52:22] [independent] (107/112) OK   C_08:02: 2563 preds
+[2026-05-20 19:52:23] [independent] (108/112) OK   C_12:03: 810 preds
+[2026-05-20 19:52:28] [independent] (109/112) OK   C_14:02: 1050 preds
+[2026-05-20 19:52:28] [independent] (110/112) OK   C_15:02: 798 preds
+[2026-05-20 19:52:28] [independent] (111/112) OK   C_17:01: 218 preds
+[2026-05-20 19:52:28] [independent] (112/112) OK   C_16:01: 1734 preds
+[2026-05-20 19:52:35] [independent] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/independent/raw_predictions.csv
+[2026-05-20 19:52:35] [independent] joined=171438 missing=0 failed_alleles=0
+[2026-05-20 19:52:37] 
+==== DATASET: external (/home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv) ====
+[2026-05-20 19:52:37] [external] cols=['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence'] shape=(103865, 6)
+[2026-05-20 19:52:37] [external] head:
+   Unnamed: 0   peptide  length          HLA  label                        HLA_sequence
+0           0  SDKYGLGY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+1           1  QLKEYLFY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+2           2  VFDEADRM       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+[2026-05-20 19:52:37] [external] rows in=103865 valid=103865 dropped=0
+[2026-05-20 19:52:37] [external] alleles=5 workers=12
+[2026-05-20 19:52:47] [external] (1/5) OK   A_02:01: 8937 preds
+[2026-05-20 19:52:48] [external] (2/5) OK   A_24:02: 8279 preds
+[2026-05-20 19:52:48] [external] (3/5) OK   A_01:01: 8644 preds
+[2026-05-20 19:52:48] [external] (4/5) OK   B_18:01: 38855 preds
+[2026-05-20 19:52:50] [external] (5/5) OK   B_08:01: 39150 preds
+[2026-05-20 19:52:56] [external] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/external/raw_predictions.csv
+[2026-05-20 19:52:56] [external] joined=103865 missing=0 failed_alleles=0
+[2026-05-20 19:52:56] 
+==== DATASET: fusionpm (/home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv) ====
+[2026-05-20 19:52:56] [fusionpm] cols=['peptide', 'length', 'HLA', 'label', 'HLA_sequence', 'pred_prob', 'pred_label'] shape=(171438, 7)
+[2026-05-20 19:52:56] [fusionpm] head:
+    peptide  length          HLA  label                        HLA_sequence  pred_prob  pred_label
+0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.834689           1
+1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.884853           1
+2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.999691           1
+[2026-05-20 19:52:57] [fusionpm] rows in=171438 valid=171438 dropped=0
+[2026-05-20 19:52:57] [fusionpm] alleles=112 workers=12
+[2026-05-20 19:53:18] [fusionpm] (1/112) OK   A_02:11: 164 preds
+[2026-05-20 19:53:18] [fusionpm] (2/112) OK   A_02:12: 140 preds
+[2026-05-20 19:53:18] [fusionpm] (3/112) OK   A_02:16: 76 preds
+[2026-05-20 19:53:18] [fusionpm] (4/112) OK   A_02:17: 118 preds
+[2026-05-20 19:53:18] [fusionpm] (5/112) OK   A_02:05: 1096 preds
+[2026-05-20 19:53:18] [fusionpm] (6/112) OK   A_02:04: 672 preds
+[2026-05-20 19:53:18] [fusionpm] (7/112) OK   A_02:06: 2017 preds
+[2026-05-20 19:53:18] [fusionpm] (8/112) OK   A_02:03: 1986 preds
+[2026-05-20 19:53:18] [fusionpm] (9/112) OK   A_02:02: 1001 preds
+[2026-05-20 19:53:18] [fusionpm] (10/112) OK   A_02:07: 1308 preds
+[2026-05-20 19:53:18] [fusionpm] (11/112) OK   A_01:01: 4238 preds
+[2026-05-20 19:53:20] [fusionpm] (12/112) OK   A_02:01: 11823 preds
+[2026-05-20 19:53:39] [fusionpm] (13/112) OK   A_02:50: 36 preds
+[2026-05-20 19:53:39] [fusionpm] (14/112) OK   A_02:19: 100 preds
+[2026-05-20 19:53:39] [fusionpm] (15/112) OK   A_23:01: 1504 preds
+[2026-05-20 19:53:39] [fusionpm] (16/112) OK   A_02:20: 402 preds
+[2026-05-20 19:53:39] [fusionpm] (17/112) OK   A_24:06: 124 preds
+[2026-05-20 19:53:39] [fusionpm] (18/112) OK   A_25:01: 50 preds
+[2026-05-20 19:53:39] [fusionpm] (19/112) OK   A_24:13: 60 preds
+[2026-05-20 19:53:39] [fusionpm] (20/112) OK   A_24:03: 156 preds
+[2026-05-20 19:53:39] [fusionpm] (21/112) OK   A_11:01: 4522 preds
+[2026-05-20 19:53:39] [fusionpm] (22/112) OK   A_24:02: 4040 preds
+[2026-05-20 19:53:40] [fusionpm] (23/112) OK   A_03:01: 5289 preds
+[2026-05-20 19:53:40] [fusionpm] (24/112) OK   A_26:01: 904 preds
+[2026-05-20 19:54:00] [fusionpm] (25/112) OK   A_26:02: 96 preds
+[2026-05-20 19:54:00] [fusionpm] (26/112) OK   A_26:03: 34 preds
+[2026-05-20 19:54:00] [fusionpm] (27/112) OK   A_30:01: 692 preds
+[2026-05-20 19:54:00] [fusionpm] (28/112) OK   A_32:01: 1697 preds
+[2026-05-20 19:54:00] [fusionpm] (29/112) OK   A_30:02: 378 preds
+[2026-05-20 19:54:00] [fusionpm] (30/112) OK   A_32:07: 36 preds
+[2026-05-20 19:54:00] [fusionpm] (31/112) OK   A_33:01: 542 preds
+[2026-05-20 19:54:00] [fusionpm] (32/112) OK   A_31:01: 2297 preds
+[2026-05-20 19:54:00] [fusionpm] (33/112) OK   A_32:15: 30 preds
+[2026-05-20 19:54:00] [fusionpm] (34/112) OK   A_66:01: 38 preds
+[2026-05-20 19:54:00] [fusionpm] (35/112) OK   A_29:02: 2937 preds
+[2026-05-20 19:54:02] [fusionpm] (36/112) OK   A_68:01: 3405 preds
+[2026-05-20 19:54:20] [fusionpm] (37/112) OK   A_68:23: 34 preds
+[2026-05-20 19:54:20] [fusionpm] (38/112) OK   A_69:01: 482 preds
+[2026-05-20 19:54:20] [fusionpm] (39/112) OK   A_80:01: 72 preds
+[2026-05-20 19:54:20] [fusionpm] (40/112) OK   A_68:02: 2594 preds
+[2026-05-20 19:54:21] [fusionpm] (41/112) OK   B_14:02: 1598 preds
+[2026-05-20 19:54:21] [fusionpm] (42/112) OK   B_08:01: 2839 preds
+[2026-05-20 19:54:21] [fusionpm] (43/112) OK   B_14:01: 38 preds
+[2026-05-20 19:54:21] [fusionpm] (44/112) OK   B_15:02: 106 preds
+[2026-05-20 19:54:21] [fusionpm] (45/112) OK   B_13:02: 1276 preds
+[2026-05-20 19:54:21] [fusionpm] (46/112) OK   B_15:01: 6850 preds
+[2026-05-20 19:54:21] [fusionpm] (47/112) OK   B_07:02: 6454 preds
+[2026-05-20 19:54:22] [fusionpm] (48/112) OK   B_15:03: 164 preds
+[2026-05-20 19:54:40] [fusionpm] (49/112) OK   B_15:09: 42 preds
+[2026-05-20 19:54:40] [fusionpm] (50/112) OK   B_15:11: 370 preds
+[2026-05-20 19:54:40] [fusionpm] (51/112) OK   B_15:18: 432 preds
+[2026-05-20 19:54:40] [fusionpm] (52/112) OK   B_15:17: 198 preds
+[2026-05-20 19:54:40] [fusionpm] (53/112) OK   B_18:03: 106 preds
+[2026-05-20 19:54:41] [fusionpm] (54/112) OK   B_15:42: 142 preds
+[2026-05-20 19:54:41] [fusionpm] (55/112) OK   B_18:01: 1124 preds
+[2026-05-20 19:54:41] [fusionpm] (56/112) OK   B_27:01: 1461 preds
+[2026-05-20 19:54:41] [fusionpm] (57/112) OK   B_27:02: 1281 preds
+[2026-05-20 19:54:41] [fusionpm] (58/112) OK   B_27:03: 402 preds
+[2026-05-20 19:54:41] [fusionpm] (59/112) OK   B_27:04: 998 preds
+[2026-05-20 19:54:44] [fusionpm] (60/112) OK   B_27:05: 10654 preds
+[2026-05-20 19:55:00] [fusionpm] (61/112) OK   B_27:06: 474 preds
+[2026-05-20 19:55:00] [fusionpm] (62/112) OK   B_27:07: 818 preds
+[2026-05-20 19:55:00] [fusionpm] (63/112) OK   B_27:08: 829 preds
+[2026-05-20 19:55:01] [fusionpm] (64/112) OK   B_27:09: 2223 preds
+[2026-05-20 19:55:01] [fusionpm] (65/112) OK   B_27:20: 38 preds
+[2026-05-20 19:55:01] [fusionpm] (66/112) OK   B_35:03: 1615 preds
+[2026-05-20 19:55:01] [fusionpm] (67/112) OK   B_35:08: 534 preds
+[2026-05-20 19:55:01] [fusionpm] (68/112) OK   B_38:01: 1555 preds
+[2026-05-20 19:55:01] [fusionpm] (69/112) OK   B_39:01: 1986 preds
+[2026-05-20 19:55:02] [fusionpm] (70/112) OK   B_37:01: 1806 preds
+[2026-05-20 19:55:03] [fusionpm] (71/112) OK   B_35:01: 4281 preds
+[2026-05-20 19:55:04] [fusionpm] (72/112) OK   B_39:06: 632 preds
+[2026-05-20 19:55:20] [fusionpm] (73/112) OK   B_39:24: 244 preds
+[2026-05-20 19:55:21] [fusionpm] (74/112) OK   B_41:01: 250 preds
+[2026-05-20 19:55:21] [fusionpm] (75/112) OK   B_40:02: 3742 preds
+[2026-05-20 19:55:21] [fusionpm] (76/112) OK   B_44:27: 28 preds
+[2026-05-20 19:55:21] [fusionpm] (77/112) OK   B_40:01: 2206 preds
+[2026-05-20 19:55:21] [fusionpm] (78/112) OK   B_44:03: 2940 preds
+[2026-05-20 19:55:21] [fusionpm] (79/112) OK   B_44:02: 3608 preds
+[2026-05-20 19:55:22] [fusionpm] (80/112) OK   B_45:01: 1135 preds
+[2026-05-20 19:55:22] [fusionpm] (81/112) OK   B_45:06: 142 preds
+[2026-05-20 19:55:22] [fusionpm] (82/112) OK   B_46:01: 825 preds
+[2026-05-20 19:55:23] [fusionpm] (83/112) OK   B_48:01: 48 preds
+[2026-05-20 19:55:24] [fusionpm] (84/112) OK   B_49:01: 1980 preds
+[2026-05-20 19:55:41] [fusionpm] (85/112) OK   B_50:01: 715 preds
+[2026-05-20 19:55:41] [fusionpm] (86/112) OK   B_51:01: 2487 preds
+[2026-05-20 19:55:41] [fusionpm] (87/112) OK   B_51:08: 230 preds
+[2026-05-20 19:55:41] [fusionpm] (88/112) OK   B_52:01: 206 preds
+[2026-05-20 19:55:42] [fusionpm] (89/112) OK   B_56:01: 290 preds
+[2026-05-20 19:55:42] [fusionpm] (90/112) OK   B_53:01: 328 preds
+[2026-05-20 19:55:42] [fusionpm] (91/112) OK   B_54:01: 590 preds
+[2026-05-20 19:55:42] [fusionpm] (92/112) OK   B_57:03: 2072 preds
+[2026-05-20 19:55:43] [fusionpm] (93/112) OK   B_57:01: 5964 preds
+[2026-05-20 19:55:43] [fusionpm] (94/112) OK   B_58:01: 2184 preds
+[2026-05-20 19:55:43] [fusionpm] (95/112) OK   B_73:01: 206 preds
+[2026-05-20 19:55:45] [fusionpm] (96/112) OK   B_83:01: 130 preds
+[2026-05-20 19:56:01] [fusionpm] (97/112) OK   C_01:02: 966 preds
+[2026-05-20 19:56:01] [fusionpm] (98/112) OK   C_02:02: 2399 preds
+[2026-05-20 19:56:01] [fusionpm] (99/112) OK   C_03:03: 2141 preds
+[2026-05-20 19:56:02] [fusionpm] (100/112) OK   C_03:04: 2010 preds
+[2026-05-20 19:56:02] [fusionpm] (101/112) OK   C_05:01: 2204 preds
+[2026-05-20 19:56:02] [fusionpm] (102/112) OK   C_04:01: 4249 preds
+[2026-05-20 19:56:02] [fusionpm] (103/112) OK   C_06:02: 2722 preds
+[2026-05-20 19:56:02] [fusionpm] (104/112) OK   C_07:01: 1825 preds
+[2026-05-20 19:56:03] [fusionpm] (105/112) OK   C_07:02: 1495 preds
+[2026-05-20 19:56:03] [fusionpm] (106/112) OK   C_07:04: 1188 preds
+[2026-05-20 19:56:03] [fusionpm] (107/112) OK   C_08:02: 2563 preds
+[2026-05-20 19:56:04] [fusionpm] (108/112) OK   C_12:03: 810 preds
+[2026-05-20 19:56:10] [fusionpm] (109/112) OK   C_14:02: 1050 preds
+[2026-05-20 19:56:10] [fusionpm] (110/112) OK   C_16:01: 1734 preds
+[2026-05-20 19:56:10] [fusionpm] (111/112) OK   C_15:02: 798 preds
+[2026-05-20 19:56:10] [fusionpm] (112/112) OK   C_17:01: 218 preds
+[2026-05-20 19:56:19] [fusionpm] raw -> /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/raw_predictions.csv
+[2026-05-20 19:56:19] [fusionpm] joined=171438 missing=0 failed_alleles=0
+
+==============================================================================
+HLA-Inception inference on 3 datasets
+==============================================================================
+
+--- INDEPENDENT ---
+csv     = /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/independent/raw_predictions.csv
+n_total = 171438  joined = 171438  failed_alleles = 0
+Overall:
+  n             : 171438
+  n_pos         : 85876
+  n_neg         : 85562
+  AUROC         : 0.9458812899950538
+  AUPRC         : 0.951698565374432
+  ACC@0.5norm   : 0.7554626162227744
+  F1@0.5norm    : 0.7988658225904727
+  MCC@0.5norm   : 0.5649714378332985
+  ACC@topK      : 0.8898377255917591
+  F1@topK       : 0.8900391261819367
+  MCC@topK      : 0.7796747120728696
+Per-allele (n=112, top 20 by AUROC):
+       A_32:15  n=   30  AUROC=1.0000  AUPRC=1.0000
+       B_15:09  n=   42  AUROC=1.0000  AUPRC=1.0000
+       B_44:27  n=   28  AUROC=1.0000  AUPRC=1.0000
+       A_25:01  n=   50  AUROC=0.9984  AUPRC=0.9985
+       A_24:13  n=   60  AUROC=0.9978  AUPRC=0.9978
+       B_27:07  n=  818  AUROC=0.9971  AUPRC=0.9967
+       B_38:01  n= 1555  AUROC=0.9964  AUPRC=0.9962
+       B_27:01  n= 1461  AUROC=0.9959  AUPRC=0.9939
+       B_27:06  n=  474  AUROC=0.9945  AUPRC=0.9946
+       B_27:02  n= 1281  AUROC=0.9928  AUPRC=0.9909
+       B_27:08  n=  829  AUROC=0.9922  AUPRC=0.9908
+       B_51:08  n=  230  AUROC=0.9921  AUPRC=0.9896
+       B_56:01  n=  290  AUROC=0.9921  AUPRC=0.9924
+       C_14:02  n= 1050  AUROC=0.9916  AUPRC=0.9907
+       B_15:18  n=  432  AUROC=0.9911  AUPRC=0.9920
+       B_44:03  n= 2940  AUROC=0.9910  AUPRC=0.9907
+       B_27:04  n=  998  AUROC=0.9905  AUPRC=0.9912
+       A_26:02  n=   96  AUROC=0.9891  AUPRC=0.9896
+       B_49:01  n= 1980  AUROC=0.9886  AUPRC=0.9865
+       B_27:20  n=   38  AUROC=0.9875  AUPRC=0.9862
+
+--- EXTERNAL ---
+csv     = /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/external/raw_predictions.csv
+n_total = 103865  joined = 103865  failed_alleles = 0
+Overall:
+  n             : 103865
+  n_pos         : 51984
+  n_neg         : 51881
+  AUROC         : 0.9294382330790751
+  AUPRC         : 0.9376237590730847
+  ACC@0.5norm   : 0.7714148173109324
+  F1@0.5norm    : 0.8061529417528046
+  MCC@0.5norm   : 0.5808428405444845
+  ACC@topK      : 0.866422760313869
+  F1@topK       : 0.8665550938750385
+  MCC@topK      : 0.7328452579042591
+Per-allele (n=5, top 20 by AUROC):
+       A_01:01  n= 8644  AUROC=0.9402  AUPRC=0.9452
+       B_08:01  n=39150  AUROC=0.9384  AUPRC=0.9389
+       A_24:02  n= 8279  AUROC=0.9268  AUPRC=0.9362
+       B_18:01  n=38855  AUROC=0.9235  AUPRC=0.9398
+       A_02:01  n= 8937  AUROC=0.9084  AUPRC=0.9085
+
+--- FUSIONPM ---
+csv     = /home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv
+raw     = /home/ubantu/HLA-inception/hla_inception_run/results/fusionpm/raw_predictions.csv
+n_total = 171438  joined = 171438  failed_alleles = 0
+Overall:
+  n             : 171438
+  n_pos         : 85876
+  n_neg         : 85562
+  AUROC         : 0.9458812899950538
+  AUPRC         : 0.951698565374432
+  ACC@0.5norm   : 0.7554626162227744
+  F1@0.5norm    : 0.7988658225904727
+  MCC@0.5norm   : 0.5649714378332985
+  ACC@topK      : 0.8898377255917591
+  F1@topK       : 0.8900391261819367
+  MCC@topK      : 0.7796747120728696
+Per-allele (n=112, top 20 by AUROC):
+       A_32:15  n=   30  AUROC=1.0000  AUPRC=1.0000
+       B_15:09  n=   42  AUROC=1.0000  AUPRC=1.0000
+       B_44:27  n=   28  AUROC=1.0000  AUPRC=1.0000
+       A_25:01  n=   50  AUROC=0.9984  AUPRC=0.9985
+       A_24:13  n=   60  AUROC=0.9978  AUPRC=0.9978
+       B_27:07  n=  818  AUROC=0.9971  AUPRC=0.9967
+       B_38:01  n= 1555  AUROC=0.9964  AUPRC=0.9962
+       B_27:01  n= 1461  AUROC=0.9959  AUPRC=0.9939
+       B_27:06  n=  474  AUROC=0.9945  AUPRC=0.9946
+       B_27:02  n= 1281  AUROC=0.9928  AUPRC=0.9909
+       B_27:08  n=  829  AUROC=0.9922  AUPRC=0.9908
+       B_51:08  n=  230  AUROC=0.9921  AUPRC=0.9896
+       B_56:01  n=  290  AUROC=0.9921  AUPRC=0.9924
+       C_14:02  n= 1050  AUROC=0.9916  AUPRC=0.9907
+       B_15:18  n=  432  AUROC=0.9911  AUPRC=0.9920
+       B_44:03  n= 2940  AUROC=0.9910  AUPRC=0.9907
+       B_27:04  n=  998  AUROC=0.9905  AUPRC=0.9912
+       A_26:02  n=   96  AUROC=0.9891  AUPRC=0.9896
+       B_49:01  n= 1980  AUROC=0.9886  AUPRC=0.9865
+       B_27:20  n=   38  AUROC=0.9875  AUPRC=0.9862
+
+==============================================================================
+[2026-05-20 19:56:21] ==== DONE ====

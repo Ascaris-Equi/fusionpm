@@ -1,0 +1,1536 @@
+[2026-05-16 21:04:14] ==== START TransPHLA reproduction ====
+[2026-05-16 21:04:14] work = /home/ubantu/HLA-inception/transphla_run
+[2026-05-16 21:04:14] conda = /home/ubantu/miniconda3/bin/conda
+[2026-05-16 21:04:15] creating conda env 'transphla_repro' (python=3.8) ...
+[2026-05-16 21:04:15] $ /home/ubantu/miniconda3/bin/conda create -n transphla_repro python=3.8 -y   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:05:25]                                                                                                                                                                                 [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A done
+Preparing transaction: / done
+Verifying transaction: \ | / - \ | done
+Executing transaction: - \ | / - \ | / - \ | / - \ | / - \ | / done
+#
+# To activate this environment, use
+#
+#     $ conda activate transphla_repro
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+[2026-05-16 21:05:25] installing dependencies into env (cpu torch + pandas + sklearn) ...
+[2026-05-16 21:05:25] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input --upgrade pip setuptools wheel   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:05:29] Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: pip in /home/ubantu/.local/lib/python3.8/site-packages (25.0.1)
+Requirement already satisfied: setuptools in /home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages (75.3.0)
+Collecting setuptools
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/cd/b1/961ba076c7d3732e3a97e6681c55ef647afb795fe8bfcd27becec8a762ce/setuptools-75.3.4-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 8.4 MB/s eta 0:00:00
+Requirement already satisfied: wheel in /home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages (0.45.1)
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 75.3.0
+    Uninstalling setuptools-75.3.0:
+      Successfully uninstalled setuptools-75.3.0
+Successfully installed setuptools-75.3.4
+
+[2026-05-16 21:05:29] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input numpy pandas scikit-learn tqdm matplotlib seaborn   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:05:33] Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: numpy in /home/ubantu/.local/lib/python3.8/site-packages (1.24.4)
+Requirement already satisfied: pandas in /home/ubantu/.local/lib/python3.8/site-packages (2.0.3)
+Collecting scikit-learn
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/3f/48/6fdd99f5717045f9984616b5c2ec683d6286d30c0ac234563062132b83ab/scikit_learn-1.3.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 21.8 MB/s eta 0:00:00
+Requirement already satisfied: tqdm in /home/ubantu/.local/lib/python3.8/site-packages (4.67.3)
+Requirement already satisfied: matplotlib in /home/ubantu/.local/lib/python3.8/site-packages (3.7.5)
+Requirement already satisfied: seaborn in /home/ubantu/.local/lib/python3.8/site-packages (0.13.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /home/ubantu/.local/lib/python3.8/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /home/ubantu/.local/lib/python3.8/site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.1 in /home/ubantu/.local/lib/python3.8/site-packages (from pandas) (2025.3)
+Requirement already satisfied: scipy>=1.5.0 in /home/ubantu/.local/lib/python3.8/site-packages (from scikit-learn) (1.10.1)
+Collecting joblib>=1.1.1 (from scikit-learn)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl (301 kB)
+Collecting threadpoolctl>=2.0.0 (from scikit-learn)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: contourpy>=1.0.1 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (4.57.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (1.4.7)
+Requirement already satisfied: packaging>=20.0 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (25.0)
+Requirement already satisfied: pillow>=6.2.0 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (3.1.4)
+Requirement already satisfied: importlib-resources>=3.2.0 in /home/ubantu/.local/lib/python3.8/site-packages (from matplotlib) (6.4.5)
+Requirement already satisfied: zipp>=3.1.0 in /home/ubantu/.local/lib/python3.8/site-packages (from importlib-resources>=3.2.0->matplotlib) (3.20.2)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: threadpoolctl, six, joblib, scikit-learn
+Successfully installed joblib-1.4.2 scikit-learn-1.3.2 six-1.17.0 threadpoolctl-3.5.0
+
+[2026-05-16 21:05:33] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input torch==1.13.1 --index-url https://download.pytorch.org/whl/cpu   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:11:53] Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch==1.13.1
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-1.13.1%2Bcpu-cp38-cp38-linux_x86_64.whl (199.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.1/199.1 MB 130.0 kB/s eta 0:00:00
+Requirement already satisfied: typing-extensions in /home/ubantu/.local/lib/python3.8/site-packages (from torch==1.13.1) (4.13.2)
+Installing collected packages: torch
+  Attempting uninstall: torch
+    Found existing installation: torch 2.4.1
+    Uninstalling torch-2.4.1:
+      Successfully uninstalled torch-2.4.1
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchaudio 2.4.1 requires torch==2.4.1, but you have torch 1.13.1+cpu which is incompatible.
+torchvision 0.19.1 requires torch==2.4.1, but you have torch 1.13.1+cpu which is incompatible.
+Successfully installed torch-1.13.1+cpu
+
+[2026-05-16 21:11:53] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -c import torch, pandas, numpy, sklearn; print('torch', torch.__version__, 'cuda?', torch.cuda.is_available())   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:11:58] torch 1.13.1+cpu cuda? False
+
+[2026-05-16 21:11:58] $ git clone --depth=1 https://github.com/a96123155/TransPHLA-AOMP.git /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 21:13:02] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 21:13:02] DATASET  = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset
+[2026-05-16 21:13:02]   code/: Attention
+[2026-05-16 21:13:02]   code/: attention.py
+[2026-05-16 21:13:02]   code/: common_hla_sequence.csv
+[2026-05-16 21:13:02]   code/: hlas.fasta
+[2026-05-16 21:13:02]   code/: model.py
+[2026-05-16 21:13:02]   code/: mutation.py
+[2026-05-16 21:13:02]   code/: pHLAIformer.pkl
+[2026-05-16 21:13:02]   code/: pHLAIformer.py
+[2026-05-16 21:13:02]   code/: peptides.fasta
+[2026-05-16 21:13:02]   code/: results
+[2026-05-16 21:13:02]   code/: utils.py
+[2026-05-16 21:13:02]   code/: vocab_dict.npy
+[2026-05-16 21:13:02] example peptides.fasta head:
+[2026-05-16 21:13:02]     >AEAFIQsa
+[2026-05-16 21:13:02]     AEAFIQsa
+[2026-05-16 21:13:02]     >AEAFIQ1
+[2026-05-16 21:13:02]     AEAFIQ1
+[2026-05-16 21:13:02]     >AEAFIQU
+[2026-05-16 21:13:02]     AEAFIQU
+[2026-05-16 21:13:02]     >AEAFIQ
+[2026-05-16 21:13:02]     AEAFIQ
+[2026-05-16 21:13:02] example hlas.fasta head:
+[2026-05-16 21:13:02]     >HLA-A*11:01
+[2026-05-16 21:13:02]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:13:02]     >HLA-A*11:01
+[2026-05-16 21:13:02]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:13:02]     >HLA-A*68:01
+[2026-05-16 21:13:02]     YYAMYRNNVAQTDVDTLYIMYRDYTWAVWAYTWY
+[2026-05-16 21:13:02]     >HLA-A*11:01
+[2026-05-16 21:13:02]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:13:02] 13 csv under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset
+[2026-05-16 21:13:02]   -- Dataset/val_data_fold2.csv
+[2026-05-16 21:13:02]   -- Dataset/train_data_fold1.csv
+[2026-05-16 21:13:02]   -- Dataset/merged_neoantigen_data.csv
+[2026-05-16 21:13:02]   -- Dataset/val_data_fold1.csv
+[2026-05-16 21:13:02]   -- Dataset/train_data_fold0.csv
+[2026-05-16 21:13:02]   -- Dataset/train_data_fold3.csv
+[2026-05-16 21:13:02]   -- Dataset/val_data_fold0.csv
+[2026-05-16 21:13:02]   -- Dataset/HPV vaccine data.csv
+[2026-05-16 21:13:02]   -- Dataset/common_hla_sequence.csv
+[2026-05-16 21:13:02]   -- Dataset/train_data_fold4.csv
+[2026-05-16 21:13:02]   -- Dataset/val_data_fold3.csv
+[2026-05-16 21:13:02]   -- Dataset/train_data_fold2.csv
+[2026-05-16 21:13:02]   -- Dataset/val_data_fold4.csv
+[2026-05-16 21:51:17] ==== START TransPHLA reproduction ====
+[2026-05-16 21:51:17] work = /home/ubantu/HLA-inception/transphla_run
+[2026-05-16 21:51:17] conda = /home/ubantu/miniconda3/bin/conda
+[2026-05-16 21:51:18] reuse conda env 'transphla_repro': /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 21:51:22] deps already OK in env, skip pip install
+[2026-05-16 21:51:22] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 21:51:22] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 21:51:22] DATASET  = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset
+[2026-05-16 21:51:22] example peptides.fasta head:
+[2026-05-16 21:51:22]     >AEAFIQsa
+[2026-05-16 21:51:22]     AEAFIQsa
+[2026-05-16 21:51:22]     >AEAFIQ1
+[2026-05-16 21:51:22]     AEAFIQ1
+[2026-05-16 21:51:22]     >AEAFIQU
+[2026-05-16 21:51:22]     AEAFIQU
+[2026-05-16 21:51:22]     >AEAFIQ
+[2026-05-16 21:51:22]     AEAFIQ
+[2026-05-16 21:51:22] example hlas.fasta head:
+[2026-05-16 21:51:22]     >HLA-A*11:01
+[2026-05-16 21:51:22]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:51:22]     >HLA-A*11:01
+[2026-05-16 21:51:22]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:51:22]     >HLA-A*68:01
+[2026-05-16 21:51:22]     YYAMYRNNVAQTDVDTLYIMYRDYTWAVWAYTWY
+[2026-05-16 21:51:22]     >HLA-A*11:01
+[2026-05-16 21:51:22]     YYAMYQENVAQTDVDTLYIIYRDYTWAAQAYRWY
+[2026-05-16 21:51:22] [scan] found 78 csv under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 21:51:22]   - Dataset/val_data_fold2.csv
+[2026-05-16 21:51:22]   - Dataset/train_data_fold1.csv
+[2026-05-16 21:51:22]   - Dataset/merged_neoantigen_data.csv
+[2026-05-16 21:51:22]   - Dataset/val_data_fold1.csv
+[2026-05-16 21:51:22]   - Dataset/train_data_fold0.csv
+[2026-05-16 21:51:22]   - Dataset/train_data_fold3.csv
+[2026-05-16 21:51:22]   - Dataset/val_data_fold0.csv
+[2026-05-16 21:51:22]   - Dataset/HPV vaccine data.csv
+[2026-05-16 21:51:22]   - Dataset/common_hla_sequence.csv
+[2026-05-16 21:51:22]   - Dataset/train_data_fold4.csv
+[2026-05-16 21:51:22]   - Dataset/val_data_fold3.csv
+[2026-05-16 21:51:22]   - Dataset/train_data_fold2.csv
+[2026-05-16 21:51:22]   - Dataset/val_data_fold4.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/common_hla_sequence.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/predict_results.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLDSY_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_FRSGLDSYV_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_PSDTRQMLFY_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_WKKAEAFIQ_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_11_01_EAFIQPITR_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_YEGVWKKAEA_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_KVYEGVWKKA_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_ELFRSGLDS_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQ_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_VWKKAEAFIQ_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLD_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_LFRSGLDSY_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_KAEAFIQPI_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_KKAEAFIQPI_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_PSDTRQMLF_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_GVWKKAEAF_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_EGVWKKAEAF_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQPI_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_GVWKKAEAFI_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_VWKKAEAFI_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_ELFRSGLDSY_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_SDTRQMLFY_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQSA_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_KKAEAFIQP_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_VYEGVWKKAE_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_EGVWKKAEA_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_VYEGVWKKA_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_WKKAEAFIQP_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_YEGVWKKAE_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_KVYEGVWKK_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLDS_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/attention/HLA-A_11_01_KVYEGVWKK_attention.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_PSDTRQMLF_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_YEGVWKKAEA_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_WKKAEAFIQP_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_ELFRSGLDS_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_WKKAEAFIQ_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_11_01_AEAFIQSA_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLD_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_EGVWKKAEAF_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_KVYEGVWKKA_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_KVYEGVWKK_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_VYEGVWKKAE_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_SDTRQMLFY_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_GVWKKAEAF_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_ELFRSGLDSY_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_11_01_AEAFIQPI_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_KKAEAFIQPI_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_LFRSGLDSY_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_11_01_KVYEGVWKK_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_PSDTRQMLFY_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLDSY_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_EGVWKKAEA_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_VYEGVWKKA_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_FRSGLDSYV_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_YEGVWKKAE_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_GVWKKAEAFI_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_KKAEAFIQP_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_KAEAFIQPI_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_11_01_EAFIQPITR_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_VWKKAEAFI_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_VWKKAEAFIQ_mutation.csv
+[2026-05-16 21:51:22]   - TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLDS_mutation.csv
+[2026-05-16 21:51:22] missing in repo: ['independent', 'external'], attempting download from SJTU webserver ...
+[2026-05-16 21:51:22] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/independent_set.csv
+[2026-05-16 21:51:22]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:22] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/dataset/independent_set.csv
+[2026-05-16 21:51:23]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:23] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/Dataset/independent_set.csv
+[2026-05-16 21:51:23]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:23] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/static/data/independent_set.csv
+[2026-05-16 21:51:24]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:24] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/external_set.csv
+[2026-05-16 21:51:24]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:24] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/dataset/external_set.csv
+[2026-05-16 21:51:24]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:24] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/Dataset/external_set.csv
+[2026-05-16 21:51:25]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:25] download: https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/static/data/external_set.csv
+[2026-05-16 21:51:25]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 21:51:25] ==== ALL CSV IN REPO ====
+[2026-05-16 21:51:25]   Dataset/val_data_fold2.csv
+[2026-05-16 21:51:25]   Dataset/train_data_fold1.csv
+[2026-05-16 21:51:25]   Dataset/merged_neoantigen_data.csv
+[2026-05-16 21:51:25]   Dataset/val_data_fold1.csv
+[2026-05-16 21:51:25]   Dataset/train_data_fold0.csv
+[2026-05-16 21:51:25]   Dataset/train_data_fold3.csv
+[2026-05-16 21:51:25]   Dataset/val_data_fold0.csv
+[2026-05-16 21:51:25]   Dataset/HPV vaccine data.csv
+[2026-05-16 21:51:25]   Dataset/common_hla_sequence.csv
+[2026-05-16 21:51:25]   Dataset/train_data_fold4.csv
+[2026-05-16 21:51:25]   Dataset/val_data_fold3.csv
+[2026-05-16 21:51:25]   Dataset/train_data_fold2.csv
+[2026-05-16 21:51:25]   Dataset/val_data_fold4.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/common_hla_sequence.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/predict_results.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLDSY_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_FRSGLDSYV_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_PSDTRQMLFY_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_WKKAEAFIQ_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_11_01_EAFIQPITR_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_YEGVWKKAEA_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_KVYEGVWKKA_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_ELFRSGLDS_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQ_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_VWKKAEAFIQ_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLD_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_LFRSGLDSY_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_KAEAFIQPI_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_KKAEAFIQPI_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_PSDTRQMLF_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_GVWKKAEAF_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_EGVWKKAEAF_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQPI_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_GVWKKAEAFI_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_VWKKAEAFI_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_ELFRSGLDSY_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_SDTRQMLFY_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_11_01_AEAFIQSA_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_KKAEAFIQP_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_VYEGVWKKAE_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_EGVWKKAEA_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_VYEGVWKKA_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_WKKAEAFIQP_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_YEGVWKKAE_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_KVYEGVWKK_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_68_01_SELFRSGLDS_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/attention/HLA-A_11_01_KVYEGVWKK_attention.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_PSDTRQMLF_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_YEGVWKKAEA_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_WKKAEAFIQP_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_ELFRSGLDS_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_WKKAEAFIQ_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_11_01_AEAFIQSA_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLD_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_EGVWKKAEAF_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_KVYEGVWKKA_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_KVYEGVWKK_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_VYEGVWKKAE_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_SDTRQMLFY_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_GVWKKAEAF_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_ELFRSGLDSY_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_11_01_AEAFIQPI_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_KKAEAFIQPI_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_LFRSGLDSY_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_11_01_KVYEGVWKK_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_PSDTRQMLFY_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLDSY_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_EGVWKKAEA_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_VYEGVWKKA_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_FRSGLDSYV_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_YEGVWKKAE_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_GVWKKAEAFI_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_KKAEAFIQP_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_KAEAFIQPI_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_11_01_EAFIQPITR_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_VWKKAEAFI_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_VWKKAEAFIQ_mutation.csv
+[2026-05-16 21:51:25]   TransPHLA-AOMP/results/mutation/HLA-A_68_01_SELFRSGLDS_mutation.csv
+[2026-05-16 21:51:25] ==== HOW TO FIX ====
+[2026-05-16 21:51:25]   请手工到 https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/download.html
+[2026-05-16 21:51:25]   下载 independent_set.csv / external_set.csv 放到: /home/ubantu/HLA-inception/transphla_run/extra_data
+[2026-05-16 21:51:25]   然后重跑 python 1.py
+[2026-05-16 22:01:58] ==== START TransPHLA reproduction (diagnose mode) ====
+[2026-05-16 22:01:58] reuse conda env 'transphla_repro': /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:02:01] deps already OK in env, skip pip install
+[2026-05-16 22:02:01] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:02:01] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:02:01] DATASET  = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset
+[2026-05-16 22:02:01] PROCEDURE= /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Procedure Code
+[2026-05-16 22:02:01] ======================================================================
+[2026-05-16 22:02:01] === INSPECTING IPYNBs UNDER: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Procedure Code
+[2026-05-16 22:02:01] ======================================================================
+[2026-05-16 22:02:01] found 11 ipynb files
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer framework.ipynb  (size=737 KB)
+[2026-05-16 22:02:01]     [csv_refs] (2 unique)
+[2026-05-16 22:02:01]         - /predict_results.csv
+[2026-05-16 22:02:01]         - {}_{}_mutation.csv
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-Effect of positional embedding.ipynb  (size=466 KB)
+[2026-05-16 22:02:01]     [csv_refs] (4 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]     [npy_refs] (1 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (4 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv'
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]     [independent] (8 unique)
+[2026-05-16 22:02:01]         - independent_data, independent_pep_inputs, independent_hla_inputs, independent_labels, independent_loader = data_with_loader(type_ = 'independent',fold = None,  batch_size = batch_size)
+[2026-05-16 22:02:01]         - independent_fold_metrics_list, external_fold_metrics_list, ys_independent_fold_dict, ys_external_fold_dict = [], [], {}, {}
+[2026-05-16 22:02:01]         - attns_train_fold_dict, attns_val_fold_dict, attns_independent_fold_dict, attns_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - loss_train_fold_dict, loss_val_fold_dict, loss_independent_fold_dict, loss_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - ys_res_independent, loss_res_independent_list, metrics_res_independent = eval_step(model_eval, independent_loader, fold, ep_best, epochs, use_cuda) # , independent_res_attns
+[2026-05-16 22:02:01]         - independent_fold_metrics_list.append(metrics_res_independent)
+[2026-05-16 22:02:01]         - ys_train_fold_dict[fold], ys_val_fold_dict[fold], ys_independent_fold_dict[fold], ys_external_fold_dict[fold] = ys_res_train, ys_res_val, ys_res_independent, ys_res_external
+[2026-05-16 22:02:01]         - loss_train_fold_dict[fold], loss_val_fold_dict[fold], loss_independent_fold_dict[fold], loss_external_fold_dict[fold] = loss_res_train_list, loss_res_val_list, loss_res_independent_list, loss_res_external_list
+[2026-05-16 22:02:01]     [external] (8 unique)
+[2026-05-16 22:02:01]         - external_data, external_pep_inputs, external_hla_inputs, external_labels, external_loader = data_with_loader(type_ = 'external',fold = None,  batch_size = batch_size)
+[2026-05-16 22:02:01]         - independent_fold_metrics_list, external_fold_metrics_list, ys_independent_fold_dict, ys_external_fold_dict = [], [], {}, {}
+[2026-05-16 22:02:01]         - attns_train_fold_dict, attns_val_fold_dict, attns_independent_fold_dict, attns_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - loss_train_fold_dict, loss_val_fold_dict, loss_independent_fold_dict, loss_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - ys_res_external, loss_res_external_list, metrics_res_external = eval_step(model_eval, external_loader, fold, ep_best, epochs, use_cuda) # , external_res_attns
+[2026-05-16 22:02:01]         - external_fold_metrics_list.append(metrics_res_external)
+[2026-05-16 22:02:01]         - ys_train_fold_dict[fold], ys_val_fold_dict[fold], ys_independent_fold_dict[fold], ys_external_fold_dict[fold] = ys_res_train, ys_res_val, ys_res_independent, ys_res_external
+[2026-05-16 22:02:01]         - loss_train_fold_dict[fold], loss_val_fold_dict[fold], loss_independent_fold_dict[fold], loss_external_fold_dict[fold] = loss_res_train_list, loss_res_val_list, loss_res_independent_list, loss_res_external_list
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-为每个HLA每个length的选择一个负肽进行新抗原突变.ipynb  (size=2284 KB)
+[2026-05-16 22:02:01]     [csv_refs] (2 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/results/pHLAIformer_all_corrected_data_res_pd.csv
+[2026-05-16 22:02:01]         - {}_{}_mutation.csv
+[2026-05-16 22:02:01]     [read_csv] (3 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/results/pHLAIformer_all_corrected_data_res_pd.csv', index_col = 0
+[2026-05-16 22:02:01]         - netmhcpan_pwd + filename, sep = '\t'
+[2026-05-16 22:02:01]         - netmhcpan_pwd + '{}_{}_{}.output'.format(hla, length, peptide
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-加载模型-保存结果-选择参数.ipynb  (size=703 KB)
+[2026-05-16 22:02:01]     [csv_refs] (7 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/independent_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/external_set.csv
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_all_corrected_data_res_pd.csv
+[2026-05-16 22:02:01]     [npy_refs] (5 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_data_layer_head_metrics_pd_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_data_metrics_pd_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_data_res_pd_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_metrics_length_hla_pd_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (6 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv'
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/independent_set.csv', index_col = 0
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/external_set.csv', index_col = 0
+[2026-05-16 22:02:01]     [independent] (8 unique)
+[2026-05-16 22:02:01]         - type_ = 'independent'
+[2026-05-16 22:02:01]         - independent_metrics_dict, independent_ys_dict, independent_attns_dict = {}, {}, {}
+[2026-05-16 22:02:01]         - independent_metrics_res, independent_ys_res, independent_attn_res = eval_step(model_eval, loader, labels, fold, type_, use_cuda, save_)
+[2026-05-16 22:02:01]         - independent_metrics_dict[temp], independent_ys_dict[temp], independent_attns_dict[temp] = independent_metrics_res, independent_ys_res, independent_attn_res
+[2026-05-16 22:02:01]         - independent_metrics_res, _, _ = eval_step(model_eval, loader, labels, fold, type_, use_cuda, save_)
+[2026-05-16 22:02:01]         - independent_metrics_dict[temp] = independent_metrics_res
+[2026-05-16 22:02:01]         - independent_metrics_pd = performances_to_pd(independent_metrics_dict)
+[2026-05-16 22:02:01]         - independent_metrics_pd
+[2026-05-16 22:02:01]     [external] (8 unique)
+[2026-05-16 22:02:01]         - type_ = 'external'
+[2026-05-16 22:02:01]         - external_metrics_dict, external_ys_dict, external_attns_dict = {}, {}, {}
+[2026-05-16 22:02:01]         - external_metrics_res, external_ys_res, external_attn_res = eval_step(model_eval, loader, labels, fold, type_, use_cuda, save_)
+[2026-05-16 22:02:01]         - external_metrics_dict[temp], external_ys_dict[temp], external_attns_dict[temp] = external_metrics_res, external_ys_res, external_attn_res
+[2026-05-16 22:02:01]         - external_metrics_res, _, _ = eval_step(model_eval, loader, labels, fold, type_, use_cuda, save_)
+[2026-05-16 22:02:01]         - external_metrics_dict[temp] = external_metrics_res
+[2026-05-16 22:02:01]         - external_metrics_pd = performances_to_pd(external_metrics_dict)
+[2026-05-16 22:02:01]         - external_metrics_pd
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-数据集和embeeding可视化.ipynb  (size=5706 KB)
+[2026-05-16 22:02:01]     [csv_refs] (3 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]     [npy_refs] (1 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (6 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format('train'
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format('external'
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format('independent'
+[2026-05-16 22:02:01]     [independent] (8 unique)
+[2026-05-16 22:02:01]         - independent_data = pd.read_csv('/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format('independent'), index_col = False)
+[2026-05-16 22:02:01]         - print('Independent Label info: {}'.format(Counter(independent_data.label)))
+[2026-05-16 22:02:01]         - independent_pos = independent_data[independent_data.label == 1]
+[2026-05-16 22:02:01]         - independent_pos_HLAs, independent_pos_counts, independent_pos_HLA_count, independent_pos_counts_log, independent_pos_sum_counts = HLA_counts_to_heatmap(independent_pos,
+[2026-05-16 22:02:01]         - dataset_heatmap(independent_pos_counts_log, independent_pos_HLA_count, independent_pos_counts, data_type = 'independent')
+[2026-05-16 22:02:01]         - independent_pos_HLA_count
+[2026-05-16 22:02:01]         - independent_HLA = list(set(independent_pos.HLA))
+[2026-05-16 22:02:01]         - independent_HLA_A = [item for item in independent_HLA if item[4] == 'A']
+[2026-05-16 22:02:01]     [external] (8 unique)
+[2026-05-16 22:02:01]         - external_data = pd.read_csv('/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format('external'), index_col = False)
+[2026-05-16 22:02:01]         - print('External Label info: {}'.format(Counter(external_data.label)))
+[2026-05-16 22:02:01]         - external_pep_inputs, external_hla_inputs = make_data(external_data)
+[2026-05-16 22:02:01]         - external_loader = Data.DataLoader(MyDataSet(external_pep_inputs, external_hla_inputs), batch_size, shuffle = False, num_workers = 0)
+[2026-05-16 22:02:01]         - height = [8, 1.2][data_type == 'external']
+[2026-05-16 22:02:01]         - external_pos = external_data[external_data.label == 1]
+[2026-05-16 22:02:01]         - external_pos_HLAs, external_pos_counts, external_pos_HLA_count, external_pos_counts_log, external_pos_sum_counts = HLA_counts_to_heatmap(external_pos,
+[2026-05-16 22:02:01]         - dataset_heatmap(external_pos_counts_log, external_pos_HLA_count, external_pos_counts, data_type = 'external')
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-方法的批量评估-external.ipynb  (size=258 KB)
+[2026-05-16 22:02:01]     [csv_refs] (4 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]         - _res_pd.csv
+[2026-05-16 22:02:01]     [npy_refs] (2 unique)
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_metrics_length_hla_pd_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_data_res_pd_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (5 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/benchmark_methods_api/Anthem/Anthem_' + ori_type + '_res_pd.csv', index_col = 0
+[2026-05-16 22:02:01]         - pwd + filename, sep = '\t'
+[2026-05-16 22:02:01]     [external] (1 unique)
+[2026-05-16 22:02:01]         - new_type = 'external'
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-方法的批量评估-independent.ipynb  (size=1677 KB)
+[2026-05-16 22:02:01]     [csv_refs] (4 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]         - _res_pd.csv
+[2026-05-16 22:02:01]     [npy_refs] (3 unique)
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_metrics_length_hla_pd_dict.npy
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_data_res_pd_dict.npy
+[2026-05-16 22:02:01]         - _metrics_length_pd_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (5 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/benchmark_methods_api/Anthem/Anthem_' + ori_type + '_res_pd.csv', index_col = 0
+[2026-05-16 22:02:01]         - pwd + filename, sep = '\t'
+[2026-05-16 22:02:01]     [independent] (1 unique)
+[2026-05-16 22:02:01]         - new_type = 'independent'
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-最终模型-注意力处理-合并看总的关键位点.ipynb  (size=20689 KB)
+[2026-05-16 22:02:01]     [csv_refs] (1 unique)
+[2026-05-16 22:02:01]         - ./results/pHLAIformer_all_corrected_data_res_pd.csv
+[2026-05-16 22:02:01]     [npy_refs] (4 unique)
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_Length_Label_Unsoftmax_pepaatype_pepposition_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_Length_Label_Unsoftmax_pepaatype_pepposition_NUM_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_{}_Length{}_Label_Unsoftmax_pepaatype_pepposition_NUM_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_{}_Length{}_Label_Unsoftmax_pepaatype_pepposition_pd.npy
+[2026-05-16 22:02:01]     [read_csv] (1 unique)
+[2026-05-16 22:02:01]         - './results/pHLAIformer_all_corrected_data_res_pd.csv', index_col = 0
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer-预测-新抗原突变.ipynb  (size=1497 KB)
+[2026-05-16 22:02:01]     [csv_refs] (2 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv
+[2026-05-16 22:02:01]         - {}_{}_softmax_attention.csv
+[2026-05-16 22:02:01]     [npy_refs] (5 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_{}_Length{}_Label_Unsoftmax_pepaatype_pepposition_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_{}_Length{}_Label_Unsoftmax_pepaatype_pepposition_NUM_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_Length_Label_Unsoftmax_pepaatype_pepposition_pd.npy
+[2026-05-16 22:02:01]         - ./results/Attention/pHLAIformer_Length_Label_Unsoftmax_pepaatype_pepposition_NUM_pd.npy
+[2026-05-16 22:02:01]     [read_csv] (1 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv'
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAIformer.ipynb  (size=42 KB)
+[2026-05-16 22:02:01]     [csv_refs] (4 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv
+[2026-05-16 22:02:01]     [npy_refs] (1 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (4 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv'
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/{}_set.csv'.format(type_
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/train_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/Anthem/Dataset/val_data_fold{}.csv'.format(fold
+[2026-05-16 22:02:01]     [independent] (8 unique)
+[2026-05-16 22:02:01]         - independent_data, independent_pep_inputs, independent_hla_inputs, independent_labels, independent_loader = data_with_loader(type_ = 'independent',fold = None,  batch_size = batch_size)
+[2026-05-16 22:02:01]         - independent_fold_metrics_list, external_fold_metrics_list, ys_independent_fold_dict, ys_external_fold_dict = [], [], {}, {}
+[2026-05-16 22:02:01]         - attns_train_fold_dict, attns_val_fold_dict, attns_independent_fold_dict, attns_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - loss_train_fold_dict, loss_val_fold_dict, loss_independent_fold_dict, loss_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - ys_res_independent, loss_res_independent_list, metrics_res_independent = eval_step(model_eval, independent_loader, fold, ep_best, epochs, use_cuda) # , independent_res_attns
+[2026-05-16 22:02:01]         - independent_fold_metrics_list.append(metrics_res_independent)
+[2026-05-16 22:02:01]         - ys_train_fold_dict[fold], ys_val_fold_dict[fold], ys_independent_fold_dict[fold], ys_external_fold_dict[fold] = ys_res_train, ys_res_val, ys_res_independent, ys_res_external
+[2026-05-16 22:02:01]         - #             attns_train_fold_dict[fold], attns_val_fold_dict[fold], attns_independent_fold_dict[fold], attns_external_fold_dict[fold] = train_res_attns, val_res_attns, independent_res_attns, external_res_attns
+[2026-05-16 22:02:01]     [external] (8 unique)
+[2026-05-16 22:02:01]         - external_data, external_pep_inputs, external_hla_inputs, external_labels, external_loader = data_with_loader(type_ = 'external',fold = None,  batch_size = batch_size)
+[2026-05-16 22:02:01]         - independent_fold_metrics_list, external_fold_metrics_list, ys_independent_fold_dict, ys_external_fold_dict = [], [], {}, {}
+[2026-05-16 22:02:01]         - attns_train_fold_dict, attns_val_fold_dict, attns_independent_fold_dict, attns_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - loss_train_fold_dict, loss_val_fold_dict, loss_independent_fold_dict, loss_external_fold_dict = {}, {}, {}, {}
+[2026-05-16 22:02:01]         - ys_res_external, loss_res_external_list, metrics_res_external = eval_step(model_eval, external_loader, fold, ep_best, epochs, use_cuda) # , external_res_attns
+[2026-05-16 22:02:01]         - external_fold_metrics_list.append(metrics_res_external)
+[2026-05-16 22:02:01]         - ys_train_fold_dict[fold], ys_val_fold_dict[fold], ys_independent_fold_dict[fold], ys_external_fold_dict[fold] = ys_res_train, ys_res_val, ys_res_independent, ys_res_external
+[2026-05-16 22:02:01]         - #             attns_train_fold_dict[fold], attns_val_fold_dict[fold], attns_independent_fold_dict[fold], attns_external_fold_dict[fold] = train_res_attns, val_res_attns, independent_res_attns, external_res_attns
+[2026-05-16 22:02:01] 
+>>> Procedure Code/pHLAformer-final model-neoantigen-HPVvaccine.ipynb  (size=140 KB)
+[2026-05-16 22:02:01]     [csv_refs] (3 unique)
+[2026-05-16 22:02:01]         - /home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv
+[2026-05-16 22:02:01]         - ./data/合并整理-新抗原.csv
+[2026-05-16 22:02:01]         - ./data/HPV病毒疫苗表位.csv
+[2026-05-16 22:02:01]     [npy_refs] (1 unique)
+[2026-05-16 22:02:01]         - Transformer_vocab_dict.npy
+[2026-05-16 22:02:01]     [read_csv] (4 unique)
+[2026-05-16 22:02:01]         - '/home/chujunyi/5_ZY_MHC/data/common_hla_sequence.csv'
+[2026-05-16 22:02:01]         - './data/合并整理-新抗原.csv', sep = ','
+[2026-05-16 22:02:01]         - './data/HPV病毒疫苗表位.csv', sep = ','
+[2026-05-16 22:02:01]         - pwd + filename, sep = '\t'
+[2026-05-16 22:02:01] ======================================================================
+[2026-05-16 22:02:01] [scan] 78 csv (repo + extra_data)
+[2026-05-16 22:02:01] GET https://cdn.jsdelivr.net/gh/a96123155/TransPHLA-AOMP@master/Dataset/independent_set.csv
+[2026-05-16 22:02:05]   fail: HTTP Error 403: Forbidden
+[2026-05-16 22:02:05] GET https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/independent_set.csv
+[2026-05-16 22:03:06]   fail: The read operation timed out
+[2026-05-16 22:03:06] GET https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/independent_set.csv
+[2026-05-16 22:03:06]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 22:03:06] GET https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/Dataset/independent_set.csv
+[2026-05-16 22:03:07]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 22:03:07] GET https://web.archive.org/web/2023/https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/independent_set.csv
+[2026-05-16 22:04:07]   fail: <urlopen error [Errno 101] Network is unreachable>
+[2026-05-16 22:04:07] GET https://cdn.jsdelivr.net/gh/a96123155/TransPHLA-AOMP@master/Dataset/external_set.csv
+[2026-05-16 22:04:12]   fail: HTTP Error 403: Forbidden
+[2026-05-16 22:04:12] GET https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/external_set.csv
+[2026-05-16 22:04:14]   fail: HTTP Error 404: Not Found
+[2026-05-16 22:04:14] GET https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/external_set.csv
+[2026-05-16 22:04:14]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 22:04:14] GET https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/Dataset/external_set.csv
+[2026-05-16 22:04:15]   fail: [Errno 104] Connection reset by peer
+[2026-05-16 22:04:15] GET https://web.archive.org/web/2023/https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/data/external_set.csv
+[2026-05-16 22:05:15]   fail: <urlopen error [Errno 101] Network is unreachable>
+[2026-05-16 22:05:15] ==== STILL MISSING: ['independent', 'external'] ====
+[2026-05-16 22:05:15] Options to resolve (pick ONE):
+[2026-05-16 22:05:15]   A) Manually put independent_set.csv / external_set.csv into:
+[2026-05-16 22:05:15]      /home/ubantu/HLA-inception/transphla_run/extra_data
+[2026-05-16 22:05:15]      Try these sources in a browser:
+[2026-05-16 22:05:15]        - https://issubmission.sjtu.edu.cn/TransPHLA-AOMP/download.html
+[2026-05-16 22:05:15]        - https://web.archive.org/web/2023*/issubmission.sjtu.edu.cn/TransPHLA-AOMP/*
+[2026-05-16 22:05:15]        - email author or open an issue: https://github.com/a96123155/TransPHLA-AOMP/issues
+[2026-05-16 22:05:15]   B) Or, if the diagnose above shows the authors actually used
+[2026-05-16 22:05:15]      val_data_fold*.csv etc as 'independent', tell me and we adjust mapping.
+[2026-05-16 22:12:08] ==== START ====
+[2026-05-16 22:12:09] reuse conda env 'transphla_repro': /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:12:11] deps OK, skip pip install
+[2026-05-16 22:12:11] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:12:11] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:12:11] DATASET  = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset
+[2026-05-16 22:12:11] == GitHub API: list Dataset/ contents ==
+[2026-05-16 22:12:11] GET https://api.github.com/repos/a96123155/TransPHLA-AOMP/contents/Dataset
+[2026-05-16 22:12:12]   - 1_Raw data processing framework.ipynb   size=593386   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/1_Raw%20data%20processing%20framework.ipynb
+[2026-05-16 22:12:12]   - 2_Deduplication of positive and negative samples_different data sets.ipynb   size=74845   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/2_Deduplication%20of%20positive%20and%20negative%20samples_different%20data%20sets.ipynb
+[2026-05-16 22:12:12]   - HPV vaccine data.csv   size=6317   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/HPV%20vaccine%20data.csv
+[2026-05-16 22:12:12]   - common_hla_sequence.csv   size=5281   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/common_hla_sequence.csv
+[2026-05-16 22:12:12]   - evaluation_dataset.txt   size=914744   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/evaluation_dataset.txt
+[2026-05-16 22:12:12]   - experimental_dataset.txt   size=532507   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/experimental_dataset.txt
+[2026-05-16 22:12:12]   - external_set.zip   size=1003902   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/external_set.zip
+[2026-05-16 22:12:12]   - independent_set.zip   size=1685998   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/independent_set.zip
+[2026-05-16 22:12:12]   - merged_neoantigen_data.csv   size=6737   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/merged_neoantigen_data.csv
+[2026-05-16 22:12:12]   - train_data_fold0.csv   size=39397753   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_data_fold0.csv
+[2026-05-16 22:12:12]   - train_data_fold1.csv   size=39397753   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_data_fold1.csv
+[2026-05-16 22:12:12]   - train_data_fold2.csv   size=39397753   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_data_fold2.csv
+[2026-05-16 22:12:12]   - train_data_fold3.csv   size=39397753   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_data_fold3.csv
+[2026-05-16 22:12:12]   - train_data_fold4.csv   size=39400265   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_data_fold4.csv
+[2026-05-16 22:12:12]   - train_set.zip   size=21683561   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/train_set.zip
+[2026-05-16 22:12:12]   - training_dataset.txt   size=3802542   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/training_dataset.txt
+[2026-05-16 22:12:12]   - val_data_fold0.csv   size=9766763   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/val_data_fold0.csv
+[2026-05-16 22:12:12]   - val_data_fold1.csv   size=9766763   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/val_data_fold1.csv
+[2026-05-16 22:12:12]   - val_data_fold2.csv   size=9766763   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/val_data_fold2.csv
+[2026-05-16 22:12:12]   - val_data_fold3.csv   size=9766763   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/val_data_fold3.csv
+[2026-05-16 22:12:12]   - val_data_fold4.csv   size=9766763   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/val_data_fold4.csv
+[2026-05-16 22:12:12]   - 合并整理.xlsx   size=5944735   url=https://raw.githubusercontent.com/a96123155/TransPHLA-AOMP/master/Dataset/合并整理.xlsx
+[2026-05-16 22:12:12] == local scan: all archive-like files in repo ==
+[2026-05-16 22:12:12]   archive: Dataset/train_set.zip  size=21683561
+[2026-05-16 22:12:12]   archive: Dataset/external_set.zip  size=1003902
+[2026-05-16 22:12:12]   archive: Dataset/independent_set.zip  size=1685998
+[2026-05-16 22:12:12] unzip /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset/independent_set.zip  ->  /home/ubantu/HLA-inception/transphla_run/extra_data
+[2026-05-16 22:12:12]     contains: independent_set.csv  (11673010 B)
+[2026-05-16 22:12:12] unzip /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/Dataset/external_set.zip  ->  /home/ubantu/HLA-inception/transphla_run/extra_data
+[2026-05-16 22:12:12]     contains: external_set.csv  (6999435 B)
+[2026-05-16 22:12:12] resolved: independent -> /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+[2026-05-16 22:12:12] resolved: external -> /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+[2026-05-16 22:12:12] loaded 112 HLA name->seq mappings
+[2026-05-16 22:12:12] 
+==== TEST: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-16 22:12:12] [independent] columns = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 22:12:12] [independent] head:
+   Unnamed: 0   peptide  length          HLA  label                        HLA_sequence
+0           0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+1           1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+2           2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY
+[2026-05-16 22:12:12] [independent] rows in=171438 kept=171438 dropped=0
+[2026-05-16 22:12:14] [independent] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python pHLAIformer.py --peptide_file /home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta --HLA_file /home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta --threshold 0.5 --cut_length 10 --cut_peptide False --output_dir /home/ubantu/HLA-inception/transphla_run/results/independent/ --output_attention False --output_heatmap False --output_mutation False
+[2026-05-16 22:12:14] [independent] rc=1
+[2026-05-16 22:12:14]   File "pHLAIformer.py", line 100
+    log.logger.critical('Please ensure the same number of HLAs and peptides.')
+                                                                             ^
+IndentationError: unindent does not match any outer indentation level
+
+[2026-05-16 22:12:14] [independent] mode=name failed: pHLAIformer rc=1
+[2026-05-16 22:12:14] [independent] retry mode=sequence
+[2026-05-16 22:12:16] [independent_seqmode] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python pHLAIformer.py --peptide_file /home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta --HLA_file /home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta --threshold 0.5 --cut_length 10 --cut_peptide False --output_dir /home/ubantu/HLA-inception/transphla_run/results/independent/ --output_attention False --output_heatmap False --output_mutation False
+[2026-05-16 22:12:16] [independent_seqmode] rc=1
+[2026-05-16 22:12:16]   File "pHLAIformer.py", line 100
+    log.logger.critical('Please ensure the same number of HLAs and peptides.')
+                                                                             ^
+IndentationError: unindent does not match any outer indentation level
+
+[2026-05-16 22:20:29] ==== START ====
+[2026-05-16 22:20:30] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:20:32] deps OK
+[2026-05-16 22:20:32] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:20:32] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:20:32] == patch_python_files: 5 .py under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP ==
+[2026-05-16 22:20:32]   OK   attention.py
+[2026-05-16 22:20:32]   ERR  model.py: line 1: invalid non-printable character U+FEFF
+[2026-05-16 22:20:32]        backup -> model.py.orig
+[2026-05-16 22:20:32]        expandtabs(8) still errors at line 1: invalid non-printable character U+FEFF
+[2026-05-16 22:20:32]        expandtabs(4) still errors at line 1: invalid non-printable character U+FEFF
+[2026-05-16 22:20:32]        SNIPPET model.py lines 1..21 (repr to show tabs):
+[2026-05-16 22:20:32]             1: '\ufeffimport math'
+[2026-05-16 22:20:32]             2: 'from sklearn import metrics'
+[2026-05-16 22:20:32]             3: 'from sklearn import preprocessing'
+[2026-05-16 22:20:32]             4: 'import numpy as np'
+[2026-05-16 22:20:32]             5: 'import pandas as pd'
+[2026-05-16 22:20:32]             6: 'import re'
+[2026-05-16 22:20:32]             7: 'import time'
+[2026-05-16 22:20:32]             8: 'import datetime'
+[2026-05-16 22:20:32]             9: 'import random'
+[2026-05-16 22:20:32]            10: 'random.seed(1234)'
+[2026-05-16 22:20:32]            11: 'from scipy import interp'
+[2026-05-16 22:20:32]            12: 'import warnings'
+[2026-05-16 22:20:32]            13: 'warnings.filterwarnings("ignore")'
+[2026-05-16 22:20:32]            14: ''
+[2026-05-16 22:20:32]            15: 'from collections import Counter'
+[2026-05-16 22:20:32]            16: 'from collections import OrderedDict'
+[2026-05-16 22:20:32]            17: 'from functools import reduce'
+[2026-05-16 22:20:32]            18: 'from tqdm import tqdm, trange'
+[2026-05-16 22:20:32]            19: 'from copy import deepcopy'
+[2026-05-16 22:20:32]            20: ''
+[2026-05-16 22:20:32]            21: 'import os'
+[2026-05-16 22:33:24] ==== START ====
+[2026-05-16 22:33:24] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:33:26] deps OK
+[2026-05-16 22:33:26] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:33:26] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:33:26] == patch_python_files: 5 .py under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP ==
+[2026-05-16 22:33:26]   OK    attention.py
+[2026-05-16 22:33:26]   FIXED model.py: stripped BOM/zwnbsp
+[2026-05-16 22:33:26]   OK    mutation.py
+[2026-05-16 22:33:26]   ERR  pHLAIformer.py: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:33:26]        expandtabs(8) still errors at line 100: unindent does not match any outer indentation level
+[2026-05-16 22:33:26]        expandtabs(4) still errors at line 100: unindent does not match any outer indentation level
+[2026-05-16 22:33:26]        SNIPPET pHLAIformer.py lines 85..115 (repr):
+[2026-05-16 22:33:26]            85: '    sys.exit(0)'
+[2026-05-16 22:33:26]            86: '\t'
+[2026-05-16 22:33:26]            87: 'cut_length = args.cut_length'
+[2026-05-16 22:33:26]            88: 'if not os.path.exists(args.output_dir): os.makedirs(args.output_dir)'
+[2026-05-16 22:33:26]            89: ''
+[2026-05-16 22:33:26]            90: '# # 读取文件'
+[2026-05-16 22:33:26]            91: ''
+[2026-05-16 22:33:26]            92: "with open(args.peptide_file, 'r') as f:"
+[2026-05-16 22:33:26]            93: '    peptide_file = f.readlines()'
+[2026-05-16 22:33:26]            94: ''
+[2026-05-16 22:33:26]            95: "with open(args.HLA_file, 'r') as f:"
+[2026-05-16 22:33:26]            96: '    HLA_file = f.readlines()'
+[2026-05-16 22:33:26]            97: '\t'
+[2026-05-16 22:33:26]            98: 'if len(peptide_file) != len(HLA_file):'
+[2026-05-16 22:33:26]            99: '        log = Logger(errLogPath)'
+[2026-05-16 22:33:26]           100: "    log.logger.critical('Please ensure the same number of HLAs and peptides.')"
+[2026-05-16 22:33:26]           101: '    sys.exit(0)'
+[2026-05-16 22:33:26]           102: '\t'
+[2026-05-16 22:33:26]           103: 'i = 0'
+[2026-05-16 22:33:26]           104: 'ori_peptides, ori_HLA_names, ori_HLA_sequences = [], [], []'
+[2026-05-16 22:33:26]           105: 'for pep, hla in zip(peptide_file, HLA_file):'
+[2026-05-16 22:33:26]           106: '    if i % 2 == 0:'
+[2026-05-16 22:33:26]           107: "        hla_name = hla.replace('>', '').replace('\\t', '').replace('\\n', '')"
+[2026-05-16 22:33:26]           108: '        ori_HLA_names.append(hla_name)'
+[2026-05-16 22:33:26]           109: '    if i % 2 == 1:'
+[2026-05-16 22:33:26]           110: "        hla_seq = str.upper(hla.replace('\\n', '').replace('\\t', ''))"
+[2026-05-16 22:33:26]           111: "        peptide = str.upper(pep.replace('\\n', '').replace('\\t', ''))"
+[2026-05-16 22:33:26]           112: '        ori_peptides.append(peptide)'
+[2026-05-16 22:33:26]           113: '        ori_HLA_sequences.append(hla_seq)'
+[2026-05-16 22:33:26]           114: '    i += 1'
+[2026-05-16 22:33:26]           115: ''
+[2026-05-16 22:38:48] ==== START ====
+[2026-05-16 22:38:49] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:38:51] deps OK
+[2026-05-16 22:38:51] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:38:51] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:38:51] == patch_python_files: 5 .py under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP ==
+[2026-05-16 22:38:51]   FIXED attention.py  via [as-is]
+[2026-05-16 22:38:51]   FIXED model.py  via [as-is]
+[2026-05-16 22:38:51]   FIXED mutation.py  via [as-is]
+[2026-05-16 22:38:51]   TRY   pHLAIformer.py  [as-is]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:38:51]   TRY   pHLAIformer.py  [expandtabs(8)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:38:51]   TRY   pHLAIformer.py  [expandtabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:38:51]   TRY   pHLAIformer.py  [clean blanks]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:38:51]   TRY   pHLAIformer.py  [clean blanks + tabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:38:51]   FIXED pHLAIformer.py  via [specific + clean + tabs(4)]
+[2026-05-16 22:38:51]   FIXED utils.py  via [as-is]
+[2026-05-16 22:38:51] == GitHub API: list Dataset/ ==
+[2026-05-16 22:38:51] GET https://api.github.com/repos/a96123155/TransPHLA-AOMP/contents/Dataset
+[2026-05-16 22:38:52]   - 1_Raw data processing framework.ipynb  size=593386
+[2026-05-16 22:38:52]   - 2_Deduplication of positive and negative samples_different data sets.ipynb  size=74845
+[2026-05-16 22:38:52]   - HPV vaccine data.csv  size=6317
+[2026-05-16 22:38:52]   - common_hla_sequence.csv  size=5281
+[2026-05-16 22:38:52]   - evaluation_dataset.txt  size=914744
+[2026-05-16 22:38:52]   - experimental_dataset.txt  size=532507
+[2026-05-16 22:38:52]   - external_set.zip  size=1003902
+[2026-05-16 22:38:52]   - independent_set.zip  size=1685998
+[2026-05-16 22:38:52]   - merged_neoantigen_data.csv  size=6737
+[2026-05-16 22:38:52]   - train_data_fold0.csv  size=39397753
+[2026-05-16 22:38:52]   - train_data_fold1.csv  size=39397753
+[2026-05-16 22:38:52]   - train_data_fold2.csv  size=39397753
+[2026-05-16 22:38:52]   - train_data_fold3.csv  size=39397753
+[2026-05-16 22:38:52]   - train_data_fold4.csv  size=39400265
+[2026-05-16 22:38:52]   - train_set.zip  size=21683561
+[2026-05-16 22:38:52]   - training_dataset.txt  size=3802542
+[2026-05-16 22:38:52]   - val_data_fold0.csv  size=9766763
+[2026-05-16 22:38:52]   - val_data_fold1.csv  size=9766763
+[2026-05-16 22:38:52]   - val_data_fold2.csv  size=9766763
+[2026-05-16 22:38:52]   - val_data_fold3.csv  size=9766763
+[2026-05-16 22:38:52]   - val_data_fold4.csv  size=9766763
+[2026-05-16 22:38:52]   - 合并整理.xlsx  size=5944735
+[2026-05-16 22:38:52]   archive: Dataset/train_set.zip size=21683561
+[2026-05-16 22:38:52]   archive: Dataset/external_set.zip size=1003902
+[2026-05-16 22:38:52]   archive: Dataset/independent_set.zip size=1685998
+[2026-05-16 22:38:52] resolved: independent -> /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+[2026-05-16 22:38:52] resolved: external -> /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+[2026-05-16 22:38:53] loaded 112 HLA name->seq mappings
+[2026-05-16 22:38:53] 
+==== TEST: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-16 22:38:53] [independent] cols = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 22:38:53] [independent] rows in=171438 kept=171438
+[2026-05-16 22:38:55]   fastas: peptides.fasta hlas.fasta (inline_seq=True)
+[2026-05-16 22:38:55] [independent] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python pHLAIformer.py --peptide_file /home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta --HLA_file /home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta --threshold 0.5 --cut_length 10 --cut_peptide False --output_dir /home/ubantu/HLA-inception/transphla_run/results/independent/ --output_attention False --output_heatmap False --output_mutation False
+[2026-05-16 22:38:57] [independent] rc=0
+[2026-05-16 22:38:57] Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta', cut_length=10, cut_peptide=True, output_attention=True, output_dir='/home/ubantu/HLA-inception/transphla_run/results/independent/', output_heatmap=True, output_mutation=True, peptide_file='/home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta', threshold=0.5)
+
+[2026-05-16 22:42:46] ==== START ====
+[2026-05-16 22:42:46] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 22:42:48] deps OK
+[2026-05-16 22:42:48] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 22:42:48] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 22:42:48] == patch_python_files: 5 .py under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP ==
+[2026-05-16 22:42:48]   FIXED attention.py  via [as-is]
+[2026-05-16 22:42:48]   FIXED model.py  via [as-is]
+[2026-05-16 22:42:48]   FIXED mutation.py  via [as-is]
+[2026-05-16 22:42:48]   TRY   pHLAIformer.py  [as-is]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:42:48]   TRY   pHLAIformer.py  [expandtabs(8)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:42:48]   TRY   pHLAIformer.py  [expandtabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:42:48]   TRY   pHLAIformer.py  [clean blanks]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:42:48]   TRY   pHLAIformer.py  [clean blanks + tabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 22:42:48]   FIXED pHLAIformer.py  via [specific + clean + tabs(4)]
+[2026-05-16 22:42:48]   FIXED utils.py  via [as-is]
+[2026-05-16 22:42:48] == GitHub API: list Dataset/ ==
+[2026-05-16 22:42:48] GET https://api.github.com/repos/a96123155/TransPHLA-AOMP/contents/Dataset
+[2026-05-16 22:42:49]   - 1_Raw data processing framework.ipynb  size=593386
+[2026-05-16 22:42:49]   - 2_Deduplication of positive and negative samples_different data sets.ipynb  size=74845
+[2026-05-16 22:42:49]   - HPV vaccine data.csv  size=6317
+[2026-05-16 22:42:49]   - common_hla_sequence.csv  size=5281
+[2026-05-16 22:42:49]   - evaluation_dataset.txt  size=914744
+[2026-05-16 22:42:49]   - experimental_dataset.txt  size=532507
+[2026-05-16 22:42:49]   - external_set.zip  size=1003902
+[2026-05-16 22:42:49]   - independent_set.zip  size=1685998
+[2026-05-16 22:42:49]   - merged_neoantigen_data.csv  size=6737
+[2026-05-16 22:42:49]   - train_data_fold0.csv  size=39397753
+[2026-05-16 22:42:49]   - train_data_fold1.csv  size=39397753
+[2026-05-16 22:42:49]   - train_data_fold2.csv  size=39397753
+[2026-05-16 22:42:49]   - train_data_fold3.csv  size=39397753
+[2026-05-16 22:42:49]   - train_data_fold4.csv  size=39400265
+[2026-05-16 22:42:49]   - train_set.zip  size=21683561
+[2026-05-16 22:42:49]   - training_dataset.txt  size=3802542
+[2026-05-16 22:42:49]   - val_data_fold0.csv  size=9766763
+[2026-05-16 22:42:49]   - val_data_fold1.csv  size=9766763
+[2026-05-16 22:42:49]   - val_data_fold2.csv  size=9766763
+[2026-05-16 22:42:49]   - val_data_fold3.csv  size=9766763
+[2026-05-16 22:42:49]   - val_data_fold4.csv  size=9766763
+[2026-05-16 22:42:49]   - 合并整理.xlsx  size=5944735
+[2026-05-16 22:42:49]   archive: Dataset/train_set.zip size=21683561
+[2026-05-16 22:42:49]   archive: Dataset/external_set.zip size=1003902
+[2026-05-16 22:42:49]   archive: Dataset/independent_set.zip size=1685998
+[2026-05-16 22:42:49] resolved: independent -> /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+[2026-05-16 22:42:49] resolved: external -> /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+[2026-05-16 22:42:49] loaded 112 HLA name->seq mappings
+[2026-05-16 22:42:49] 
+==== TEST: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-16 22:42:49] [independent] cols = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 22:42:49] [independent] rows in=171438 kept=171438
+[2026-05-16 22:42:51]   fastas: peptides.fasta hlas.fasta (inline_seq=True)
+[2026-05-16 22:42:51] [independent] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python pHLAIformer.py --peptide_file /home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta --HLA_file /home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta --threshold 0.5 --cut_length 10 --cut_peptide False --output_dir /home/ubantu/HLA-inception/transphla_run/results/independent/ --output_attention False --output_heatmap False --output_mutation False
+[2026-05-16 22:42:54] [independent] rc=0
+[2026-05-16 22:42:54] Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta', cut_length=10, cut_peptide=True, output_attention=True, output_dir='/home/ubantu/HLA-inception/transphla_run/results/independent/', output_heatmap=True, output_mutation=True, peptide_file='/home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta', threshold=0.5)
+
+[2026-05-16 23:15:17] ==== START ====
+[2026-05-16 23:15:17] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 23:15:20] deps OK
+[2026-05-16 23:15:20] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 23:15:20] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 23:15:20] == patch_python_files: 5 .py under /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP ==
+[2026-05-16 23:15:20]   FIXED attention.py  via [as-is]
+[2026-05-16 23:15:20]   FIXED model.py  via [as-is]
+[2026-05-16 23:15:20]   FIXED mutation.py  via [as-is]
+[2026-05-16 23:15:20]   TRY   pHLAIformer.py  [as-is]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:15:20]   TRY   pHLAIformer.py  [expandtabs(8)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:15:20]   TRY   pHLAIformer.py  [expandtabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:15:20]   TRY   pHLAIformer.py  [clean blanks]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:15:20]   TRY   pHLAIformer.py  [clean blanks + tabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:15:20]   FIXED pHLAIformer.py  via [specific + clean + tabs(4)]
+[2026-05-16 23:15:20]   FIXED utils.py  via [as-is]
+[2026-05-16 23:15:20] == pHLAIformer.py top 130 lines (post-patch) ==
+[2026-05-16 23:15:20]      1| 
+[2026-05-16 23:15:20]      2| # coding: utf-8
+[2026-05-16 23:15:20]      3| 
+[2026-05-16 23:15:20]      4| 
+[2026-05-16 23:15:20]      5| from model import *
+[2026-05-16 23:15:20]      6| from attention import pHLA_attns_draw_save
+[2026-05-16 23:15:20]      7| from mutation import *
+[2026-05-16 23:15:20]      8| from utils import Logger, cut_peptide_to_specific_length
+[2026-05-16 23:15:20]      9| 
+[2026-05-16 23:15:20]     10| import math
+[2026-05-16 23:15:20]     11| from sklearn import metrics
+[2026-05-16 23:15:20]     12| from sklearn import preprocessing
+[2026-05-16 23:15:20]     13| import numpy as np
+[2026-05-16 23:15:20]     14| import pandas as pd
+[2026-05-16 23:15:20]     15| import re
+[2026-05-16 23:15:20]     16| import time
+[2026-05-16 23:15:20]     17| import datetime
+[2026-05-16 23:15:20]     18| import random
+[2026-05-16 23:15:20]     19| random.seed(1234)
+[2026-05-16 23:15:20]     20| from scipy import interp
+[2026-05-16 23:15:20]     21| import warnings
+[2026-05-16 23:15:20]     22| warnings.filterwarnings("ignore")
+[2026-05-16 23:15:20]     23| 
+[2026-05-16 23:15:20]     24| from collections import Counter
+[2026-05-16 23:15:20]     25| from collections import OrderedDict
+[2026-05-16 23:15:20]     26| from functools import reduce
+[2026-05-16 23:15:20]     27| from tqdm import tqdm, trange
+[2026-05-16 23:15:20]     28| from copy import deepcopy
+[2026-05-16 23:15:20]     29| 
+[2026-05-16 23:15:20]     30| import torch
+[2026-05-16 23:15:20]     31| import torch.nn as nn
+[2026-05-16 23:15:20]     32| import torch.optim as optim
+[2026-05-16 23:15:20]     33| import torch.utils.data as Data
+[2026-05-16 23:15:20]     34| 
+[2026-05-16 23:15:20]     35| import matplotlib as mpl
+[2026-05-16 23:15:20]     36| mpl.use('AGG')
+[2026-05-16 23:15:20]     37| import matplotlib.pyplot as plt
+[2026-05-16 23:15:20]     38| import seaborn as sns
+[2026-05-16 23:15:20]     39| 
+[2026-05-16 23:15:20]     40| import difflib
+[2026-05-16 23:15:20]     41| 
+[2026-05-16 23:15:20]     42| seed = 19961231
+[2026-05-16 23:15:20]     43| random.seed(seed)
+[2026-05-16 23:15:20]     44| np.random.seed(seed)
+[2026-05-16 23:15:20]     45| torch.manual_seed(seed)
+[2026-05-16 23:15:20]     46| torch.cuda.manual_seed(seed)
+[2026-05-16 23:15:20]     47| torch.cuda.manual_seed_all(seed)
+[2026-05-16 23:15:20]     48| torch.backends.cudnn.benchmark = False
+[2026-05-16 23:15:20]     49| torch.backends.cudnn.deterministic = True
+[2026-05-16 23:15:20]     50| 
+[2026-05-16 23:15:20]     51| import os
+[2026-05-16 23:15:20]     52| import argparse
+[2026-05-16 23:15:20]     53| import logging
+[2026-05-16 23:15:20]     54| import sys
+[2026-05-16 23:15:20]     55| 
+[2026-05-16 23:15:20]     56| parser = argparse.ArgumentParser(usage = 'peptide-HLA-I binding prediction')
+[2026-05-16 23:15:20]     57| parser.add_argument('--peptide_file', type = str, help = 'the path of the .fasta file contains peptides')
+[2026-05-16 23:15:20]     58| parser.add_argument('--HLA_file', type = str, help = 'the path of the .fasta file contains sequence')
+[2026-05-16 23:15:20]     59| parser.add_argument('--threshold', type = float, default = 0.5, help = 'the threshold to define predicted binder, float from 0 - 1, the recommended value is 0.5')
+[2026-05-16 23:15:20]     60| parser.add_argument('--cut_peptide', type = bool, default = True, help = 'Whether to split peptides larger than cut_length?')
+[2026-05-16 23:15:20]     61| parser.add_argument('--cut_length', type = int, default = 9, help = 'if there is a peptide sequence length > 15, we will segment the peptide according the length you choose, from 8 - 15')
+[2026-05-16 23:15:20]     62| parser.add_argument('--output_dir', type = str, help = 'The directory where the output results are stored.')
+[2026-05-16 23:15:20]     63| parser.add_argument('--output_attention', type = bool, default = True, help = 'Output the mutual influence of peptide and HLA on the binding?')
+[2026-05-16 23:15:20]     64| parser.add_argument('--output_heatmap', type = bool, default = True, help = 'Visualize the mutual influence of peptide and HLA on the binding?')
+[2026-05-16 23:15:20]     65| parser.add_argument('--output_mutation', type = bool, default = True, help = 'Whether to perform mutations with better affinity for each sample?')
+[2026-05-16 23:15:20]     66| args = parser.parse_args()
+[2026-05-16 23:15:20]     67| print(args)
+[2026-05-16 23:15:20]     68| 
+[2026-05-16 23:15:20]     69| errLogPath = args.output_dir + '/error.log'
+[2026-05-16 23:15:20]     70| if args.threshold <= 0 or args.threshold >= 1: 
+[2026-05-16 23:15:20]     71|     log = Logger(errLogPath)
+[2026-05-16 23:15:20]     72|     log.logger.critical('The threshold invalid, please check whether it ranges from 0-1.')
+[2026-05-16 23:15:20]     73|     sys.exit(0)
+[2026-05-16 23:15:20]     74| if not args.peptide_file:
+[2026-05-16 23:15:20]     75|     log = Logger(errLogPath)
+[2026-05-16 23:15:20]     76|     log.logger.critical('The peptide file is empty.')
+[2026-05-16 23:15:20]     77|     sys.exit(0)
+[2026-05-16 23:15:20]     78| if not args.HLA_file:
+[2026-05-16 23:15:20]     79|     log = Logger(errLogPath)
+[2026-05-16 23:15:20]     80|     log.logger.critical('The HLA file is empty.')
+[2026-05-16 23:15:20]     81|     sys.exit(0)
+[2026-05-16 23:15:20]     82| if not args.output_dir:
+[2026-05-16 23:15:20]     83|     log = Logger(errLogPath)
+[2026-05-16 23:15:20]     84|     log.logger.critical('Please fill the output file directory.')
+[2026-05-16 23:15:20]     85|     sys.exit(0)
+[2026-05-16 23:15:20]     86| 
+[2026-05-16 23:15:20]     87| cut_length = args.cut_length
+[2026-05-16 23:15:20]     88| if not os.path.exists(args.output_dir): os.makedirs(args.output_dir)
+[2026-05-16 23:15:20]     89| 
+[2026-05-16 23:15:20]     90| # # 读取文件
+[2026-05-16 23:15:20]     91| 
+[2026-05-16 23:15:20]     92| with open(args.peptide_file, 'r') as f:
+[2026-05-16 23:15:20]     93|     peptide_file = f.readlines()
+[2026-05-16 23:15:20]     94| 
+[2026-05-16 23:15:20]     95| with open(args.HLA_file, 'r') as f:
+[2026-05-16 23:15:20]     96|     HLA_file = f.readlines()
+[2026-05-16 23:15:20]     97| 
+[2026-05-16 23:15:20]     98| if len(peptide_file) != len(HLA_file):
+[2026-05-16 23:15:20]     99|     log = Logger(errLogPath)
+[2026-05-16 23:15:20]    100|     log.logger.critical('Please ensure the same number of HLAs and peptides.')
+[2026-05-16 23:15:20]    101|     sys.exit(0)
+[2026-05-16 23:15:20]    102| 
+[2026-05-16 23:15:20]    103| i = 0
+[2026-05-16 23:15:20]    104| ori_peptides, ori_HLA_names, ori_HLA_sequences = [], [], []
+[2026-05-16 23:15:20]    105| for pep, hla in zip(peptide_file, HLA_file):
+[2026-05-16 23:15:20]    106|     if i % 2 == 0:
+[2026-05-16 23:15:20]    107|         hla_name = hla.replace('>', '').replace('\t', '').replace('\n', '')
+[2026-05-16 23:15:20]    108|         ori_HLA_names.append(hla_name)
+[2026-05-16 23:15:20]    109|     if i % 2 == 1:
+[2026-05-16 23:15:20]    110|         hla_seq = str.upper(hla.replace('\n', '').replace('\t', ''))
+[2026-05-16 23:15:20]    111|         peptide = str.upper(pep.replace('\n', '').replace('\t', ''))
+[2026-05-16 23:15:20]    112|         ori_peptides.append(peptide)
+[2026-05-16 23:15:20]    113|         ori_HLA_sequences.append(hla_seq)
+[2026-05-16 23:15:20]    114|     i += 1
+[2026-05-16 23:15:20]    115| 
+[2026-05-16 23:15:20]    116| peptides, HLA_names, HLA_sequences = [], [], []
+[2026-05-16 23:15:20]    117| for pep, hla_name, hla_seq in zip(ori_peptides, ori_HLA_names, ori_HLA_sequences):
+[2026-05-16 23:15:20]    118| 
+[2026-05-16 23:15:20]    119|     if not (pep.isalpha() and hla.isalpha()): 
+[2026-05-16 23:15:20]    120|         continue
+[2026-05-16 23:15:20]    121|     if len(set(pep).difference(set('ARNDCQEGHILKMFPSTWYV'))) != 0:
+[2026-05-16 23:15:20]    122|         continue
+[2026-05-16 23:15:20]    123|     if len(set(hla_seq).difference(set('ARNDCQEGHILKMFPSTWYV'))) != 0:
+[2026-05-16 23:15:20]    124|         continue
+[2026-05-16 23:15:20]    125|         if len(hla_seq) > 34:
+[2026-05-16 23:15:20]    126|             continue
+[2026-05-16 23:15:20]    127|     length = len(pep)
+[2026-05-16 23:15:20]    128|     if length < 15:
+[2026-05-16 23:15:20]    129|         if args.cut_peptide:
+[2026-05-16 23:15:20]    130|             if length > cut_length:
+[2026-05-16 23:15:20] == GitHub API: list Dataset/ ==
+[2026-05-16 23:15:20] GET https://api.github.com/repos/a96123155/TransPHLA-AOMP/contents/Dataset
+[2026-05-16 23:15:21]   - 1_Raw data processing framework.ipynb  size=593386
+[2026-05-16 23:15:21]   - 2_Deduplication of positive and negative samples_different data sets.ipynb  size=74845
+[2026-05-16 23:15:21]   - HPV vaccine data.csv  size=6317
+[2026-05-16 23:15:21]   - common_hla_sequence.csv  size=5281
+[2026-05-16 23:15:21]   - evaluation_dataset.txt  size=914744
+[2026-05-16 23:15:21]   - experimental_dataset.txt  size=532507
+[2026-05-16 23:15:21]   - external_set.zip  size=1003902
+[2026-05-16 23:15:21]   - independent_set.zip  size=1685998
+[2026-05-16 23:15:21]   - merged_neoantigen_data.csv  size=6737
+[2026-05-16 23:15:21]   - train_data_fold0.csv  size=39397753
+[2026-05-16 23:15:21]   - train_data_fold1.csv  size=39397753
+[2026-05-16 23:15:21]   - train_data_fold2.csv  size=39397753
+[2026-05-16 23:15:21]   - train_data_fold3.csv  size=39397753
+[2026-05-16 23:15:21]   - train_data_fold4.csv  size=39400265
+[2026-05-16 23:15:21]   - train_set.zip  size=21683561
+[2026-05-16 23:15:21]   - training_dataset.txt  size=3802542
+[2026-05-16 23:15:21]   - val_data_fold0.csv  size=9766763
+[2026-05-16 23:15:21]   - val_data_fold1.csv  size=9766763
+[2026-05-16 23:15:21]   - val_data_fold2.csv  size=9766763
+[2026-05-16 23:15:21]   - val_data_fold3.csv  size=9766763
+[2026-05-16 23:15:21]   - val_data_fold4.csv  size=9766763
+[2026-05-16 23:15:21]   - 合并整理.xlsx  size=5944735
+[2026-05-16 23:15:21]   archive: Dataset/train_set.zip size=21683561
+[2026-05-16 23:15:21]   archive: Dataset/external_set.zip size=1003902
+[2026-05-16 23:15:21]   archive: Dataset/independent_set.zip size=1685998
+[2026-05-16 23:15:21] resolved: independent -> /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+[2026-05-16 23:15:21] resolved: external -> /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+[2026-05-16 23:15:22] loaded 112 HLA name->seq mappings
+[2026-05-16 23:15:22] 
+==== TEST: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-16 23:15:22] [independent] cols = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 23:15:22] [independent] rows in=171438 kept=171438
+[2026-05-16 23:15:22] [independent] peptide length stats: min=8 max=14
+[2026-05-16 23:15:25]   fastas: peptides.fasta hlas.fasta (inline_seq=True)
+[2026-05-16 23:15:25] [independent] $ '/home/ubantu/miniconda3/envs/transphla_repro/bin/python' 'pHLAIformer.py' '--peptide_file' '/home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta' '--HLA_file' '/home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta' '--threshold' '0.5' '--cut_length' '15' '--cut_peptide' '' '--output_dir' '/home/ubantu/HLA-inception/transphla_run/results/independent/' '--output_attention' '' '--output_heatmap' '' '--output_mutation' ''
+[2026-05-16 23:15:25] [independent] rc=1
+[2026-05-16 23:15:25] [independent] STDOUT/STDERR (full):
+[2026-05-16 23:15:25]   | Traceback (most recent call last):
+[2026-05-16 23:15:25]   |   File "pHLAIformer.py", line 5, in <module>
+[2026-05-16 23:15:25]   |     from model import *
+[2026-05-16 23:15:25]   |   File "/home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP/model.py", line 2, in <module>
+[2026-05-16 23:15:25]   |     from sklearn import metrics
+[2026-05-16 23:15:25]   |   File "/home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages/sklearn/__init__.py", line 83, in <module>
+[2026-05-16 23:15:25]   |     from .base import clone
+[2026-05-16 23:15:25]   |   File "/home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages/sklearn/base.py", line 14, in <module>
+[2026-05-16 23:15:25]   |     import numpy as np
+[2026-05-16 23:15:25]   | ModuleNotFoundError: No module named 'numpy'
+[2026-05-16 23:15:25] [independent] === files in out_dir after run ===
+[2026-05-16 23:15:25]   _run.log  (586 B)
+[2026-05-16 23:15:25]   error.log  (93 B)
+[2026-05-16 23:15:25]   hlas.fasta  (7946476 B)
+[2026-05-16 23:15:25]   peptides.fasta  (3738457 B)
+[2026-05-16 23:22:19] ==== START ====
+[2026-05-16 23:22:20] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-16 23:22:20] deps check failed in isolated env: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages/torch/__init__.py", line 779, in <module>
+    from .serialization import save, load
+  File "/home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages/torch/serialization.py", line 18, in <module>
+    from typing_extensions import TypeAlias
+ModuleNotFoundError: No module named 'typing_extensions'
+[2026-05-16 23:22:20] installing deps into conda env with --ignore-installed (bypass ~/.local)
+[2026-05-16 23:22:20] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input --upgrade pip setuptools wheel   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 23:22:26] Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: pip in /home/ubantu/.local/lib/python3.8/site-packages (25.0.1)
+Requirement already satisfied: setuptools in /home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages (75.3.4)
+Requirement already satisfied: wheel in /home/ubantu/miniconda3/envs/transphla_repro/lib/python3.8/site-packages (0.45.1)
+
+[2026-05-16 23:22:26] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input --ignore-installed numpy scipy pandas scikit-learn tqdm matplotlib seaborn   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 23:22:51] 37ee6e30e8c6466046018326977efd95/tzdata-2026.2-py2.py3-none-any.whl (349 kB)
+Collecting joblib>=1.1.1 (from scikit-learn)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl (301 kB)
+Collecting threadpoolctl>=2.0.0 (from scikit-learn)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Collecting contourpy>=1.0.1 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8e/71/7f20855592cc929bc206810432b991ec4c702dc26b0567b132e52c85536f/contourpy-1.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (301 kB)
+Collecting cycler>=0.10 (from matplotlib)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting fonttools>=4.22.0 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/a5/0e/b6314a09a4d561aaa7e09de43fa700917be91e701f07df6178865962666c/fonttools-4.57.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 32.7 MB/s eta 0:00:00
+Collecting kiwisolver>=1.0.1 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/76/36/ae40d7a3171e06f55ac77fe5536079e7be1d8be2a8210e08975c7f9b4d54/kiwisolver-1.4.7-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 39.3 MB/s eta 0:00:00
+Collecting packaging>=20.0 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl (100 kB)
+Collecting pillow>=6.2.0 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fb/ad/435fe29865f98a8fbdc64add8875a6e4f8c97749a93577a8919ec6f32c64/pillow-10.4.0-cp38-cp38-manylinux_2_28_x86_64.whl (4.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 32.0 MB/s eta 0:00:00
+Collecting pyparsing>=2.3.1 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl (104 kB)
+Collecting importlib-resources>=3.2.0 (from matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/e1/6a/4604f9ae2fa62ef47b9de2fa5ad599589d28c9fd1d335f32759813dfa91e/importlib_resources-6.4.5-py3-none-any.whl (36 kB)
+Collecting zipp>=3.1.0 (from importlib-resources>=3.2.0->matplotlib)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/62/8b/5ba542fa83c90e09eac972fc9baca7a88e7e7ca4b221a89251954019308b/zipp-3.20.2-py3-none-any.whl (9.2 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: pytz, zipp, tzdata, tqdm, threadpoolctl, six, pyparsing, pillow, packaging, numpy, kiwisolver, joblib, fonttools, cycler, scipy, python-dateutil, importlib-resources, contourpy, scikit-learn, pandas, matplotlib, seaborn
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+jupyter-events 0.10.0 requires pyyaml>=5.3, which is not installed.
+torchvision 0.19.1 requires torch==2.4.1, but you have torch 1.13.1+cpu which is incompatible.
+Successfully installed contourpy-1.1.1 cycler-0.12.1 fonttools-4.57.0 importlib-resources-6.4.5 joblib-1.4.2 kiwisolver-1.4.7 matplotlib-3.7.5 numpy-1.24.4 packaging-26.2 pandas-2.0.3 pillow-10.4.0 pyparsing-3.1.4 python-dateutil-2.9.0.post0 pytz-2026.2 scikit-learn-1.3.2 scipy-1.10.1 seaborn-0.13.2 six-1.17.0 threadpoolctl-3.5.0 tqdm-4.67.3 tzdata-2026.2 zipp-3.20.2
+
+[2026-05-16 23:22:51] $ /home/ubantu/miniconda3/envs/transphla_repro/bin/python -m pip install --no-input --ignore-installed torch==1.13.1 --index-url https://download.pytorch.org/whl/cpu   (cwd=/home/ubantu/HLA-inception)
+[2026-05-16 23:23:00] Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch==1.13.1
+  Using cached https://download-r2.pytorch.org/whl/cpu/torch-1.13.1%2Bcpu-cp38-cp38-linux_x86_64.whl (199.1 MB)
+Collecting typing-extensions (from torch==1.13.1)
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+INFO: pip is looking at multiple versions of typing-extensions to determine which version is compatible with other requirements. This could take a while.
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.14.0-py3-none-any.whl.metadata (3.0 kB)
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Installing collected packages: typing-extensions, torch
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+anyio 4.5.2 requires idna>=2.8, which is not installed.
+httpx 0.28.1 requires certifi, which is not installed.
+httpx 0.28.1 requires idna, which is not installed.
+ipython 8.12.3 requires pexpect>4.3; sys_platform != "win32", which is not installed.
+torchaudio 2.4.1 requires torch==2.4.1, but you have torch 1.13.1+cpu which is incompatible.
+torchvision 0.19.1 requires torch==2.4.1, but you have torch 1.13.1+cpu which is incompatible.
+Successfully installed torch-1.13.1+cpu typing-extensions-4.12.2
+
+[2026-05-16 23:23:02] deps OK (isolated): 1.13.1+cpu 1.24.4
+[2026-05-16 23:23:02] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-16 23:23:02] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-16 23:23:02] == patch_python_files: 5 .py ==
+[2026-05-16 23:23:02]   FIXED attention.py  via [as-is]
+[2026-05-16 23:23:02]   FIXED model.py  via [as-is]
+[2026-05-16 23:23:02]   FIXED mutation.py  via [as-is]
+[2026-05-16 23:23:02]   TRY   pHLAIformer.py  [as-is]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:23:02]   TRY   pHLAIformer.py  [expandtabs(8)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:23:02]   TRY   pHLAIformer.py  [expandtabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:23:02]   TRY   pHLAIformer.py  [clean blanks]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:23:02]   TRY   pHLAIformer.py  [clean blanks + tabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-16 23:23:02]   FIXED pHLAIformer.py  via [specific + clean + tabs(4)]
+[2026-05-16 23:23:02]   FIXED utils.py  via [as-is]
+[2026-05-16 23:23:02] == GitHub API: list Dataset/ ==
+[2026-05-16 23:23:02] GET https://api.github.com/repos/a96123155/TransPHLA-AOMP/contents/Dataset
+[2026-05-16 23:23:03]   - 1_Raw data processing framework.ipynb  size=593386
+[2026-05-16 23:23:03]   - 2_Deduplication of positive and negative samples_different data sets.ipynb  size=74845
+[2026-05-16 23:23:03]   - HPV vaccine data.csv  size=6317
+[2026-05-16 23:23:03]   - common_hla_sequence.csv  size=5281
+[2026-05-16 23:23:03]   - evaluation_dataset.txt  size=914744
+[2026-05-16 23:23:03]   - experimental_dataset.txt  size=532507
+[2026-05-16 23:23:03]   - external_set.zip  size=1003902
+[2026-05-16 23:23:03]   - independent_set.zip  size=1685998
+[2026-05-16 23:23:03]   - merged_neoantigen_data.csv  size=6737
+[2026-05-16 23:23:03]   - train_data_fold0.csv  size=39397753
+[2026-05-16 23:23:03]   - train_data_fold1.csv  size=39397753
+[2026-05-16 23:23:03]   - train_data_fold2.csv  size=39397753
+[2026-05-16 23:23:03]   - train_data_fold3.csv  size=39397753
+[2026-05-16 23:23:03]   - train_data_fold4.csv  size=39400265
+[2026-05-16 23:23:03]   - train_set.zip  size=21683561
+[2026-05-16 23:23:03]   - training_dataset.txt  size=3802542
+[2026-05-16 23:23:03]   - val_data_fold0.csv  size=9766763
+[2026-05-16 23:23:03]   - val_data_fold1.csv  size=9766763
+[2026-05-16 23:23:03]   - val_data_fold2.csv  size=9766763
+[2026-05-16 23:23:03]   - val_data_fold3.csv  size=9766763
+[2026-05-16 23:23:03]   - val_data_fold4.csv  size=9766763
+[2026-05-16 23:23:03]   - 合并整理.xlsx  size=5944735
+[2026-05-16 23:23:03]   archive: Dataset/train_set.zip size=21683561
+[2026-05-16 23:23:03]   archive: Dataset/external_set.zip size=1003902
+[2026-05-16 23:23:03]   archive: Dataset/independent_set.zip size=1685998
+[2026-05-16 23:23:03] resolved: independent -> /home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv
+[2026-05-16 23:23:03] resolved: external -> /home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv
+[2026-05-16 23:23:03] loaded 112 HLA name->seq mappings
+[2026-05-16 23:23:03] 
+==== TEST: independent (/home/ubantu/HLA-inception/transphla_run/extra_data/independent_set.csv) ====
+[2026-05-16 23:23:03] [independent] cols = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 23:23:03] [independent] rows in=171438 kept=171438
+[2026-05-16 23:23:03] [independent] pep len min=8 max=14
+[2026-05-16 23:23:05]   fastas: peptides.fasta hlas.fasta (inline_seq=True)
+[2026-05-16 23:23:05] [independent] $ '/home/ubantu/miniconda3/envs/transphla_repro/bin/python' 'pHLAIformer.py' '--peptide_file' '/home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta' '--HLA_file' '/home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta' '--threshold' '0.5' '--cut_length' '15' '--cut_peptide' '' '--output_dir' '/home/ubantu/HLA-inception/transphla_run/results/independent/' '--output_attention' '' '--output_heatmap' '' '--output_mutation' ''
+[2026-05-16 23:32:33] [independent] rc=0
+[2026-05-16 23:32:33] [independent] STDOUT/STDERR (tail 6000 chars):
+[2026-05-16 23:32:33]   | Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results/independent/hlas.fasta', cut_length=15, cut_peptide=False, output_attention=False, output_dir='/home/ubantu/HLA-inception/transphla_run/results/independent/', output_heatmap=False, output_mutation=False, peptide_file='/home/ubantu/HLA-inception/transphla_run/results/independent/peptides.fasta', threshold=0.5)
+[2026-05-16 23:32:33]   | # Samples =  171438
+[2026-05-16 23:32:33] [independent] === files in out_dir ===
+[2026-05-16 23:32:33]   _run.log  (400 B)
+[2026-05-16 23:32:33]   error.log  (93 B)
+[2026-05-16 23:32:33]   hlas.fasta  (7946476 B)
+[2026-05-16 23:32:33]   peptides.fasta  (3738457 B)
+[2026-05-16 23:32:33]   predict_results.csv  (10718516 B)
+[2026-05-16 23:32:33] [independent] pred cols=['HLA', 'HLA_sequence', 'peptide', 'y_pred', 'y_prob'] rows=171438
+[2026-05-16 23:32:33] [independent] pred head:
+     HLA                        HLA_sequence   peptide  y_pred  y_prob
+0  hla_0  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  LFGRDLSY       1  0.9999
+1  hla_1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  TDKKTHLY       1  1.0000
+2  hla_2  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  RSDTPLIY       1  1.0000
+[2026-05-16 23:32:33] [independent] score col = 'y_prob'
+[2026-05-16 23:32:34] [independent] raw -> /home/ubantu/HLA-inception/transphla_run/results/independent/raw_predictions.csv
+[2026-05-16 23:32:34] [independent] missing scores = 0
+[2026-05-16 23:32:36] 
+==== TEST: external (/home/ubantu/HLA-inception/transphla_run/extra_data/external_set.csv) ====
+[2026-05-16 23:32:36] [external] cols = ['Unnamed: 0', 'peptide', 'length', 'HLA', 'label', 'HLA_sequence']
+[2026-05-16 23:32:36] [external] rows in=103865 kept=103865
+[2026-05-16 23:32:36] [external] pep len min=8 max=14
+[2026-05-16 23:32:39]   fastas: peptides.fasta hlas.fasta (inline_seq=True)
+[2026-05-16 23:32:39] [external] $ '/home/ubantu/miniconda3/envs/transphla_repro/bin/python' 'pHLAIformer.py' '--peptide_file' '/home/ubantu/HLA-inception/transphla_run/results/external/peptides.fasta' '--HLA_file' '/home/ubantu/HLA-inception/transphla_run/results/external/hlas.fasta' '--threshold' '0.5' '--cut_length' '15' '--cut_peptide' '' '--output_dir' '/home/ubantu/HLA-inception/transphla_run/results/external/' '--output_attention' '' '--output_heatmap' '' '--output_mutation' ''
+[2026-05-16 23:38:24] [external] rc=0
+[2026-05-16 23:38:24] [external] STDOUT/STDERR (tail 6000 chars):
+[2026-05-16 23:38:24]   | Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results/external/hlas.fasta', cut_length=15, cut_peptide=False, output_attention=False, output_dir='/home/ubantu/HLA-inception/transphla_run/results/external/', output_heatmap=False, output_mutation=False, peptide_file='/home/ubantu/HLA-inception/transphla_run/results/external/peptides.fasta', threshold=0.5)
+[2026-05-16 23:38:24]   | # Samples =  103865
+[2026-05-16 23:38:24] [external] === files in out_dir ===
+[2026-05-16 23:38:24]   _run.log  (391 B)
+[2026-05-16 23:38:24]   hlas.fasta  (4770545 B)
+[2026-05-16 23:38:24]   peptides.fasta  (2196303 B)
+[2026-05-16 23:38:24]   predict_results.csv  (6434834 B)
+[2026-05-16 23:38:24] [external] pred cols=['HLA', 'HLA_sequence', 'peptide', 'y_pred', 'y_prob'] rows=103865
+[2026-05-16 23:38:24] [external] pred head:
+     HLA                        HLA_sequence   peptide  y_pred  y_prob
+0  hla_0  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  SDKYGLGY       1  0.9994
+1  hla_1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  QLKEYLFY       1  0.7373
+2  hla_2  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  VFDEADRM       1  1.0000
+[2026-05-16 23:38:24] [external] score col = 'y_prob'
+[2026-05-16 23:38:24] [external] raw -> /home/ubantu/HLA-inception/transphla_run/results/external/raw_predictions.csv
+[2026-05-16 23:38:24] [external] missing scores = 0
+
+==============================================================================
+TransPHLA reproduction
+==============================================================================
+
+--- INDEPENDENT ---
+raw = /home/ubantu/HLA-inception/transphla_run/results/independent/raw_predictions.csv
+Overall (threshold=0.5):
+  n         : 171438
+  n_pos     : 85876
+  n_neg     : 85562
+  AUROC     : 0.9741539293489838
+  AUPRC     : 0.9674208346491681
+  ACC       : 0.9308438035908025
+  F1        : 0.9309268019855049
+  MCC       : 0.8616881463046119
+  PREC      : 0.9315129185710288
+  REC       : 0.9303414225161861
+  TN        : 79688
+  FP        : 5874
+  FN        : 5982
+  TP        : 79894
+Per-allele (n=112, top 30):
+   HLA-A*32:15  n=   30  AUROC=1.0000  AUPRC=1.0000  ACC=0.9667  F1=0.9655
+   HLA-B*27:20  n=   38  AUROC=1.0000  AUPRC=1.0000  ACC=0.8947  F1=0.8824
+   HLA-B*44:27  n=   28  AUROC=1.0000  AUPRC=1.0000  ACC=1.0000  F1=1.0000
+   HLA-A*25:01  n=   50  AUROC=0.9984  AUPRC=0.9985  ACC=0.9400  F1=0.9434
+   HLA-B*38:01  n= 1555  AUROC=0.9958  AUPRC=0.9938  ACC=0.9852  F1=0.9853
+   HLA-C*14:02  n= 1050  AUROC=0.9946  AUPRC=0.9916  ACC=0.9762  F1=0.9764
+   HLA-B*27:01  n= 1461  AUROC=0.9945  AUPRC=0.9917  ACC=0.9726  F1=0.9723
+   HLA-B*27:02  n= 1281  AUROC=0.9939  AUPRC=0.9943  ACC=0.9711  F1=0.9708
+   HLA-B*27:08  n=  829  AUROC=0.9938  AUPRC=0.9924  ACC=0.9698  F1=0.9696
+   HLA-B*27:07  n=  818  AUROC=0.9937  AUPRC=0.9886  ACC=0.9841  F1=0.9841
+   HLA-B*13:02  n= 1276  AUROC=0.9934  AUPRC=0.9903  ACC=0.9655  F1=0.9658
+   HLA-B*37:01  n= 1806  AUROC=0.9931  AUPRC=0.9884  ACC=0.9806  F1=0.9807
+   HLA-B*18:03  n=  106  AUROC=0.9920  AUPRC=0.9923  ACC=0.9528  F1=0.9515
+   HLA-B*44:03  n= 2940  AUROC=0.9919  AUPRC=0.9891  ACC=0.9701  F1=0.9701
+   HLA-B*73:01  n=  206  AUROC=0.9918  AUPRC=0.9858  ACC=0.9709  F1=0.9709
+   HLA-B*35:03  n= 1615  AUROC=0.9918  AUPRC=0.9864  ACC=0.9752  F1=0.9753
+   HLA-B*49:01  n= 1980  AUROC=0.9906  AUPRC=0.9865  ACC=0.9818  F1=0.9818
+   HLA-B*56:01  n=  290  AUROC=0.9905  AUPRC=0.9870  ACC=0.9621  F1=0.9627
+   HLA-B*27:06  n=  474  AUROC=0.9903  AUPRC=0.9857  ACC=0.9662  F1=0.9662
+   HLA-B*50:01  n=  715  AUROC=0.9900  AUPRC=0.9855  ACC=0.9636  F1=0.9638
+   HLA-A*02:20  n=  402  AUROC=0.9894  AUPRC=0.9805  ACC=0.9701  F1=0.9709
+   HLA-B*14:02  n= 1598  AUROC=0.9892  AUPRC=0.9842  ACC=0.9593  F1=0.9590
+   HLA-B*15:18  n=  432  AUROC=0.9891  AUPRC=0.9820  ACC=0.9745  F1=0.9751
+   HLA-B*27:04  n=  998  AUROC=0.9889  AUPRC=0.9867  ACC=0.9649  F1=0.9645
+   HLA-B*39:06  n=  632  AUROC=0.9879  AUPRC=0.9794  ACC=0.9731  F1=0.9734
+   HLA-B*18:01  n= 1124  AUROC=0.9877  AUPRC=0.9862  ACC=0.9511  F1=0.9498
+   HLA-A*02:50  n=   36  AUROC=0.9877  AUPRC=0.9890  ACC=0.9167  F1=0.9143
+   HLA-B*40:02  n= 3742  AUROC=0.9871  AUPRC=0.9802  ACC=0.9687  F1=0.9688
+   HLA-C*08:02  n= 2563  AUROC=0.9870  AUPRC=0.9788  ACC=0.9575  F1=0.9577
+   HLA-B*51:08  n=  230  AUROC=0.9868  AUPRC=0.9757  ACC=0.9652  F1=0.9652
+
+--- EXTERNAL ---
+raw = /home/ubantu/HLA-inception/transphla_run/results/external/raw_predictions.csv
+Overall (threshold=0.5):
+  n         : 103865
+  n_pos     : 51984
+  n_neg     : 51881
+  AUROC     : 0.9359107531483087
+  AUPRC     : 0.9346884322401114
+  ACC       : 0.8784287296009243
+  F1        : 0.868985982423557
+  MCC       : 0.765103381335685
+  PREC      : 0.9432593760558622
+  REC       : 0.8055555555555556
+  TN        : 49362
+  FP        : 2519
+  FN        : 10108
+  TP        : 41876
+Per-allele (n=5, top 30):
+   HLA-A*01:01  n= 8644  AUROC=0.9467  AUPRC=0.9429  ACC=0.8992  F1=0.8936
+   HLA-A*24:02  n= 8279  AUROC=0.9438  AUPRC=0.9426  ACC=0.8824  F1=0.8770
+   HLA-B*08:01  n=39150  AUROC=0.9397  AUPRC=0.9373  ACC=0.8823  F1=0.8734
+   HLA-B*18:01  n=38855  AUROC=0.9314  AUPRC=0.9320  ACC=0.8746  F1=0.8623
+   HLA-A*02:01  n= 8937  AUROC=0.9236  AUPRC=0.9177  ACC=0.8545  F1=0.8469
+
+==============================================================================
+[2026-05-16 23:38:24] ==== DONE ====
+[2026-05-17 17:00:03] ==== START fusionpm overlay with TransPHLA ====
+[2026-05-17 17:00:04] reuse env: /home/ubantu/miniconda3/envs/transphla_repro/bin/python
+[2026-05-17 17:00:06] deps OK (isolated): 1.13.1+cpu 1.24.4
+[2026-05-17 17:00:06] reuse repo: /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP
+[2026-05-17 17:00:06] CODE_DIR = /home/ubantu/HLA-inception/transphla_run/TransPHLA-AOMP/TransPHLA-AOMP
+[2026-05-17 17:00:06] == patch_python_files: 5 .py ==
+[2026-05-17 17:00:06]   FIXED attention.py via [as-is]
+[2026-05-17 17:00:06]   FIXED model.py via [as-is]
+[2026-05-17 17:00:06]   FIXED mutation.py via [as-is]
+[2026-05-17 17:00:06]   TRY   pHLAIformer.py [as-is]: line 100: unindent does not match any outer indentation level
+[2026-05-17 17:00:06]   TRY   pHLAIformer.py [expandtabs(8)]: line 100: unindent does not match any outer indentation level
+[2026-05-17 17:00:06]   TRY   pHLAIformer.py [expandtabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-17 17:00:06]   TRY   pHLAIformer.py [clean blanks]: line 100: unindent does not match any outer indentation level
+[2026-05-17 17:00:06]   TRY   pHLAIformer.py [clean blanks + tabs(4)]: line 100: unindent does not match any outer indentation level
+[2026-05-17 17:00:06]   FIXED pHLAIformer.py via [specific + clean + tabs(4)]
+[2026-05-17 17:00:06]   FIXED utils.py via [as-is]
+[2026-05-17 17:00:07] loaded 112 HLA name<->seq mappings from common_hla_sequence.csv
+[2026-05-17 17:00:07] GET https://raw.githubusercontent.com/Ascaris-Equi/fusionpm/main/test_result.csv
+[2026-05-17 17:03:23]   saved /home/ubantu/HLA-inception/transphla_run/fusionpm/test_result.csv (12844077 B)
+[2026-05-17 17:03:23] GET https://raw.githubusercontent.com/Ascaris-Equi/fusionpm/main/test_results.csv
+[2026-05-17 17:03:25]   saved /home/ubantu/HLA-inception/transphla_run/fusionpm/test_results.csv (5273 B)
+[2026-05-17 17:03:25] fusionpm csvs to process: ['test_result.csv', 'test_results.csv']
+[2026-05-17 17:03:25] 
+==== test_result.csv ====
+[2026-05-17 17:03:25] == test_result.csv ==
+[2026-05-17 17:03:25]   shape: (171438, 7)
+[2026-05-17 17:03:25]   cols : ['peptide', 'length', 'HLA', 'label', 'HLA_sequence', 'pred_prob', 'pred_label']
+[2026-05-17 17:03:25]   dtypes:
+peptide             str
+length            int64
+HLA                 str
+label             int64
+HLA_sequence        str
+pred_prob       float64
+pred_label        int64
+[2026-05-17 17:03:25]   head:
+    peptide  length          HLA  label                        HLA_sequence  pred_prob  pred_label
+0  LFGRDLSY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.834689           1
+1  TDKKTHLY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.884853           1
+2  RSDTPLIY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.999691           1
+3  NSDLVQKY       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.999116           1
+4  LSDLLDWK       8  HLA-A*01:01      1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY   0.956873           1
+[2026-05-17 17:03:25] [test_result.csv] columns: {'peptide': 'peptide', 'hla_name': 'HLA', 'hla_seq': 'HLA_sequence', 'label': 'label', 'pred': None}
+[2026-05-17 17:03:25] [test_result.csv] rows in=171438 kept=171438 dropped=0
+[2026-05-17 17:03:27]   fastas: /home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/peptides.fasta /home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/hlas.fasta
+[2026-05-17 17:03:27] [test_result.csv] $ '/home/ubantu/miniconda3/envs/transphla_repro/bin/python' 'pHLAIformer.py' '--peptide_file' '/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/peptides.fasta' '--HLA_file' '/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/hlas.fasta' '--threshold' '0.5' '--cut_length' '15' '--cut_peptide' '' '--output_dir' '/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/' '--output_attention' '' '--output_heatmap' '' '--output_mutation' ''
+[2026-05-17 17:12:57] [test_result.csv] rc=0
+[2026-05-17 17:12:57] [test_result.csv] STDOUT/STDERR (tail 4000 chars):
+[2026-05-17 17:12:57]   | Namespace(HLA_file='/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/hlas.fasta', cut_length=15, cut_peptide=False, output_attention=False, output_dir='/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/', output_heatmap=False, output_mutation=False, peptide_file='/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result/peptides.fasta', threshold=0.5)
+[2026-05-17 17:12:57]   | # Samples =  171438
+[2026-05-17 17:12:57] [test_result.csv] === files in out_dir ===
+[2026-05-17 17:12:57]   _run.log (427 B)
+[2026-05-17 17:12:57]   hlas.fasta (7946476 B)
+[2026-05-17 17:12:57]   peptides.fasta (3738457 B)
+[2026-05-17 17:12:57]   predict_results.csv (10718516 B)
+[2026-05-17 17:12:57]   TransPHLA pred cols=['HLA', 'HLA_sequence', 'peptide', 'y_pred', 'y_prob'] rows=171438
+[2026-05-17 17:12:57]   TransPHLA pred head:
+     HLA                        HLA_sequence   peptide  y_pred  y_prob
+0  hla_0  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  LFGRDLSY       1  0.9999
+1  hla_1  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  TDKKTHLY       1  1.0000
+2  hla_2  YFAMYQENMAHTDANTLYIIYRDYTWVARVYRGY  RSDTPLIY       1  1.0000
+[2026-05-17 17:12:57]   TransPHLA score col = 'y_prob'
+[2026-05-17 17:12:57]   no fusionpm pred col detected; only added 'transphla_score' column
+[2026-05-17 17:12:57]   -> /home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result_transphla.csv
+[2026-05-17 17:12:58]   TransPHLA on 'test_result.csv': n=171438  AUROC=0.9742  AUPRC=0.9674
+[2026-05-17 17:12:58] 
+==== test_results.csv ====
+[2026-05-17 17:12:58] == test_results.csv ==
+[2026-05-17 17:12:58]   shape: (28, 11)
+[2026-05-17 17:12:58]   cols : ['metric', 'roc_auc', 'accuracy', 'mcc', 'f1', 'sensitivity', 'specificity', 'precision', 'recall', 'aupr', 'dataset']
+[2026-05-17 17:12:58]   dtypes:
+metric             str
+roc_auc        float64
+accuracy       float64
+mcc            float64
+f1             float64
+sensitivity    float64
+specificity    float64
+precision      float64
+recall         float64
+aupr           float64
+dataset            str
+[2026-05-17 17:12:58]   head:
+  metric   roc_auc  accuracy       mcc        f1  sensitivity  specificity  precision    recall      aupr      dataset
+0      0  0.979745  0.933562  0.867230  0.934207     0.941637     0.925458   0.926893  0.941637  0.979075  Independent
+1      1  0.979528  0.933177  0.866511  0.933936     0.942941     0.923377   0.925102  0.942941  0.979279  Independent
+2      2  0.979332  0.932833  0.865867  0.933679     0.943861     0.921764   0.923714  0.943861  0.978813  Independent
+3      3  0.979262  0.932407  0.865059  0.933333     0.944571     0.920198   0.922360  0.944571  0.978933  Independent
+4      4  0.979707  0.933795  0.867590  0.933926     0.934068     0.933522   0.933785  0.934068  0.979512  Independent
+[2026-05-17 17:12:58] [test_results.csv] columns: {'peptide': None, 'hla_name': None, 'hla_seq': None, 'label': None, 'pred': None}
+[2026-05-17 17:12:58] [test_results.csv] no peptide column — SKIP
+[2026-05-17 17:12:58] 
+==== DONE ====
+[2026-05-17 17:12:58] outputs: {'test_result.csv': '/home/ubantu/HLA-inception/transphla_run/results_fusionpm/test_result_transphla.csv'}
