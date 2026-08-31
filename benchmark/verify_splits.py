@@ -46,7 +46,12 @@ def read_keys(path: Path, peptide: str, hla: str, label: str):
         raise ValueError(f"{path}: null value in split key columns")
     pair_keys = set(zip(frame[peptide], frame[hla]))
     labeled_keys = set(zip(frame[peptide], frame[hla], frame[label]))
-    return frame, pair_keys, labeled_keys
+    canonical_rows = sorted(zip(frame[peptide], frame[hla], frame[label]))
+    digest = hashlib.sha256()
+    for row in canonical_rows:
+        digest.update("\x1f".join(map(str, row)).encode("utf-8"))
+        digest.update(b"\x1e")
+    return frame, pair_keys, labeled_keys, digest.hexdigest()
 
 
 def markdown_table(frame: pd.DataFrame) -> str:
@@ -74,10 +79,10 @@ def main() -> None:
 
     rows = []
     for fold in sorted(train):
-        train_frame, train_pairs, train_labeled = read_keys(
+        train_frame, train_pairs, train_labeled, _ = read_keys(
             train[fold], args.peptide_column, args.hla_column, args.label_column
         )
-        val_frame, val_pairs, val_labeled = read_keys(
+        val_frame, val_pairs, val_labeled, val_rowset_sha256 = read_keys(
             validation[fold], args.peptide_column, args.hla_column, args.label_column
         )
         shared_pairs = train_pairs & val_pairs
@@ -109,6 +114,7 @@ def main() -> None:
                 "shared_pairs_conflicting_labels": conflicting,
                 "train_sha256": file_sha256(train[fold]),
                 "validation_sha256": file_sha256(validation[fold]),
+                "validation_canonical_rowset_sha256": val_rowset_sha256,
             }
         )
 
@@ -117,7 +123,30 @@ def main() -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     audit.to_csv(output_dir / "split_audit.csv", index=False)
 
-    shown = audit.drop(columns=["train_sha256", "validation_sha256"])
+    shown = audit.drop(
+        columns=[
+            "train_sha256",
+            "validation_sha256",
+            "validation_canonical_rowset_sha256",
+        ]
+    )
+    validation_sets_identical = (
+        audit["validation_canonical_rowset_sha256"].nunique() == 1
+    )
+    if validation_sets_identical:
+        validation_note = (
+            "All five validation CSVs contain the same normalized "
+            "`(peptide, HLA_sequence, label)` row multiset; their byte hashes differ "
+            "only because row order/index values differ. The upstream preprocessing "
+            "notebook selects `val_data_cv_idx_dict[0]` for every saved validation "
+            "fold. These files therefore do not form conventional disjoint "
+            "cross-validation validation folds, and folds 1-4 show substantial "
+            "train/validation overlap."
+        )
+    else:
+        validation_note = (
+            "The validation CSVs do not share one identical normalized row multiset."
+        )
     report = "\n".join(
         [
             "# Train/validation split audit",
@@ -125,6 +154,8 @@ def main() -> None:
             "Keys are normalized by stripping whitespace and uppercasing `peptide` "
             "and `HLA_sequence`. `shared_labeled_rows` uses "
             "`(peptide, HLA_sequence, label)`; `shared_pairs` ignores the label.",
+            "",
+            validation_note,
             "",
             markdown_table(shown),
             "",

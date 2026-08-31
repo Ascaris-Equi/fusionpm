@@ -1,5 +1,5 @@
 # train.py
-# 5-fold training. Saves only weights to ./weights/.
+# Training over the five released split pairs. Saves only weights to ./weights/.
 # Prints (does not save) TransPHLA-style independent + external test metrics per fold.
 import os
 import sys

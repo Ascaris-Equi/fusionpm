@@ -1,8 +1,8 @@
 # Training-overlap performance
 
-All 171,438 rows in `independent_set.csv` were evaluated; no sampling or subset selection was applied. Scores are the mean positive-class probability from the five released fold checkpoints (five-fold ensemble).
+All 171,438 rows in `independent_set.csv` were evaluated; no sampling or subset selection was applied. Scores are the mean positive-class probability from the five released checkpoints. Because the released validation CSVs are not five disjoint folds, this is described as a five-checkpoint average rather than an unbiased five-fold cross-validation estimate.
 
-Rows are normalized by stripping whitespace and uppercasing both `peptide` and `HLA_sequence`. The primary comparison treats an exact normalized `(peptide, HLA_sequence)` pair as seen when it occurs in the union of all training-fold CSVs. The five-way breakdown separates exact-pair overlap from component-level coverage; the overall row and all strata summarize the same set of ensemble predictions.
+Rows are normalized by stripping whitespace and uppercasing both `peptide` and `HLA_sequence`. The primary comparison treats an exact normalized `(peptide, HLA_sequence)` pair as seen when it occurs in the union of all training-fold CSVs. The five-way breakdown separates exact-pair overlap from component-level coverage; the overall row and all strata summarize the same set of five-checkpoint predictions.
 
 | grouping | group | n_evaluable | n_unique_pairs | n_positive | positive_rate | auc | aupr | accuracy | mcc | f1 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

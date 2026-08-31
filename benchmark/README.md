@@ -44,7 +44,8 @@ date, row count, byte count, and SHA-256 are recorded there.
 
 ## 3. Inference
 
-Run the released five-fold ensemble on the independent test set:
+Run the released five-checkpoint probability average on the independent test
+set:
 
 ```bash
 python infer.py \
@@ -56,6 +57,14 @@ python infer.py \
 
 The model and evaluation settings are also recorded in
 `configs/iscience_revision.json`.
+
+The released validation CSVs contain the same normalized row multiset and do
+not form conventional disjoint cross-validation folds. This upstream behavior
+and the measured overlap are documented in
+[`DATA_PROVENANCE.md`](DATA_PROVENANCE.md) and
+[`results/split_audit.md`](results/split_audit.md). “Five-checkpoint average”
+therefore describes the inference operation more accurately than an unbiased
+five-fold cross-validation estimate.
 
 Before inference, audit that every supplied train/validation fold is the
 intended file and quantify any split overlap:
@@ -74,6 +83,7 @@ Generate both machine-readable metrics and the GitHub-rendered table:
 ```bash
 python benchmark/evaluate_seen_unseen.py \
   --train-glob "dataset/train_data_fold*.csv" \
+  --validation-glob "dataset/val_data_fold*.csv" \
   --test-input dataset/independent_set.csv \
   --predictions benchmark/results/independent_predictions.csv \
   --output-dir benchmark/results \
@@ -97,16 +107,21 @@ misreported as performance on a previously observed pMHC pair.
 ## 5. Baseline provenance
 
 `baseline_versions.csv` is the provenance table for the 15 Fusion-pM
-baselines. Fourteen values (`source = published`) are taken from the official
-Chu et al. (2022) Figure 4 source workbook; they were not recomputed for this
-revision. HLA-Inception (`source = local`) is the only baseline independently
-evaluated for the Fusion-pM comparison. The table records the reported method
-release, exact immutable result source, access date, input panel or split, and
-reproduction note. Fusion-pM itself is the proposed method and is not included
-as a baseline row.
+baselines. Thirteen metric rows are taken from the official Chu et al. (2022)
+Figure 4 source workbook, HLAthena is linked to its separate published method
+article because it is absent from that workbook, and HLA-Inception
+(`source = local`) is the only author-run baseline. The table records the
+reported method release, exact immutable result source, access date, worksheet
+cell range, published metric vector, and reproduction note. Fusion-pM itself
+is the proposed method and is not included as a baseline row.
 
 The same information is rendered as a GitHub table in
 [`BASELINE_PROVENANCE.md`](BASELINE_PROVENANCE.md).
+
+Checkpoint hashes and the exact parameter count are recorded in
+[`MODEL_PROVENANCE.md`](MODEL_PROVENANCE.md). Verified HLA-Inception release
+behavior and the status of its run-specific metadata are recorded in
+[`HLA_INCEPTION_PROVENANCE.md`](HLA_INCEPTION_PROVENANCE.md).
 
 ## 6. Outputs
 

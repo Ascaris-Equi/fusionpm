@@ -4,7 +4,8 @@
   "validation_splits": "dataset/val_data_fold*.csv",
   "independent_test": "dataset/independent_set.csv",
   "model_weights": "weights/model_fold[0-4].pkl",
-  "inference_mode": "five-fold probability ensemble",
+  "inference_mode": "mean probability from five released checkpoints",
+  "validation_split_note": "The five released validation CSVs contain the same normalized row multiset; this is not a conventional disjoint five-fold cross-validation split.",
   "decision_threshold": 0.5,
   "overlap_normalization": "strip whitespace and uppercase",
   "primary_overlap_key": [

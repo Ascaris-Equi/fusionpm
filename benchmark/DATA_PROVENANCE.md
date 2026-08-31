@@ -43,7 +43,17 @@ exact frozen files used in the reported analysis.
 | `val_data_fold3.csv` | validation split 3 | TransPHLA `3ed2260292934170757507a71e645d0bcadfc44b` | 2026-08-27 | 143674 | 9766763 | `e691cacd911be3f20591ac6a8ff3da848510fc483e5272188495772df98b8dd4` |
 | `val_data_fold4.csv` | validation split 4 | TransPHLA `3ed2260292934170757507a71e645d0bcadfc44b` | 2026-08-27 | 143674 | 9766763 | `975c142363804b13ef747de454f1967e8f37e19354263e80cc0f8d1fa9f1de90` |
 | `independent_set.csv` | independent test | TransPHLA `3ed2260292934170757507a71e645d0bcadfc44b` | 2026-08-27 | 171438 | 11673010 | `3abbf5264a3a6cf0787c542d8b26ec95e1357e15ad658d9b8ad05d98301da1b9` |
-| `common_hla.csv` | optional allele lookup | local frozen mapping | 2026-08-27 | 112 | 5281 | `b4ee3ec46cfaf0a50a0a9300e1e36fe84b0d58b1fe7700f6c2299499b73d9bbe` |
+| `common_hla.csv` | optional allele lookup | TransPHLA `3ed2260292934170757507a71e645d0bcadfc44b` | 2026-08-27 | 112 | 5281 | `b4ee3ec46cfaf0a50a0a9300e1e36fe84b0d58b1fe7700f6c2299499b73d9bbe` |
+
+The independent test file contains 171,438 rows: 85,876 positives and
+85,562 negatives (positive rate 0.500916). After stripping whitespace and
+uppercasing `peptide` and `HLA_sequence`, it contains 171,330 unique pairs,
+108 repeated pair rows, and no pair with conflicting labels.
+
+The five training CSVs contain 2,873,328 rows in total. This sum counts rows
+again when they occur in multiple released training folds and therefore is
+not a count of unique training examples. It does not support a 515,149-row
+description of these released model-ready files.
 
 ## What this repository reproduces
 
@@ -62,10 +72,23 @@ to the frozen CSV inputs:
 train/validation pair overlap. `benchmark/evaluate_seen_unseen.py` records the
 independent-test overlap analysis.
 
-## Frozen five-fold split contract
+## Released validation-split behavior
 
-This release treats the supplied TransPHLA-derived fold CSVs as frozen
-benchmark inputs rather than regenerating them from raw source tables. The
-source snapshot, retrieval date, dimensions, and SHA-256 manifest above make
-the inputs independently verifiable byte for byte. The accompanying split
-audit reports observed pair overlap as a property of these supplied files.
+The supplied TransPHLA-derived CSVs are frozen benchmark inputs rather than
+newly generated splits. Byte-level comparison against the pinned upstream
+snapshot found all 12 listed CSVs identical to their upstream files.
+
+The five validation files have different byte hashes because their index and
+row order differ, but they contain the same normalized
+`(peptide, HLA_sequence, label)` row multiset. The pinned upstream notebook
+uses `val_data_cv_idx_dict[0]` when saving every `val_data_fold*.csv`, rather
+than indexing that dictionary by the current fold. Consequently, folds 1-4
+have extensive train/validation pair overlap, as quantified in
+[`results/split_audit.md`](results/split_audit.md).
+
+These files are therefore not represented as conventional disjoint
+five-fold cross-validation validation folds. Inference results average the
+probabilities from five released checkpoints; they are not claimed as an
+unbiased five-fold cross-validation estimate. The source snapshot, retrieval
+date, dimensions, and SHA-256 manifest above still make the released inputs
+independently verifiable byte for byte.

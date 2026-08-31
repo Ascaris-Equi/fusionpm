@@ -1,6 +1,8 @@
 # Fusion-pM
 
-Fusion-pM is a deep learning–based service for Class I HLA–peptide binding
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22178340.svg)](https://doi.org/10.5281/zenodo.22178340)
+
+Fusion-pM is a deep learning model for Class I HLA–peptide binding
 prediction and immunogenicity-related analysis. The model integrates HLA
 Class I sequences with peptide sequences and uses **cross-attention** and
 **masked-residue learning** to support HLA–peptide binding prediction,
@@ -42,8 +44,8 @@ binding-groove-related positions.
 - **NetMHCpan-style IC50 reporting.** Reports a ranking-friendly
   pseudo-affinity `IC50_nM = 50000^(1 − score)` together with SB / WB / NB
   classes.
-- **5-fold ensemble inference.** Default inference averages five
-  cross-validation folds; an optional fast mode uses the best single fold.
+- **Five-checkpoint inference.** Default inference averages five released
+  checkpoint probabilities; an optional fast mode uses one checkpoint.
 - **Pretrained model files.** Includes five pretrained `.pkl` model files
   for direct inference.
 
@@ -53,9 +55,9 @@ binding-groove-related positions.
 |---|---|
 | `README.md` | Project overview and quick start |
 | `model.py` | Model architecture (backbone + cross-attention + MLM head) |
-| `train.py` | 5-fold training script |
+| `train.py` | Training script for the five released split pairs |
 | `infer.py` | CSV-in / CSV-out inference (ensemble or fast mode) |
-| `weights/model_fold[0-4].pkl` | Pretrained 5-fold weights |
+| `weights/model_fold[0-4].pkl` | Five pretrained checkpoint files |
 | `weights/vocab_dict.npy` | Vocabulary dictionary |
 | `weights/best_fold.json` | Best-fold index used by `--fast` |
 | `dataset/` | User-provided data folder (not tracked in git) |
@@ -86,7 +88,7 @@ python -m pip install torch numpy pandas scikit-learn
 
 ## Quick Start
 
-Run inference on a CSV file (5-fold ensemble, default):
+Run inference on a CSV file (five-checkpoint average, default):
 
 ```
 python infer.py --input dataset/independent_set.csv --output preds.csv
@@ -125,12 +127,12 @@ score, IC50_nM, binder_class, pred_label, rank, n_models, status
 
 | column | meaning |
 |---|---|
-| `score` | Mean softmax-positive probability across `n_models` folds |
+| `score` | Mean softmax-positive probability across `n_models` checkpoints |
 | `IC50_nM` | NetMHCpan-style affinity transform: `50000^(1 − score)` |
 | `binder_class` | `SB` (< 50 nM), `WB` (< 500 nM), `NB` (≥ 500 nM) |
 | `pred_label` | `int(score > threshold)`; default threshold 0.5 |
 | `rank` | Dense rank within the same HLA_sequence (1 = best) |
-| `n_models` | Number of fold weights actually used for the row |
+| `n_models` | Number of checkpoint files actually used for the row |
 | `status` | `ok`, or short tag (`bad-pep-len(7)`, `bad-hla-aa(X)`, ...) |
 
 Invalid rows are kept with `score = NaN`; the run does not abort.
@@ -165,7 +167,7 @@ dataset/
 └── common_hla.csv          (optional, for HLA-allele → pseudo-seq lookup)
 ```
 
-Then run 5-fold training:
+Then train across the five released split pairs:
 
 ```
 python train.py
@@ -190,15 +192,25 @@ weights are written to disk** (`weights/model_fold[0-4].pkl`). The fold
 with the highest validation `avg(auc + acc + mcc + f1) / 4` is recorded in
 `weights/best_fold.json` and is used by `infer.py --fast`.
 
+The released validation CSVs contain the same normalized row multiset and are
+not conventional disjoint cross-validation folds. Folds 1-4 consequently
+show substantial train/validation overlap. See
+[`benchmark/DATA_PROVENANCE.md`](benchmark/DATA_PROVENANCE.md) and
+[`benchmark/results/split_audit.md`](benchmark/results/split_audit.md) before
+interpreting validation-selected or `--fast` results.
+
 ## Reproducing the manuscript benchmark
 
 The iScience manuscript benchmark evaluates all 171,438 independent-test rows
-with the released five-fold ensemble. Exact commands and configuration are in
+with the mean probability from the five released checkpoints. Exact commands
+and configuration are in
 [`benchmark/README.md`](benchmark/README.md), frozen input provenance and
 SHA-256 values are in
 [`benchmark/DATA_PROVENANCE.md`](benchmark/DATA_PROVENANCE.md), baseline and
 web-server versions are in
-[`benchmark/BASELINE_PROVENANCE.md`](benchmark/BASELINE_PROVENANCE.md), and the
+[`benchmark/BASELINE_PROVENANCE.md`](benchmark/BASELINE_PROVENANCE.md),
+checkpoint hashes and parameter counts are in
+[`benchmark/MODEL_PROVENANCE.md`](benchmark/MODEL_PROVENANCE.md), and the
 GitHub-rendered seen/unseen result is in
 [`benchmark/results/README.md`](benchmark/results/README.md).
 
@@ -209,16 +221,15 @@ python train.py --folds 0 --epochs 3
 python infer.py --input dataset/independent_set.csv --output ind_pred.csv --fast
 ```
 
-For full manuscript-level reproducibility, the following materials are
-typically also required:
+The benchmark directory records the frozen split hashes, random seed,
+checkpoint hashes, metric scripts, published baseline source cells, and exact
+commands. The model-ready data remain user-supplied and are verified against
+the pinned upstream TransPHLA snapshot by SHA-256.
 
-- training, validation, and test splits;
-- processed benchmark datasets;
-- HLA allele or pseudo-sequence tables;
-- random seeds;
-- baseline model outputs;
-- metric calculation scripts;
-- source data for figures and tables.
+Software archive citation: concept DOI
+[`10.5281/zenodo.22178340`](https://doi.org/10.5281/zenodo.22178340), which
+resolves to the latest archived release. Cite a version DOI only when an exact
+historical archive is required.
 
 ## Limitations
 
@@ -256,7 +267,8 @@ the Health and Medical Research Fund, and other investors and sponsors.
 
 Fusion-pM is distributed for non-commercial research use under the
 PolyForm Noncommercial License 1.0.0. Commercial use requires prior written
-permission. For commercial licensing, contact: **fusionpm@bayvaxbio.com**
+permission. See [`LICENSE`](LICENSE). For commercial licensing, contact:
+**fusionpm@bayvaxbio.com**
 
 ## Contact
 

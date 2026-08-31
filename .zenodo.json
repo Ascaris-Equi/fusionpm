@@ -1,0 +1,51 @@
+{
+  "title": "Fusion-pM iScience reproducibility release v1.0.3",
+  "version": "v1.0.3-iscience",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "polyform-noncommercial-1.0.0",
+  "language": "eng",
+  "description": "Fusion-pM is a cross-attention Transformer for Class I HLA-peptide binding prediction. This release provides five pretrained checkpoints, inference scripts, a reproducible benchmark workflow, frozen input provenance, exact baseline source cells, and training-overlap analyses for the iScience revision.",
+  "creators": [
+    {
+      "name": "Ma, Jiahao",
+      "affiliation": "BayVax Biotech Limited"
+    },
+    {
+      "name": "Li, Hongzong",
+      "affiliation": "BayVax Biotech Limited"
+    },
+    {
+      "name": "Yu, Yaojun",
+      "affiliation": "Second Affiliated Hospital of Wenzhou Medical University"
+    },
+    {
+      "name": "Su, Xiaoping",
+      "affiliation": "Wenzhou Medical University"
+    },
+    {
+      "name": "Cai, Zhenzhai",
+      "affiliation": "Second Affiliated Hospital of Wenzhou Medical University"
+    },
+    {
+      "name": "Hu, Ye-Fan",
+      "affiliation": "BayVax Biotech Limited"
+    },
+    {
+      "name": "Chen, Yifan",
+      "affiliation": "Hong Kong Baptist University"
+    },
+    {
+      "name": "Huang, Jian-Dong",
+      "affiliation": "The University of Hong Kong"
+    }
+  ],
+  "keywords": [
+    "HLA-peptide binding",
+    "pMHC-I",
+    "Transformer",
+    "cross-attention",
+    "immunoinformatics",
+    "reproducible benchmark"
+  ]
+}

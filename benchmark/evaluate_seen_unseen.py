@@ -58,6 +58,11 @@ def parse_args() -> argparse.Namespace:
         help="Fusion-pM prediction CSV containing labels and scores",
     )
     parser.add_argument(
+        "--validation-glob",
+        default=None,
+        help="Optional validation split glob to include in the data manifest",
+    )
+    parser.add_argument(
         "--test-input",
         default=None,
         help="Optional raw test CSV to include separately in the data manifest",
@@ -189,6 +194,15 @@ def main() -> None:
     train_paths = [Path(path) for path in sorted(glob.glob(args.train_glob))]
     if not train_paths:
         raise FileNotFoundError(f"No files matched --train-glob: {args.train_glob}")
+    validation_paths = (
+        [Path(path) for path in sorted(glob.glob(args.validation_glob))]
+        if args.validation_glob
+        else []
+    )
+    if args.validation_glob and not validation_paths:
+        raise FileNotFoundError(
+            f"No files matched --validation-glob: {args.validation_glob}"
+        )
 
     prediction_path = Path(args.predictions)
     output_dir = Path(args.output_dir)
@@ -211,6 +225,18 @@ def main() -> None:
         manifest_rows.append(
             {
                 "role": "training_split",
+                "file": path.name,
+                "bytes": path.stat().st_size,
+                "rows": int(len(frame)),
+                "sha256": sha256(path),
+            }
+        )
+
+    for path in validation_paths:
+        frame = pd.read_csv(path)
+        manifest_rows.append(
+            {
+                "role": "validation_split",
                 "file": path.name,
                 "bytes": path.stat().st_size,
                 "rows": int(len(frame)),
@@ -336,7 +362,7 @@ def main() -> None:
         test_input_path = Path(args.test_input)
         test_input = pd.read_csv(test_input_path)
         manifest_rows.insert(
-            len(train_paths),
+            len(train_paths) + len(validation_paths),
             {
                 "role": "independent_test",
                 "file": test_input_path.name,
@@ -366,14 +392,16 @@ def main() -> None:
             "",
             f"All {len(predictions):,} rows in `independent_set.csv` were evaluated; "
             "no sampling or subset selection was applied. Scores are the mean positive-class "
-            "probability from the five released fold checkpoints (five-fold ensemble).",
+            "probability from the five released checkpoints. Because the released validation "
+            "CSVs are not five disjoint folds, this is described as a five-checkpoint average "
+            "rather than an unbiased five-fold cross-validation estimate.",
             "",
             "Rows are normalized by stripping whitespace and uppercasing both `peptide` and "
             "`HLA_sequence`. The primary comparison treats an exact normalized "
             "`(peptide, HLA_sequence)` pair as seen when it occurs in the union of all "
             "training-fold CSVs. The five-way breakdown separates exact-pair overlap from "
             "component-level coverage; the overall row and all strata summarize the same set "
-            "of ensemble predictions.",
+            "of five-checkpoint predictions.",
             "",
             markdown_table(metrics),
             "",
